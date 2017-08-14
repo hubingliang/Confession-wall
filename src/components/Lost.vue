@@ -1,5 +1,5 @@
 <template>
-    <div class="Confession">
+    <div class="Lost">
         <div></div>
     </div>
 </template>

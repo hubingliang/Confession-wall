@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 html{
-    background: rgb(0, 50, 203);
     .box{
         width: 100vw;
         background: rgb(0, 50, 203);
@@ -12,6 +11,7 @@ html{
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        overflow: hidden;
         .start{
             width: 100vw;
             height: 100vh;
@@ -43,35 +43,57 @@ html{
             .topbar{
                 width: 100%;
                 display: flex;
+                justify-content: center;
                 .logo{
                     display: flex;
                     align-items: center;
                     flex-direction: row;
-                    width: 20%;
+                    position: absolute;
+                    left: 40px;
                     .icon{
-                        width: 1.5em; height: 1.5em;
+                        width: 3em; height: 3em;
                         vertical-align: -0.15em;
                         fill: white;
                         overflow: hidden;
                         position: absolute;
+                        border-radius: 50%;
+                        background: rgb(0, 50, 203);
+                        padding: 10px;
+                        margin-left: -10px;
+                        z-index: 2;  
                     }
                     h3{
                         color: white;
-                        margin-left: 30px;
-                        z-index: 2;                  
+                        margin-left: 40px;               
                     }
                 }
                 .nav{
                     display: flex;
                     justify-content: center;
-                    flex: 1;
                     .nav-item{
                         color: white;
                         padding: 0 20px;
+                        font-weight: bold;
+                        font-size: 15px;
                     }
                 }
-                .xx{
-                    width: 300px;
+                .link-box{
+                    display: flex;
+                    .xx{
+                        padding: 0 10px;
+                        height: 30px;
+                        line-height: 100%;
+                        background: none;
+                        border: 1px solid white;
+                        color: white;
+                        font-size: 15px;
+                        font-weight: bold;
+                        border-radius: 40px;
+                        position: absolute;
+                        right: 40px;
+                        z-index: 2;
+                        outline: none;
+                    }
                 }
             }
             .main{
@@ -82,16 +104,18 @@ html{
                 height: 100vh;
                 .icon{
                     fill: white;
-                    width: 4em; height: 4em;
+                    width: 5em; height: 5em;
                     vertical-align: -0.15em;
                     overflow: hidden;
                 }
                 h1{
                     margin-top: 20px;
                     color: white;
+                    font-size: 40px;
+                    
                 }
                 .Confessionshow{
-                    margin-top: 30px;
+                    margin-top: 50px;
                 }
             }
             .footer{
@@ -99,6 +123,73 @@ html{
                 display: flex;
                 color: white;
                 flex-direction: column-reverse; 
+            }
+            .back-button{
+                position: absolute;
+                left: 40px;
+                bottom: 40px;
+                width: 20px;
+                z-index: 2;
+                .back{
+                    color: white;
+                    word-wrap: break-word;
+                    background: none;
+                    border: none;
+                    font-size: 15px;
+                    font-weight: bold;
+                    outline: none;
+                    p{
+                        margin: 5px 0 ;
+                    }
+                }
+            }
+            .nav-icon{
+                position: absolute;
+                right: 40px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                bottom: 40px;
+                z-index: 2; 
+                .icon{
+                    width: 3em; height: 3em;
+                    vertical-align: -0.15em;
+                    fill: white;
+                    overflow: hidden;
+                    border-radius: 50%;
+                    border: 1px solid white;
+                    padding: 10px;
+                    margin-top: 20px;
+                    z-index: 2; 
+                }
+            }
+            .Confession{
+                background: white;
+                position: absolute;
+                top: 20px;
+                left: 20px;
+                right: 20px;
+                bottom: 20px;
+                z-index: 1;
+            }
+            .Lost{
+                background: white;
+                position: absolute;
+                top: 20px;
+                left: 20px;
+                right: 20px;
+                bottom: 20px;
+                z-index: 1;
+            }
+            .Notice{
+                background: white;
+                position: absolute;
+                top: 20px;
+                left: 20px;
+                right: 20px;
+                bottom: 20px;
+                z-index: 1; 
             }
         }
     }  
