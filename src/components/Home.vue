@@ -51,10 +51,10 @@
       </transition>
       
       <div class="nav-icon" id="nav-icon">
-        <svg class="icon animated fadeInRight" aria-hidden="true" v-on:click="Confession()" @click="Confessionshow = true">
+        <svg class="icon animated fadeInRight" aria-hidden="true" v-on:click="Confession()" @click="Confessionshow = true,Lostshow = false, Noticeshow = false">
             <use xlink:href="#icon-xin1"></use>
         </svg>
-        <svg class="icon animated fadeInRight" aria-hidden="true" v-on:click="Lost()" @click="Lostshow = true">
+        <svg class="icon animated fadeInRight" aria-hidden="true" v-on:click="Lost()" @click="Confessionshow = true,Lostshow = true">
             <use xlink:href="#icon-wenhao"></use>
         </svg>
         <svg class="icon animated fadeInRight" aria-hidden="true" v-on:click="Notice()" @click="Noticeshow = true">

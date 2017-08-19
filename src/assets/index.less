@@ -166,13 +166,125 @@ html{
                 }
             }
             .Confession{
-                background: white;
+                background: rgb(243, 243, 243);
                 position: absolute;
                 top: 20px;
                 left: 20px;
                 right: 20px;
                 bottom: 20px;
                 z-index: 1;
+                padding: 80px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .el-icon-arrow-right{
+                    position: absolute;
+                    right: 40px;
+                }
+                .el-icon-arrow-left{
+                    position: absolute;
+                    left: 40px;
+                }
+                .view{
+                    background: rgb(243, 243, 243);
+                    height: 550px;
+                    width: 1200px;
+                    display: flex;
+                    align-items: center;
+                    overflow: hidden;
+                    .Confession-box{
+                        background: rgb(243, 243, 243);
+                        transform: translateX(0px);
+                        display: flex;
+                        flex-wrap: nowrap;
+                        transition: all 1s;
+                        .items{
+                            display: flex;
+                            flex-direction: row;
+                            height: 550px;
+                            width: 1200px;
+                            flex-wrap: wrap;
+                            background: rgb(243, 243, 243);
+                            justify-content: space-between;
+                            .item{
+                                width: 590px;
+                                height: 255px;
+                                background: white;
+                                box-shadow: 0 1px 3px rgba(0,0,0,.1);
+                                border-radius: 2px;
+                                padding: 10px;
+                                .content{
+                                    display: flex;
+                                    img{
+                                        height: 160px;
+                                        display: block;
+                                        border-radius: 2px;
+                                        margin-right: 18px;
+                                    }
+                                    p{
+                                        line-height: 1.67;
+                                        height: 160px;
+                                        overflow: hidden;
+                                    }
+                                }
+                                .user{
+                                    display: flex;
+                                    align-items: center;
+                                    margin-bottom: 10px;
+                                    img{
+                                        height: 24px;
+                                        width: 24px;
+                                        border-radius: 50%;
+                                    }
+                                    span{
+                                        text-align: center;
+                                        margin: 0 5px;
+                                        font-size: 15px;
+                                        font-weight: bold;
+                                    }
+                                }
+                                .actions{
+                                    display: flex;
+                                    justify-content: flex-start;
+                                    align-items: center;
+                                    margin-top: 10px;
+                                    margin-left: 10px;
+                                    height: 30px;
+                                    .good{
+                                        display: flex;
+                                        align-items: center;
+                                        margin-right: 20px;
+                                        .items-icon{
+                                            height: 20px;
+                                            fill: #333;
+                                            width: 20px;
+                                            margin-right: 5px;
+                                        }
+                                        span{
+                                            height: 30px;
+                                            line-height: 30px;
+                                        }
+                                    }
+                                    .comment{
+                                        display: flex;
+                                        align-items: center;
+                                        .items-icon{
+                                            height: 20px;
+                                            fill: #333;
+                                            width: 20px;
+                                            margin-right: 5px;
+                                            
+                                        }
+                                        span{
+                                            height: 30px;
+                                            line-height: 30px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
             .Lost{
                 background: white;

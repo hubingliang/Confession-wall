@@ -172,13 +172,124 @@ html .box .home .nav-icon .icon {
   z-index: 2;
 }
 html .box .home .Confession {
-  background: white;
+  background: #f3f3f3;
   position: absolute;
   top: 20px;
   left: 20px;
   right: 20px;
   bottom: 20px;
   z-index: 1;
+  padding: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+html .box .home .Confession .el-icon-arrow-right {
+  position: absolute;
+  right: 40px;
+}
+html .box .home .Confession .el-icon-arrow-left {
+  position: absolute;
+  left: 40px;
+}
+html .box .home .Confession .view {
+  background: #f3f3f3;
+  height: 550px;
+  width: 1200px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+html .box .home .Confession .view .Confession-box {
+  background: #f3f3f3;
+  transform: translateX(0px);
+  display: flex;
+  flex-wrap: nowrap;
+  transition: all 1s;
+}
+html .box .home .Confession .view .Confession-box .items {
+  display: flex;
+  flex-direction: row;
+  height: 550px;
+  width: 1200px;
+  flex-wrap: wrap;
+  background: #f3f3f3;
+  justify-content: space-between;
+}
+html .box .home .Confession .view .Confession-box .items .item {
+  width: 590px;
+  height: 255px;
+  background: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  padding: 10px;
+}
+html .box .home .Confession .view .Confession-box .items .item .content {
+  display: flex;
+}
+html .box .home .Confession .view .Confession-box .items .item .content img {
+  height: 160px;
+  display: block;
+  border-radius: 2px;
+  margin-right: 18px;
+}
+html .box .home .Confession .view .Confession-box .items .item .content p {
+  line-height: 1.67;
+  height: 160px;
+  overflow: hidden;
+}
+html .box .home .Confession .view .Confession-box .items .item .user {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+html .box .home .Confession .view .Confession-box .items .item .user img {
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+}
+html .box .home .Confession .view .Confession-box .items .item .user span {
+  text-align: center;
+  margin: 0 5px;
+  font-size: 15px;
+  font-weight: bold;
+}
+html .box .home .Confession .view .Confession-box .items .item .actions {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 10px;
+  margin-left: 10px;
+  height: 30px;
+}
+html .box .home .Confession .view .Confession-box .items .item .actions .good {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+html .box .home .Confession .view .Confession-box .items .item .actions .good .items-icon {
+  height: 20px;
+  fill: #333;
+  width: 20px;
+  margin-right: 5px;
+}
+html .box .home .Confession .view .Confession-box .items .item .actions .good span {
+  height: 30px;
+  line-height: 30px;
+}
+html .box .home .Confession .view .Confession-box .items .item .actions .comment {
+  display: flex;
+  align-items: center;
+}
+html .box .home .Confession .view .Confession-box .items .item .actions .comment .items-icon {
+  height: 20px;
+  fill: #333;
+  width: 20px;
+  margin-right: 5px;
+}
+html .box .home .Confession .view .Confession-box .items .item .actions .comment span {
+  height: 30px;
+  line-height: 30px;
 }
 html .box .home .Lost {
   background: white;
