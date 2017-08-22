@@ -3,7 +3,7 @@
         <div class="view">
             <div class="Confession-box" id="box">
                 <div class="items">
-                    <div class="item">
+                    <div class="item" @click="Windowshow = true">
                         <div class="user">
                             <img src="https://i.loli.net/2017/08/19/5997affaf2cda.jpg"/>
                             <span>Brown</span>
@@ -203,13 +203,21 @@
 
         <i class="el-icon-arrow-right" v-on:click="rightmove()"></i>
         <i class="el-icon-arrow-left" v-on:click="leftmove()"></i>
+        <div class="wrapper" @click="Windowshow = false" v-show="Windowshow">
+            <Window></Window>
+        </div>
+        
     </div>
 </template>
 
 
 <script>
+import Window from './Window'
+
 export default {
+components:{Window},
   data: () => ({
+      Windowshow: false,
       page: 0,
   }),
   methods:{

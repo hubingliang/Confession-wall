@@ -1,25 +1,42 @@
 *{
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 html{
     font-family: -apple-system, "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Source Han Sans CN", "Source Han Sans SC", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
     .box{
         width: 100vw;
         background: rgb(0, 50, 203);
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         overflow: hidden;
+        position: relative;
         .start{
             width: 100vw;
             height: 100vh;
             background: rgb(0, 50, 203);
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            justify-content: center;
-            align-items: center;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
             .icon{
                 width: 4em; height: 4em;
                 vertical-align: -0.15em;
@@ -36,19 +53,37 @@ html{
             width: 100vw;
             height: 100vh;
             background: rgb(0, 50, 203);
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
             padding: 40px;
             position: relative;
             .topbar{
                 width: 100%;
+                display: -webkit-box;
+                display: -ms-flexbox;
                 display: flex;
-                justify-content: center;
+                -webkit-box-pack: center;
+                    -ms-flex-pack: center;
+                        justify-content: center;
                 .logo{
+                    display: -webkit-box;
+                    display: -ms-flexbox;
                     display: flex;
-                    align-items: center;
-                    flex-direction: row;
+                    -webkit-box-align: center;
+                        -ms-flex-align: center;
+                            align-items: center;
+                    -webkit-box-orient: horizontal;
+                    -webkit-box-direction: normal;
+                        -ms-flex-direction: row;
+                            flex-direction: row;
                     position: absolute;
                     left: 40px;
                     .icon{
@@ -69,8 +104,12 @@ html{
                     }
                 }
                 .nav{
+                    display: -webkit-box;
+                    display: -ms-flexbox;
                     display: flex;
-                    justify-content: center;
+                    -webkit-box-pack: center;
+                        -ms-flex-pack: center;
+                            justify-content: center;
                     .nav-item{
                         color: white;
                         padding: 0 20px;
@@ -79,6 +118,8 @@ html{
                     }
                 }
                 .link-box{
+                    display: -webkit-box;
+                    display: -ms-flexbox;
                     display: flex;
                     .xx{
                         padding: 0 10px;
@@ -98,10 +139,19 @@ html{
                 }
             }
             .main{
+                display: -webkit-box;
+                display: -ms-flexbox;
                 display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                    -ms-flex-direction: column;
+                        flex-direction: column;
+                -webkit-box-pack: center;
+                    -ms-flex-pack: center;
+                        justify-content: center;
+                -webkit-box-align: center;
+                    -ms-flex-align: center;
+                        align-items: center;
                 height: 100vh;
                 .icon{
                     fill: white;
@@ -121,9 +171,14 @@ html{
             }
             .footer{
                 height: 20vh;
+                display: -webkit-box;
+                display: -ms-flexbox;
                 display: flex;
                 color: white;
-                flex-direction: column-reverse; 
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: reverse;
+                    -ms-flex-direction: column-reverse;
+                        flex-direction: column-reverse; 
             }
             .back-button{
                 position: absolute;
@@ -147,10 +202,19 @@ html{
             .nav-icon{
                 position: absolute;
                 right: 40px;
+                display: -webkit-box;
+                display: -ms-flexbox;
                 display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                    -ms-flex-direction: column;
+                        flex-direction: column;
+                -webkit-box-pack: center;
+                    -ms-flex-pack: center;
+                        justify-content: center;
+                -webkit-box-align: center;
+                    -ms-flex-align: center;
+                        align-items: center;
                 bottom: 40px;
                 z-index: 2; 
                 .icon{
@@ -174,9 +238,15 @@ html{
                 bottom: 20px;
                 z-index: 1;
                 padding: 80px;
+                display: -webkit-box;
+                display: -ms-flexbox;
                 display: flex;
-                justify-content: center;
-                align-items: center;
+                -webkit-box-pack: center;
+                    -ms-flex-pack: center;
+                        justify-content: center;
+                -webkit-box-align: center;
+                    -ms-flex-align: center;
+                        align-items: center;
                 .el-icon-arrow-right{
                     position: absolute;
                     right: 40px;
@@ -189,31 +259,51 @@ html{
                     background: rgb(243, 243, 243);
                     height: 550px;
                     width: 1200px;
+                    display: -webkit-box;
+                    display: -ms-flexbox;
                     display: flex;
-                    align-items: center;
+                    -webkit-box-align: center;
+                        -ms-flex-align: center;
+                            align-items: center;
                     overflow: hidden;
                     .Confession-box{
                         background: rgb(243, 243, 243);
-                        transform: translateX(0px);
+                        -webkit-transform: translateX(0px);
+                                transform: translateX(0px);
+                        display: -webkit-box;
+                        display: -ms-flexbox;
                         display: flex;
-                        flex-wrap: nowrap;
+                        -ms-flex-wrap: nowrap;
+                            flex-wrap: nowrap;
+                        -webkit-transition: all 1s;
                         transition: all 1s;
                         .items{
+                            display: -webkit-box;
+                            display: -ms-flexbox;
                             display: flex;
-                            flex-direction: row;
+                            -webkit-box-orient: horizontal;
+                            -webkit-box-direction: normal;
+                                -ms-flex-direction: row;
+                                    flex-direction: row;
                             height: 550px;
                             width: 1200px;
-                            flex-wrap: wrap;
+                            -ms-flex-wrap: wrap;
+                                flex-wrap: wrap;
                             background: rgb(243, 243, 243);
-                            justify-content: space-between;
+                            -webkit-box-pack: justify;
+                                -ms-flex-pack: justify;
+                                    justify-content: space-between;
                             .item{
                                 width: 590px;
                                 height: 255px;
                                 background: white;
-                                box-shadow: 0 1px 3px rgba(0,0,0,.1);
+                                -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.1);
+                                        box-shadow: 0 1px 3px rgba(0,0,0,.1);
                                 border-radius: 2px;
                                 padding: 10px;
                                 .content{
+                                    display: -webkit-box;
+                                    display: -ms-flexbox;
                                     display: flex;
                                     img{
                                         height: 160px;
@@ -228,8 +318,12 @@ html{
                                     }
                                 }
                                 .user{
+                                    display: -webkit-box;
+                                    display: -ms-flexbox;
                                     display: flex;
-                                    align-items: center;
+                                    -webkit-box-align: center;
+                                        -ms-flex-align: center;
+                                            align-items: center;
                                     margin-bottom: 10px;
                                     img{
                                         height: 24px;
@@ -244,20 +338,30 @@ html{
                                     }
                                 }
                                 .actions{
+                                    display: -webkit-box;
+                                    display: -ms-flexbox;
                                     display: flex;
-                                    justify-content: flex-start;
-                                    align-items: center;
+                                    -webkit-box-pack: start;
+                                        -ms-flex-pack: start;
+                                            justify-content: flex-start;
+                                    -webkit-box-align: center;
+                                        -ms-flex-align: center;
+                                            align-items: center;
                                     margin-top: 10px;
                                     margin-left: 10px;
                                     height: 30px;
                                     .good{
+                                        display: -webkit-box;
+                                        display: -ms-flexbox;
                                         display: flex;
-                                        align-items: center;
+                                        -webkit-box-align: center;
+                                            -ms-flex-align: center;
+                                                align-items: center;
                                         margin-right: 20px;
                                         .items-icon{
-                                            height: 20px;
+                                            height: 15px;
                                             fill: #333;
-                                            width: 20px;
+                                            width: 15px;
                                             margin-right: 5px;
                                         }
                                         span{
@@ -266,12 +370,16 @@ html{
                                         }
                                     }
                                     .comment{
+                                        display: -webkit-box;
+                                        display: -ms-flexbox;
                                         display: flex;
-                                        align-items: center;
+                                        -webkit-box-align: center;
+                                            -ms-flex-align: center;
+                                                align-items: center;
                                         .items-icon{
-                                            height: 20px;
+                                            height: 15px;
                                             fill: #333;
-                                            width: 20px;
+                                            width: 15px;
                                             margin-right: 5px;
                                             
                                         }
@@ -283,6 +391,29 @@ html{
                                 }
                             }
                         }
+                    }
+                }
+                .dialog{
+                    position: fixed;
+                    left: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    z-index: 2;
+                    display: -webkit-box;
+                    display: -ms-flexbox;
+                    display: flex;
+                    -webkit-box-pack: center;
+                        -ms-flex-pack: center;
+                            justify-content: center;
+                    -webkit-box-align: center;
+                        -ms-flex-align: center;
+                            align-items: center;
+                    background: rgba(205, 205, 205, 0.5);
+                    .bigItem{
+                        border: 1px solid red;
+                        height: 650px;
+                        width: 600px;
                     }
                 }
             }

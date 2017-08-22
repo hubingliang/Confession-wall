@@ -71,7 +71,6 @@
       </div>
 
     </div>
-    
   </div>
 </template>
 
@@ -79,15 +78,16 @@
 import Confession from './Confession'
 import Lost from './Lost'
 import Notice from './Notice'
+
 export default {
   components:{Confession,Lost,Notice},
-  props:['show2'],
   data: () => ({
     Confessionshow: false,
     Lostshow: false,
     Noticeshow: false,
     startshow: true,
-    homeshow: false
+    homeshow: false,
+    Windowshow: false,
   }),
   mounted() {
 

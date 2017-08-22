@@ -1,6 +1,7 @@
 * {
   padding: 0;
   margin: 0;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 html {
@@ -9,18 +10,34 @@ html {
 html .box {
   width: 100vw;
   background: #0032cb;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   overflow: hidden;
+  position: relative;
 }
 html .box .start {
   width: 100vw;
   height: 100vh;
   background: #0032cb;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 html .box .start .icon {
@@ -39,20 +56,38 @@ html .box .home {
   width: 100vw;
   height: 100vh;
   background: #0032cb;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   padding: 40px;
   position: relative;
 }
 html .box .home .topbar {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 html .box .home .topbar .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
   flex-direction: row;
   position: absolute;
   left: 40px;
@@ -75,7 +110,11 @@ html .box .home .topbar .logo h3 {
   margin-left: 40px;
 }
 html .box .home .topbar .nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 html .box .home .topbar .nav .nav-item {
@@ -85,6 +124,8 @@ html .box .home .topbar .nav .nav-item {
   font-size: 15px;
 }
 html .box .home .topbar .link-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 html .box .home .topbar .link-box .xx {
@@ -103,9 +144,18 @@ html .box .home .topbar .link-box .xx {
   outline: none;
 }
 html .box .home .main {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   height: 100vh;
 }
@@ -126,8 +176,13 @@ html .box .home .main .Confessionshow {
 }
 html .box .home .footer {
   height: 20vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   color: white;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: column-reverse;
   flex-direction: column-reverse;
 }
 html .box .home .back-button {
@@ -152,9 +207,18 @@ html .box .home .back-button .back p {
 html .box .home .nav-icon {
   position: absolute;
   right: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   bottom: 40px;
   z-index: 2;
@@ -180,8 +244,14 @@ html .box .home .Confession {
   bottom: 20px;
   z-index: 1;
   padding: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 html .box .home .Confession .el-icon-arrow-right {
@@ -196,35 +266,55 @@ html .box .home .Confession .view {
   background: #f3f3f3;
   height: 550px;
   width: 1200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   overflow: hidden;
 }
 html .box .home .Confession .view .Confession-box {
   background: #f3f3f3;
+  -webkit-transform: translateX(0px);
   transform: translateX(0px);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
+  -webkit-transition: all 1s;
   transition: all 1s;
 }
 html .box .home .Confession .view .Confession-box .items {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
   flex-direction: row;
   height: 550px;
   width: 1200px;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   background: #f3f3f3;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 html .box .home .Confession .view .Confession-box .items .item {
   width: 590px;
   height: 255px;
   background: white;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   border-radius: 2px;
   padding: 10px;
 }
 html .box .home .Confession .view .Confession-box .items .item .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 html .box .home .Confession .view .Confession-box .items .item .content img {
@@ -239,7 +329,11 @@ html .box .home .Confession .view .Confession-box .items .item .content p {
   overflow: hidden;
 }
 html .box .home .Confession .view .Confession-box .items .item .user {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   margin-bottom: 10px;
 }
@@ -255,22 +349,32 @@ html .box .home .Confession .view .Confession-box .items .item .user span {
   font-weight: bold;
 }
 html .box .home .Confession .view .Confession-box .items .item .actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
   justify-content: flex-start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   margin-top: 10px;
   margin-left: 10px;
   height: 30px;
 }
 html .box .home .Confession .view .Confession-box .items .item .actions .good {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   margin-right: 20px;
 }
 html .box .home .Confession .view .Confession-box .items .item .actions .good .items-icon {
-  height: 20px;
+  height: 15px;
   fill: #333;
-  width: 20px;
+  width: 15px;
   margin-right: 5px;
 }
 html .box .home .Confession .view .Confession-box .items .item .actions .good span {
@@ -278,18 +382,45 @@ html .box .home .Confession .view .Confession-box .items .item .actions .good sp
   line-height: 30px;
 }
 html .box .home .Confession .view .Confession-box .items .item .actions .comment {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 html .box .home .Confession .view .Confession-box .items .item .actions .comment .items-icon {
-  height: 20px;
+  height: 15px;
   fill: #333;
-  width: 20px;
+  width: 15px;
   margin-right: 5px;
 }
 html .box .home .Confession .view .Confession-box .items .item .actions .comment span {
   height: 30px;
   line-height: 30px;
+}
+html .box .home .Confession .dialog {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: rgba(205, 205, 205, 0.5);
+}
+html .box .home .Confession .dialog .bigItem {
+  border: 1px solid red;
+  height: 650px;
+  width: 600px;
 }
 html .box .home .Lost {
   background: white;
