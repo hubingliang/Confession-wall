@@ -19,15 +19,15 @@
                                 </svg>
                                 <span class="number">2333</span>
                             </div>
-                            <div class="comment">
+                            <div class="comment-icon">
                                 <svg class="items-icon" aria-hidden="true">
                                     <use xlink:href="#icon-pinglun"></use>
                                 </svg>
-                                <span class="comment">2333 条评论</span>
+                                <span>2333 条评论</span>
                             </div>
                         </div>
                     </div>
-                    <div class="item">
+                    <div class="item" @click="Windowshow = true">
                         <div class="user">
                             <img src="https://i.loli.net/2017/08/19/5997affaf2cda.jpg"/>
                             <span>Brown</span>
@@ -43,15 +43,15 @@
                                 </svg>
                                 <span class="number">2333</span>
                             </div>
-                            <div class="comment">
+                            <div class="comment-icon">
                                 <svg class="items-icon" aria-hidden="true">
                                     <use xlink:href="#icon-pinglun"></use>
                                 </svg>
-                                <span class="comment">2333 条评论</span>
+                                <span>2333 条评论</span>
                             </div>
                         </div>
                     </div>
-                    <div class="item">
+                    <div class="item" @click="Windowshow = true">
                         <div class="user">
                             <img src="https://i.loli.net/2017/08/19/5997affaf2cda.jpg"/>
                             <span>Brown</span>
@@ -67,15 +67,15 @@
                                 </svg>
                                 <span class="number">2333</span>
                             </div>
-                            <div class="comment">
+                            <div class="comment-icon">
                                 <svg class="items-icon" aria-hidden="true">
                                     <use xlink:href="#icon-pinglun"></use>
                                 </svg>
-                                <span class="comment">2333 条评论</span>
+                                <span>2333 条评论</span>
                             </div>
                         </div>
                     </div>
-                    <div class="item">
+                    <div class="item" @click="Windowshow = true">
                         <div class="user">
                             <img src="https://i.loli.net/2017/08/19/5997affaf2cda.jpg"/>
                             <span>Brown</span>
@@ -91,41 +91,17 @@
                                 </svg>
                                 <span class="number">2333</span>
                             </div>
-                            <div class="comment">
+                            <div class="comment-icon">
                                 <svg class="items-icon" aria-hidden="true">
                                     <use xlink:href="#icon-pinglun"></use>
                                 </svg>
-                                <span class="comment">2333 条评论</span>
+                                <span>2333 条评论</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="items">
-                    <div class="item">
-                        <div class="user">
-                            <img src="https://i.loli.net/2017/08/19/5997affaf2cda.jpg"/>
-                            <span>Brown1</span>
-                        </div>
-                        <div class="content">
-                            <img class="img" src="https://i.loli.net/2017/08/19/5997acbb7dd43.jpg"/>
-                            <p>我能吞下玻璃而不伤身体，The quick brown fox jumps over the lazy dog.</p>
-                        </div>
-                        <div class="actions">
-                            <div class="good">
-                                <svg class="items-icon" aria-hidden="true">
-                                    <use xlink:href="#icon-dianzan2"></use>
-                                </svg>
-                                <span class="number">2333</span>
-                            </div>
-                            <div class="comment">
-                                <svg class="items-icon" aria-hidden="true">
-                                    <use xlink:href="#icon-pinglun"></use>
-                                </svg>
-                                <span class="comment">2333 条评论</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
+                    <div class="item" @click="Windowshow = true">
                         <div class="user">
                             <img src="https://i.loli.net/2017/08/19/5997affaf2cda.jpg"/>
                             <span>Brown</span>
@@ -141,15 +117,15 @@
                                 </svg>
                                 <span class="number">2333</span>
                             </div>
-                            <div class="comment">
+                            <div class="comment-icon">
                                 <svg class="items-icon" aria-hidden="true">
                                     <use xlink:href="#icon-pinglun"></use>
                                 </svg>
-                                <span class="comment">2333 条评论</span>
+                                <span>2333 条评论</span>
                             </div>
                         </div>
                     </div>
-                    <div class="item">
+                    <div class="item" @click="Windowshow = true">
                         <div class="user">
                             <img src="https://i.loli.net/2017/08/19/5997affaf2cda.jpg"/>
                             <span>Brown</span>
@@ -165,15 +141,15 @@
                                 </svg>
                                 <span class="number">2333</span>
                             </div>
-                            <div class="comment">
+                            <div class="comment-icon">
                                 <svg class="items-icon" aria-hidden="true">
                                     <use xlink:href="#icon-pinglun"></use>
                                 </svg>
-                                <span class="comment">2333 条评论</span>
+                                <span>2333 条评论</span>
                             </div>
                         </div>
                     </div>
-                    <div class="item">
+                    <div class="item" @click="Windowshow = true">
                         <div class="user">
                             <img src="https://i.loli.net/2017/08/19/5997affaf2cda.jpg"/>
                             <span>Brown</span>
@@ -189,11 +165,35 @@
                                 </svg>
                                 <span class="number">2333</span>
                             </div>
-                            <div class="comment">
+                            <div class="comment-icon">
                                 <svg class="items-icon" aria-hidden="true">
                                     <use xlink:href="#icon-pinglun"></use>
                                 </svg>
-                                <span class="comment">2333 条评论</span>
+                                <span>2333 条评论</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item" @click="Windowshow = true">
+                        <div class="user">
+                            <img src="https://i.loli.net/2017/08/19/5997affaf2cda.jpg"/>
+                            <span>Brown</span>
+                        </div>
+                        <div class="content">
+                            <img class="img" src="https://i.loli.net/2017/08/19/5997acbb7dd43.jpg"/>
+                            <p>我能吞下玻璃而不伤身体，The quick brown fox jumps over the lazy dog.</p>
+                        </div>
+                        <div class="actions">
+                            <div class="good">
+                                <svg class="items-icon" aria-hidden="true">
+                                    <use xlink:href="#icon-dianzan2"></use>
+                                </svg>
+                                <span class="number">2333</span>
+                            </div>
+                            <div class="comment-icon">
+                                <svg class="items-icon" aria-hidden="true">
+                                    <use xlink:href="#icon-pinglun"></use>
+                                </svg>
+                                <span>2333 条评论</span>
                             </div>
                         </div>
                     </div>
@@ -203,10 +203,11 @@
 
         <i class="el-icon-arrow-right" v-on:click="rightmove()"></i>
         <i class="el-icon-arrow-left" v-on:click="leftmove()"></i>
-        <div class="wrapper" @click="Windowshow = false" v-show="Windowshow">
-            <Window></Window>
-        </div>
-        
+        <transition name="el-fade-in">
+            <div class="wrapper" @click="Windowshow = false" v-show="Windowshow">
+                <Window></Window>
+            </div>
+        </transition>
     </div>
 </template>
 

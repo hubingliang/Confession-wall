@@ -37,6 +37,12 @@ html{
             -webkit-box-align: center;
                 -ms-flex-align: center;
                     align-items: center;
+            flex-direction: column;
+            position: relative;
+            .icon-box{
+                display: flex;
+                align-items: center;
+            }
             .icon{
                 width: 4em; height: 4em;
                 vertical-align: -0.15em;
@@ -47,7 +53,86 @@ html{
                 color: white;
                 font-size: 40px;
                 margin-left: 20px;
-              }
+            }
+            .main-button{
+                padding: 20px;
+            }
+            .form{
+                position: absolute;
+                display: flex;
+                box-shadow: 0 1px 3px rgba(0,0,0,.1);
+                .register{
+                    width: 400px;
+                    height: 535px;
+                    background: white;
+                    display: flex;
+                    flex-direction: column;
+                    padding: 20px;
+                    border-radius: 4px 0 0 4px;
+                    align-items: center;
+                    h1{
+                        font-weight: normal;
+                        margin: 20px 0;
+                    }
+                    p{
+                        color: black;
+                        font-size: 16px;
+                        margin: 10px 0;
+                    }
+                    .register-form{
+                        display: flex;
+                        flex-direction: column;
+                        input{
+                            margin: 20px 0;
+                            outline: none;
+                            border: none;
+                            border-bottom: 1px solid #ddd;
+                            height: 30px;
+                            width: 300px;
+                        }
+                        button{
+                            margin-top: 20px;
+                            background: rgb(247, 108, 108);
+                            border-color: rgb(247, 108, 108);
+                        }
+                    }
+                }
+                .login{
+                    border-radius: 0 4px 4px 0;
+                    width: 400px;
+                    height: 535px;
+                    background: white;
+                    display: flex;
+                    flex-direction: column;
+                    padding: 20px;
+                }
+                .slider{
+                    position: absolute;
+                    width: 400px;
+                    height: 535px;
+                    background: rgb(247, 108, 108);
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                    transform: translateX(400px);
+                    animation-duration:2s;
+                    border-radius: 4px;
+                    .icon{
+                        width: 110px;
+                        height: 110px;
+                        margin-top: 100px;
+                    }
+                    h1{
+                        color: white;
+                        margin-top: 100px;
+                    }
+                    P{
+                        font-size: 20px;
+                        margin-top: 20px;
+                    }
+                }
+            }
+
         }
         .home{
             width: 100vw;
@@ -369,7 +454,7 @@ html{
                                             line-height: 30px;
                                         }
                                     }
-                                    .comment{
+                                    .comment-icon{
                                         display: -webkit-box;
                                         display: -ms-flexbox;
                                         display: flex;
@@ -411,9 +496,116 @@ html{
                             align-items: center;
                     background: rgba(205, 205, 205, 0.5);
                     .bigItem{
-                        border: 1px solid red;
                         height: 650px;
                         width: 600px;
+                        background: white;
+                        padding: 10px;
+                        .content{
+                            img{
+                                height: 160px;
+                                display: block;
+                                border-radius: 2px;
+                                margin-right: 18px;
+                                margin-bottom: 10px;
+                            }
+                            p{
+                                overflow: hidden;
+                                vertical-align: center;
+                            }
+                        }
+                        .user{
+                            display: -webkit-box;
+                            display: -ms-flexbox;
+                            display: flex;
+                            -webkit-box-align: center;
+                                -ms-flex-align: center;
+                                    align-items: center;
+                            margin-bottom: 10px;
+                            img{
+                                height: 24px;
+                                width: 24px;
+                                border-radius: 50%;
+                            }
+                            span{
+                                text-align: center;
+                                margin: 0 5px;
+                                font-size: 15px;
+                                font-weight: bold;
+                            }
+                        }
+                        .actions{
+                            display: -webkit-box;
+                            display: -ms-flexbox;
+                            display: flex;
+                            -webkit-box-pack: start;
+                                -ms-flex-pack: start;
+                                    justify-content: flex-start;
+                            -webkit-box-align: center;
+                                -ms-flex-align: center;
+                                    align-items: center;
+                            margin-top: 10px;
+                            margin-left: 10px;
+                            height: 30px;
+                            .good{
+                                display: -webkit-box;
+                                display: -ms-flexbox;
+                                display: flex;
+                                -webkit-box-align: center;
+                                    -ms-flex-align: center;
+                                        align-items: center;
+                                margin-right: 20px;
+                                .items-icon{
+                                    height: 15px;
+                                    fill: #333;
+                                    width: 15px;
+                                    margin-right: 5px;
+                                }
+                                span{
+                                    height: 30px;
+                                    line-height: 30px;
+                                }
+                            }
+                            .comment-icon{
+                                display: -webkit-box;
+                                display: -ms-flexbox;
+                                display: flex;
+                                -webkit-box-align: center;
+                                    -ms-flex-align: center;
+                                        align-items: center;
+                                .items-icon{
+                                    height: 15px;
+                                    fill: #333;
+                                    width: 15px;
+                                    margin-right: 5px;
+                                    
+                                }
+                                span{
+                                    height: 30px;
+                                    line-height: 30px;
+                                }
+                            }
+                        }
+                        .line{
+                            border: none;
+                            border-top: 1px solid #333;
+                            margin: 10px 0;
+                        }
+                        .comment{
+                            display: flex;
+                            align-items: center;
+                            font-size: 13px;
+                            img{
+                                height: 24px;
+                                width: 24px;
+                                border-radius: 50%;
+                            }
+                            span{
+                                margin-left: 5px;
+                            }
+                            p{
+                                margin-left: 5px;
+                            }
+                        }
                     }
                 }
             }

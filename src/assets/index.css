@@ -39,6 +39,12 @@ html .box .start {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+html .box .start .icon-box {
+  display: flex;
+  align-items: center;
 }
 html .box .start .icon {
   width: 4em;
@@ -51,6 +57,84 @@ html .box .start p {
   color: white;
   font-size: 40px;
   margin-left: 20px;
+}
+html .box .start .main-button {
+  padding: 20px;
+}
+html .box .start .form {
+  position: absolute;
+  display: flex;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+html .box .start .form .register {
+  width: 400px;
+  height: 535px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 4px 0 0 4px;
+  align-items: center;
+}
+html .box .start .form .register h1 {
+  font-weight: normal;
+  margin: 20px 0;
+}
+html .box .start .form .register p {
+  color: black;
+  font-size: 16px;
+  margin: 10px 0;
+}
+html .box .start .form .register .register-form {
+  display: flex;
+  flex-direction: column;
+}
+html .box .start .form .register .register-form input {
+  margin: 20px 0;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  height: 30px;
+  width: 300px;
+}
+html .box .start .form .register .register-form button {
+  margin-top: 20px;
+  background: #f76c6c;
+  border-color: #f76c6c;
+}
+html .box .start .form .login {
+  border-radius: 0 4px 4px 0;
+  width: 400px;
+  height: 535px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+html .box .start .form .slider {
+  position: absolute;
+  width: 400px;
+  height: 535px;
+  background: #f76c6c;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  transform: translateX(400px);
+  animation-duration: 2s;
+  border-radius: 4px;
+}
+html .box .start .form .slider .icon {
+  width: 110px;
+  height: 110px;
+  margin-top: 100px;
+}
+html .box .start .form .slider h1 {
+  color: white;
+  margin-top: 100px;
+}
+html .box .start .form .slider P {
+  font-size: 20px;
+  margin-top: 20px;
 }
 html .box .home {
   width: 100vw;
@@ -381,7 +465,7 @@ html .box .home .Confession .view .Confession-box .items .item .actions .good sp
   height: 30px;
   line-height: 30px;
 }
-html .box .home .Confession .view .Confession-box .items .item .actions .comment {
+html .box .home .Confession .view .Confession-box .items .item .actions .comment-icon {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -389,13 +473,13 @@ html .box .home .Confession .view .Confession-box .items .item .actions .comment
   -ms-flex-align: center;
   align-items: center;
 }
-html .box .home .Confession .view .Confession-box .items .item .actions .comment .items-icon {
+html .box .home .Confession .view .Confession-box .items .item .actions .comment-icon .items-icon {
   height: 15px;
   fill: #333;
   width: 15px;
   margin-right: 5px;
 }
-html .box .home .Confession .view .Confession-box .items .item .actions .comment span {
+html .box .home .Confession .view .Confession-box .items .item .actions .comment-icon span {
   height: 30px;
   line-height: 30px;
 }
@@ -418,9 +502,113 @@ html .box .home .Confession .dialog {
   background: rgba(205, 205, 205, 0.5);
 }
 html .box .home .Confession .dialog .bigItem {
-  border: 1px solid red;
   height: 650px;
   width: 600px;
+  background: white;
+  padding: 10px;
+}
+html .box .home .Confession .dialog .bigItem .content img {
+  height: 160px;
+  display: block;
+  border-radius: 2px;
+  margin-right: 18px;
+  margin-bottom: 10px;
+}
+html .box .home .Confession .dialog .bigItem .content p {
+  overflow: hidden;
+  vertical-align: center;
+}
+html .box .home .Confession .dialog .bigItem .user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+html .box .home .Confession .dialog .bigItem .user img {
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+}
+html .box .home .Confession .dialog .bigItem .user span {
+  text-align: center;
+  margin: 0 5px;
+  font-size: 15px;
+  font-weight: bold;
+}
+html .box .home .Confession .dialog .bigItem .actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-top: 10px;
+  margin-left: 10px;
+  height: 30px;
+}
+html .box .home .Confession .dialog .bigItem .actions .good {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-right: 20px;
+}
+html .box .home .Confession .dialog .bigItem .actions .good .items-icon {
+  height: 15px;
+  fill: #333;
+  width: 15px;
+  margin-right: 5px;
+}
+html .box .home .Confession .dialog .bigItem .actions .good span {
+  height: 30px;
+  line-height: 30px;
+}
+html .box .home .Confession .dialog .bigItem .actions .comment-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+html .box .home .Confession .dialog .bigItem .actions .comment-icon .items-icon {
+  height: 15px;
+  fill: #333;
+  width: 15px;
+  margin-right: 5px;
+}
+html .box .home .Confession .dialog .bigItem .actions .comment-icon span {
+  height: 30px;
+  line-height: 30px;
+}
+html .box .home .Confession .dialog .bigItem .line {
+  border: none;
+  border-top: 1px solid #333;
+  margin: 10px 0;
+}
+html .box .home .Confession .dialog .bigItem .comment {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+}
+html .box .home .Confession .dialog .bigItem .comment img {
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+}
+html .box .home .Confession .dialog .bigItem .comment span {
+  margin-left: 5px;
+}
+html .box .home .Confession .dialog .bigItem .comment p {
+  margin-left: 5px;
 }
 html .box .home .Lost {
   background: white;

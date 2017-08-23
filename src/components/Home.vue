@@ -1,14 +1,51 @@
 <template>
   <div class="box">
-    <div class="start" v-show="startshow" @click="startshow = !startshow,homeshow = !homeshow" >
-      <svg class="icon animated bounce" aria-hidden="true">
-          <use xlink:href="#icon-xin"></use>
-      </svg>
-      <p class="animated bounce">Confession Wall</p>
-      
+    <div class="start" v-show="startshow" @click="startshow = startshow,homeshow = homeshow" >
+      <div class="icon-box">
+        <svg class="icon animated bounce" aria-hidden="true">
+            <use xlink:href="#icon-xin"></use>
+        </svg>
+        <p class="animated bounce">Confession Wall</p>
+      </div>
+      <div class="main-button">
+        <el-button class="Confessionshow animated bounce" @click="formshow = !formshow">登录</el-button>
+        <el-button class="Confessionshow animated bounce" @click="registershow = !registershow">注册</el-button>
+      </div>
+
+      <transition name="el-fade-in">
+        <div class="form" v-show="formshow">
+          <div class="register">
+            <h1>注册</h1>
+            <p>在墙上分享你的</p>
+            <form class="register-form" autocomplete="off">
+                  <input type="text"placeholder="用户名"id="inputUsername">
+                  <input type="password"placeholder="密码"id="inputPassword">
+                  <input type="text"placeholder="邮箱"id="inputEmail">
+                  <el-button class="el-register"v-on:click="register()" @click="registershow = !registershow,signInshow = !signInshow" type="primary" >注册</el-button>
+            </form>
+          </div>
+          <div class="login" v-show="formshow">
+              <form class="register-form" autocomplete="off">
+                  <input type="text"placeholder="Username"id="signinEmail">
+                  <input type="password"placeholder="password"id="signinPassword">
+                  <el-button class="el-signin" v-on:click="login()"  @click="signInshow = !signInshow,todoshow = !todoshow">sign in</el-button>
+              </form>
+          </div>
+          <div class="slider" id="slider">
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-xin"></use>
+            </svg>
+            <h1>W a l l</h1>
+            <p>Just say ! Just now !</p>
+          </div>
+        </div>
+
+      </transition>
     </div>
     <div class="home" v-show="homeshow" id="home">
+
       <div class="topbar">
+
         <div class="logo">
           <svg id="icon" class="icon animated fadeInDown" aria-hidden="true">
             <use xlink:href="#icon-xin"></use>
@@ -21,11 +58,13 @@
           <el-button type="text" class="nav-item" v-on:click="Lost()" @click="Lostshow = !Lostshow">失 物 招 领</el-button>
           <el-button type="text" class="nav-item" v-on:click="Notice()" @click="Noticeshow = true">各 类 通 知</el-button>
         </div>
+
         <div class="link-box">
           <a href="http://211.68.250.72/JWWEB/" target="_blank">
             <button id="link" class="xx animated fadeInDown">教 务 在 线 传 送 门</button> 
           </a>
         </div>
+
       </div>
  
       <div class="main animated fadeIn">
@@ -33,13 +72,12 @@
             <use xlink:href="#icon-xin"></use>
         </svg>
         <h1>天农，表白，墙</h1>
-        <p></p>
-        <el-button @click="Confessionshow = !Confessionshow" class="Confessionshow" v-on:click="Confession()">Confession!</el-button>
       </div>
       
       <footer class="footer animated fadeInUp">
         <p>设计参考于-Jared Granger</p>
       </footer>
+
       <transition name="el-zoom-in-bottom" >
         <Confession v-show="Confessionshow"></Confession>
       </transition>
@@ -88,6 +126,7 @@ export default {
     startshow: true,
     homeshow: false,
     Windowshow: false,
+    formshow: false,
   }),
   mounted() {
 
@@ -133,7 +172,7 @@ export default {
       user.setPassword(password);
       user.setEmail(email);
       user.signUp().then(function (loginedUser) {
-        // 注册成功，跳转到商品 list 页面
+        $('#slider').css('transform','translateX(0px)')
       }, (function (error) {
           alert(JSON.stringify(error));
       }));
