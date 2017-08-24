@@ -200,7 +200,9 @@
                 </div>
             </div>
         </div>
-
+        <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-jia"></use>
+        </svg>
         <i class="el-icon-arrow-right" v-on:click="rightmove()"></i>
         <i class="el-icon-arrow-left" v-on:click="leftmove()"></i>
         <transition name="el-fade-in">

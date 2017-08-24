@@ -105,6 +105,33 @@ html{
                     display: flex;
                     flex-direction: column;
                     padding: 20px;
+                    align-items: center;
+                    h1{
+                        font-weight: normal;
+                        margin: 20px 0;
+                    }
+                    p{
+                        color: black;
+                        font-size: 16px;
+                        margin: 10px 0;
+                    }
+                    .login-form{
+                        display: flex;
+                        flex-direction: column;
+                        input{
+                            margin: 20px 0;
+                            outline: none;
+                            border: none;
+                            border-bottom: 1px solid #ddd;
+                            height: 30px;
+                            width: 300px;
+                        }
+                        button{
+                            margin-top: 20px;
+                            background: rgb(247, 108, 108);
+                            border-color: rgb(247, 108, 108);
+                        }
+                    }
                 }
                 .slider{
                     position: absolute;
@@ -114,8 +141,7 @@ html{
                     display: flex;
                     align-items: center;
                     flex-direction: column;
-                    transform: translateX(400px);
-                    animation-duration:2s;
+                    transform: translateX(0px);
                     border-radius: 4px;
                     .icon{
                         width: 110px;
@@ -250,6 +276,11 @@ html{
                     font-size: 40px;
                     
                 }
+                p{
+                    color: white;
+                    font-size: 20px;
+                    margin-top: 20px;
+                }
                 .Confessionshow{
                     margin-top: 50px;
                 }
@@ -340,6 +371,15 @@ html{
                     position: absolute;
                     left: 40px;
                 }
+                .icon{
+                    position: absolute;
+                    bottom: 40px;
+                    width: 3em;
+                    height: 3em;
+                    border: 1px solid black;
+                    border-radius: 50%;
+                    padding: 10px;
+                }
                 .view{
                     background: rgb(243, 243, 243);
                     height: 550px;
@@ -351,6 +391,7 @@ html{
                         -ms-flex-align: center;
                             align-items: center;
                     overflow: hidden;
+                    position: relative;
                     .Confession-box{
                         background: rgb(243, 243, 243);
                         -webkit-transform: translateX(0px);

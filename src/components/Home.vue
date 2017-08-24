@@ -1,6 +1,6 @@
 <template>
   <div class="box">
-    <div class="start" v-show="startshow" @click="startshow = startshow,homeshow = homeshow" >
+    <div class="start" v-show="startshow" @click="startshow = startshow,homeshow = homeshow" id="start">
       <div class="icon-box">
         <svg class="icon animated bounce" aria-hidden="true">
             <use xlink:href="#icon-xin"></use>
@@ -9,7 +9,7 @@
       </div>
       <div class="main-button">
         <el-button class="Confessionshow animated bounce" @click="formshow = !formshow">登录</el-button>
-        <el-button class="Confessionshow animated bounce" @click="registershow = !registershow">注册</el-button>
+        <el-button class="Confessionshow animated bounce" @click="formshow = !formshow,move()">注册</el-button>
       </div>
 
       <transition name="el-fade-in">
@@ -21,14 +21,16 @@
                   <input type="text"placeholder="用户名"id="inputUsername">
                   <input type="password"placeholder="密码"id="inputPassword">
                   <input type="text"placeholder="邮箱"id="inputEmail">
-                  <el-button class="el-register"v-on:click="register()" @click="registershow = !registershow,signInshow = !signInshow" type="primary" >注册</el-button>
+                  <el-button class="el-register"v-on:click="register()" type="primary" >注册</el-button>
             </form>
           </div>
-          <div class="login" v-show="formshow">
-              <form class="register-form" autocomplete="off">
+          <div class="login">
+              <h1>登录</h1>
+              <p>在墙上分享你的</p>
+              <form class="login-form" autocomplete="off">
                   <input type="text"placeholder="Username"id="signinEmail">
                   <input type="password"placeholder="password"id="signinPassword">
-                  <el-button class="el-signin" v-on:click="login()"  @click="signInshow = !signInshow,todoshow = !todoshow">sign in</el-button>
+                  <el-button class="el-signin" v-on:click="login()" type="primary">sign in</el-button>
               </form>
           </div>
           <div class="slider" id="slider">
@@ -72,6 +74,7 @@
             <use xlink:href="#icon-xin"></use>
         </svg>
         <h1>天农，表白，墙</h1>
+        <p id="username"></p>
       </div>
       
       <footer class="footer animated fadeInUp">
@@ -127,6 +130,8 @@ export default {
     homeshow: false,
     Windowshow: false,
     formshow: false,
+
+    slidermove: 0,
   }),
   mounted() {
 
@@ -172,7 +177,13 @@ export default {
       user.setPassword(password);
       user.setEmail(email);
       user.signUp().then(function (loginedUser) {
-        $('#slider').css('transform','translateX(0px)')
+        let x = 400
+        setInterval(function(){
+          if(x>=0){
+              $('#slider').css('transform',`translateX(${x}px)`)
+              x = x - 10
+          }
+        },15)
       }, (function (error) {
           alert(JSON.stringify(error));
       }));
@@ -184,10 +195,16 @@ export default {
       // LeanCloud - 登录
       // https://leancloud.cn/docs/leanstorage_guide-js.html#用户名和密码登录
       AV.User.logIn(username, password).then(function (loginedUser) {
-        // 登录成功，跳转到商品 list 页面
+        console.log(loginedUser.attributes.username)
+        $('#start').css('display','none')
+        $('#home').css('display','flex')
+        $('#username').html('你好 ' + loginedUser.attributes.username)
       }, function (error) {
         alert(JSON.stringify(error));
       });
+    },
+    move:function(){
+      $('#slider').css('transform',`translateX(400px)`)
     }
   }
 }

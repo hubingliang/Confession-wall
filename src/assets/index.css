@@ -110,6 +110,33 @@ html .box .start .form .login {
   display: flex;
   flex-direction: column;
   padding: 20px;
+  align-items: center;
+}
+html .box .start .form .login h1 {
+  font-weight: normal;
+  margin: 20px 0;
+}
+html .box .start .form .login p {
+  color: black;
+  font-size: 16px;
+  margin: 10px 0;
+}
+html .box .start .form .login .login-form {
+  display: flex;
+  flex-direction: column;
+}
+html .box .start .form .login .login-form input {
+  margin: 20px 0;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  height: 30px;
+  width: 300px;
+}
+html .box .start .form .login .login-form button {
+  margin-top: 20px;
+  background: #f76c6c;
+  border-color: #f76c6c;
 }
 html .box .start .form .slider {
   position: absolute;
@@ -119,8 +146,7 @@ html .box .start .form .slider {
   display: flex;
   align-items: center;
   flex-direction: column;
-  transform: translateX(400px);
-  animation-duration: 2s;
+  transform: translateX(0px);
   border-radius: 4px;
 }
 html .box .start .form .slider .icon {
@@ -255,6 +281,11 @@ html .box .home .main h1 {
   color: white;
   font-size: 40px;
 }
+html .box .home .main p {
+  color: white;
+  font-size: 20px;
+  margin-top: 20px;
+}
 html .box .home .main .Confessionshow {
   margin-top: 50px;
 }
@@ -346,6 +377,15 @@ html .box .home .Confession .el-icon-arrow-left {
   position: absolute;
   left: 40px;
 }
+html .box .home .Confession .icon {
+  position: absolute;
+  bottom: 40px;
+  width: 3em;
+  height: 3em;
+  border: 1px solid black;
+  border-radius: 50%;
+  padding: 10px;
+}
 html .box .home .Confession .view {
   background: #f3f3f3;
   height: 550px;
@@ -357,6 +397,7 @@ html .box .home .Confession .view {
   -ms-flex-align: center;
   align-items: center;
   overflow: hidden;
+  position: relative;
 }
 html .box .home .Confession .view .Confession-box {
   background: #f3f3f3;
