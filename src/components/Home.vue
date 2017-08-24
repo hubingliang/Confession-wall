@@ -8,8 +8,8 @@
         <p class="animated bounce">Confession Wall</p>
       </div>
       <div class="main-button">
-        <el-button class="Confessionshow animated bounce" @click="formshow = !formshow">登录</el-button>
-        <el-button class="Confessionshow animated bounce" @click="formshow = !formshow,move()">注册</el-button>
+        <el-button class="Confessionshow animated bounce" @click="formshow = !formshow">登 录</el-button>
+        <el-button class="Confessionshow animated bounce" @click="formshow = !formshow,move()">注 册</el-button>
       </div>
 
       <transition name="el-fade-in">

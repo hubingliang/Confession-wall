@@ -6,7 +6,10 @@
                     <div class="item" @click="Windowshow = true">
                         <div class="user">
                             <img src="https://i.loli.net/2017/08/19/5997affaf2cda.jpg"/>
-                            <span>Brown</span>
+                            <div class="username">
+                                <h4>Brown</h4>
+                                <span>用无限适用于未来的方法，置换体内星辰河流。</span>
+                            </div>
                         </div>
                         <div class="content">
                             <img class="img" src="https://i.loli.net/2017/08/19/5997acbb7dd43.jpg"/>
@@ -30,7 +33,10 @@
                     <div class="item" @click="Windowshow = true">
                         <div class="user">
                             <img src="https://i.loli.net/2017/08/19/5997affaf2cda.jpg"/>
-                            <span>Brown</span>
+                            <div class="username">
+                                <h4>Brown</h4>
+                                <span>用无限适用于未来的方法，置换体内星辰河流。</span>
+                            </div>
                         </div>
                         <div class="content">
                             <img class="img" src="https://i.loli.net/2017/08/19/5997acbb7dd43.jpg"/>
@@ -54,7 +60,10 @@
                     <div class="item" @click="Windowshow = true">
                         <div class="user">
                             <img src="https://i.loli.net/2017/08/19/5997affaf2cda.jpg"/>
-                            <span>Brown</span>
+                            <div class="username">
+                                <h4>Brown</h4>
+                                <span>用无限适用于未来的方法，置换体内星辰河流。</span>
+                            </div>
                         </div>
                         <div class="content">
                             <img class="img" src="https://i.loli.net/2017/08/19/5997acbb7dd43.jpg"/>
@@ -78,7 +87,10 @@
                     <div class="item" @click="Windowshow = true">
                         <div class="user">
                             <img src="https://i.loli.net/2017/08/19/5997affaf2cda.jpg"/>
-                            <span>Brown</span>
+                            <div class="username">
+                                <h4>Brown</h4>
+                                <span>用无限适用于未来的方法，置换体内星辰河流。</span>
+                            </div>
                         </div>
                         <div class="content">
                             <img class="img" src="https://i.loli.net/2017/08/19/5997acbb7dd43.jpg"/>
@@ -104,7 +116,10 @@
                     <div class="item" @click="Windowshow = true">
                         <div class="user">
                             <img src="https://i.loli.net/2017/08/19/5997affaf2cda.jpg"/>
-                            <span>Brown</span>
+                            <div class="username">
+                                <h4>Brown</h4>
+                                <span>用无限适用于未来的方法，置换体内星辰河流。</span>
+                            </div>
                         </div>
                         <div class="content">
                             <img class="img" src="https://i.loli.net/2017/08/19/5997acbb7dd43.jpg"/>
@@ -128,7 +143,10 @@
                     <div class="item" @click="Windowshow = true">
                         <div class="user">
                             <img src="https://i.loli.net/2017/08/19/5997affaf2cda.jpg"/>
-                            <span>Brown</span>
+                            <div class="username">
+                                <h4>Brown</h4>
+                                <span>用无限适用于未来的方法，置换体内星辰河流。</span>
+                            </div>
                         </div>
                         <div class="content">
                             <img class="img" src="https://i.loli.net/2017/08/19/5997acbb7dd43.jpg"/>
@@ -152,7 +170,10 @@
                     <div class="item" @click="Windowshow = true">
                         <div class="user">
                             <img src="https://i.loli.net/2017/08/19/5997affaf2cda.jpg"/>
-                            <span>Brown</span>
+                            <div class="username">
+                                <h4>Brown</h4>
+                                <span>用无限适用于未来的方法，置换体内星辰河流。</span>
+                            </div>
                         </div>
                         <div class="content">
                             <img class="img" src="https://i.loli.net/2017/08/19/5997acbb7dd43.jpg"/>
@@ -176,7 +197,10 @@
                     <div class="item" @click="Windowshow = true">
                         <div class="user">
                             <img src="https://i.loli.net/2017/08/19/5997affaf2cda.jpg"/>
-                            <span>Brown</span>
+                            <div class="username">
+                                <h4>Brown</h4>
+                                <span>用无限适用于未来的方法，置换体内星辰河流。</span>
+                            </div>
                         </div>
                         <div class="content">
                             <img class="img" src="https://i.loli.net/2017/08/19/5997acbb7dd43.jpg"/>
@@ -200,16 +224,50 @@
                 </div>
             </div>
         </div>
-        <svg class="icon" aria-hidden="true">
-            <use xlink:href="#icon-jia"></use>
-        </svg>
+
+        <el-button class="icon" @click="editorshow = true"><i class="el-icon-plus"></i></el-button>
+
         <i class="el-icon-arrow-right" v-on:click="rightmove()"></i>
+
         <i class="el-icon-arrow-left" v-on:click="leftmove()"></i>
+
         <transition name="el-fade-in">
-            <div class="wrapper" @click="Windowshow = false" v-show="Windowshow">
+            <div v-show="Windowshow">
+                <el-button class="dialog-close" type="text"><i class="el-icon-close" @click="Windowshow = false"></i></el-button>
                 <Window></Window>
             </div>
         </transition>
+
+        <transition name="el-fade-in">
+            <div class="wrapper" v-show="editorshow">
+                <div class="editor">
+                    <el-button class="editor-close" type="text"><i class="el-icon-close" @click="editorshow = false"></i></el-button>
+                    <div class="user">
+                        <img src="https://i.loli.net/2017/08/19/5997affaf2cda.jpg"/>
+                        <div class="username">
+                            <h4>胡秉亮</h4>
+                            <p>用无限适用于未来的方法，置换体内星辰河流。</p>
+                        </div>
+                    </div>
+                    <div class="editable">
+                        <svg class="editable-icon" aria-hidden="true">
+                            <use xlink:href="#icon-zhaoxiang"></use>
+                        </svg>
+                    </div>
+                    <el-input
+                    class="textArea"
+                    type="textarea"
+                    :rows="5"
+                    placeholder="写什么都行..."
+                    v-model="textarea">
+                    </el-input>
+                    <div class="submit">
+                        <el-button type="primary">提交发表</el-button>
+                    </div>
+                </div>
+            </div>
+        </transition>
+
     </div>
 </template>
 
@@ -221,7 +279,9 @@ export default {
 components:{Window},
   data: () => ({
       Windowshow: false,
+      editorshow: false,
       page: 0,
+      textarea: '',
   }),
   methods:{
       leftmove:function(){

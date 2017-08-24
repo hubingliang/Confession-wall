@@ -44,18 +44,23 @@ html{
                 align-items: center;
             }
             .icon{
-                width: 4em; height: 4em;
+                width: 5em; height: 5em;
                 vertical-align: -0.15em;
                 fill: white;
                 overflow: hidden;
             }
             p{
                 color: white;
-                font-size: 40px;
+                font-size: 50px;
                 margin-left: 20px;
             }
             .main-button{
-                padding: 20px;
+                margin-top: 40px;
+                button{
+                    width: 100px;
+                    margin: 0 40px;
+                    font-size: 18px;
+                }
             }
             .form{
                 position: absolute;
@@ -376,9 +381,9 @@ html{
                     bottom: 40px;
                     width: 3em;
                     height: 3em;
-                    border: 1px solid black;
                     border-radius: 50%;
                     padding: 10px;
+                    box-shadow: 0 1px 3px rgba(0,0,0,.1);
                 }
                 .view{
                     background: rgb(243, 243, 243);
@@ -452,15 +457,18 @@ html{
                                             align-items: center;
                                     margin-bottom: 10px;
                                     img{
-                                        height: 24px;
-                                        width: 24px;
+                                        height: 30px;
+                                        width: 30px;
                                         border-radius: 50%;
                                     }
-                                    span{
-                                        text-align: center;
-                                        margin: 0 5px;
-                                        font-size: 15px;
-                                        font-weight: bold;
+                                    .username{
+                                        margin-left: 10px;
+                                        display: flex;
+                                        flex-direction: column;
+                                        h4{
+                                            font-size: 15px;
+                                            font-weight: bold;
+                                        }
                                     }
                                 }
                                 .actions{
@@ -473,9 +481,8 @@ html{
                                     -webkit-box-align: center;
                                         -ms-flex-align: center;
                                             align-items: center;
-                                    margin-top: 10px;
                                     margin-left: 10px;
-                                    height: 30px;
+                                    height: 40px;
                                     .good{
                                         display: -webkit-box;
                                         display: -ms-flexbox;
@@ -518,6 +525,80 @@ html{
                             }
                         }
                     }
+                }
+                .wrapper{
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    left: 0;
+                    bottom: 0;
+                    background: rgba(205, 205, 205, 0.5);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    .editor{
+                        position: absolute;
+                        width: 700px;
+                        height: 300px;
+                        background: white;
+                        .editor-close{
+                            position: absolute;
+                            right: 15px;
+                            top: 5px;
+                        }
+                        .user{
+                            padding: 16px 20px;
+                            display: flex;
+                            align-items: center;
+                            img{
+                                height: 30px;
+                                width: 30px;
+                                border-radius: 50%;
+                                margin-right: 14px;
+                            }
+                        }
+                        .editable{
+                            padding: 6px 12px;
+                            background: #f7f8fa;
+                            border-top: 1px solid #e7eaf1;
+                            border-bottom: 1px solid #e7eaf1;
+                            width: 700px;
+                            height: 42px;
+                            display: flex;
+                            align-items: center;
+                            .editable-icon{
+                                fill: #9fadc7;
+                                width: 25px;
+                                height: 25px;
+                                margin-left: 10px;
+                            }
+                        }
+                        .textArea{
+                            width: 700px;
+                            height: 118px;
+                            textarea{
+                                border: none;
+                                padding: 12px 20px;
+                                font-size: 15px;
+                                font-family: inherit;
+                            }
+                            span{
+                                color: #8590a6;
+                            }
+                        }
+                        .submit{
+                            padding: 12px 24px;
+                            height: 64px;
+                            display: flex;
+                            flex-direction: row-reverse;
+                        }
+                    }
+                }
+                .dialog-close{
+                    position: absolute;
+                    top: 35px;
+                    left: 1010px;
+                    z-index: 4;
                 }
                 .dialog{
                     position: fixed;
@@ -563,15 +644,18 @@ html{
                                     align-items: center;
                             margin-bottom: 10px;
                             img{
-                                height: 24px;
-                                width: 24px;
+                                height: 30px;
+                                width: 30px;
                                 border-radius: 50%;
                             }
-                            span{
-                                text-align: center;
-                                margin: 0 5px;
-                                font-size: 15px;
-                                font-weight: bold;
+                            .username{
+                                margin-left: 10px;
+                                display: flex;
+                                flex-direction: column;
+                                h4{
+                                    font-size: 15px;
+                                    font-weight: bold;
+                                }
                             }
                         }
                         .actions{
