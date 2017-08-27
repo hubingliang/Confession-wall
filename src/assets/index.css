@@ -286,10 +286,15 @@ html .box .home .main h1 {
   color: white;
   font-size: 40px;
 }
-html .box .home .main p {
+html .box .home .main .greet {
+  display: flex;
+  align-items: center;
+}
+html .box .home .main .greet p {
   color: white;
   font-size: 20px;
   margin-top: 20px;
+  margin-left: 10px;
 }
 html .box .home .main .Confessionshow {
   margin-top: 50px;
@@ -422,8 +427,8 @@ html .box .home .Confession .view .Confession-box .items {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
+  -ms-flex-direction: column;
+  flex-direction: column;
   height: 550px;
   width: 1200px;
   -ms-flex-wrap: wrap;
@@ -441,6 +446,7 @@ html .box .home .Confession .view .Confession-box .items .item {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   border-radius: 2px;
   padding: 10px;
+  margin-right: 10px;
 }
 html .box .home .Confession .view .Confession-box .items .item .content {
   display: -webkit-box;

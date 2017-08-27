@@ -74,7 +74,9 @@
             <use xlink:href="#icon-xin"></use>
         </svg>
         <h1>天农，表白，墙</h1>
-        <p id="username"></p>
+        <div class="greet">
+          <p>你好 </p><p id="username"></p>
+        </div>
       </div>
       
       <footer class="footer animated fadeInUp">
@@ -82,7 +84,7 @@
       </footer>
 
       <transition name="el-zoom-in-bottom" >
-        <Confession v-show="Confessionshow"></Confession>
+        <Confession v-show="Confessionshow" v-bind:user="user"></Confession>
       </transition>
       <transition name="el-zoom-in-bottom" >
         <Lost v-show="Lostshow"></Lost>
@@ -122,17 +124,24 @@ import Notice from './Notice'
 
 export default {
   components:{Confession,Lost,Notice},
-  data: () => ({
-    Confessionshow: false,
-    Lostshow: false,
-    Noticeshow: false,
-    startshow: true,
-    homeshow: false,
-    Windowshow: false,
-    formshow: false,
+  data(){
+    return{
+      Confessionshow: false,
+      Lostshow: false,
+      Noticeshow: false,
+      startshow: true,
+      homeshow: false,
+      Windowshow: false,
+      formshow: false,
 
-    slidermove: 0,
-  }),
+
+      user:{
+        username:'',
+      },
+
+      slidermove: 0,
+    }
+  },
   mounted() {
 
   },
@@ -194,14 +203,20 @@ export default {
 
       // LeanCloud - 登录
       // https://leancloud.cn/docs/leanstorage_guide-js.html#用户名和密码登录
-      AV.User.logIn(username, password).then(function (loginedUser) {
-        console.log(loginedUser.attributes.username)
+      AV.User.logIn(username, password).then( (loginedUser)=> {
         $('#start').css('display','none')
         $('#home').css('display','flex')
-        $('#username').html('你好 ' + loginedUser.attributes.username)
+        $('#username').html(loginedUser.attributes.username)
+        console.log(loginedUser.attributes.username)
+        this.user.username = loginedUser.attributes.username
       }, function (error) {
         alert(JSON.stringify(error));
-      });
+      })
+
+      
+
+
+
     },
     move:function(){
       $('#slider').css('transform',`translateX(400px)`)

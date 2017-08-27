@@ -4,7 +4,7 @@
         <div class="user">
             <img src="https://i.loli.net/2017/08/19/5997affaf2cda.jpg"/>
             <div class="username">
-                <h4>Brown</h4>
+                <h4 @click="con()">sdasdas</h4>
                 <span>用无限适用于未来的方法，置换体内星辰河流。</span>
             </div>
         </div>
@@ -39,7 +39,12 @@
 
 <script>
 export default {
-
+    props:['ConfessionData'],
+    methods:{
+        con:function(){
+            console.log(this.ConfessionData)
+        }
+    }
 }
 </script>
 
