@@ -387,8 +387,9 @@ html{
                     width: 3em;
                     height: 3em;
                     border-radius: 50%;
-                    padding: 10px;
                     box-shadow: 0 1px 3px rgba(0,0,0,.1);
+                    padding: 10px;
+                    left: calc(50%-1.5em);
                 }
                 .view{
                     background: rgb(243, 243, 243);
@@ -421,7 +422,7 @@ html{
                             -webkit-box-direction: normal;
                                 -ms-flex-direction: column;
                                     flex-direction: column;
-                            height: 550px;
+                            height: 520px;
                             width: 1200px;
                             -ms-flex-wrap: wrap;
                                 flex-wrap: wrap;
@@ -429,6 +430,7 @@ html{
                             -webkit-box-pack: justify;
                                 -ms-flex-pack: justify;
                                     justify-content: space-between;
+                            align-items: center;
                             .item{
                                 width: 590px;
                                 height: 255px;
@@ -577,6 +579,12 @@ html{
                                 width: 25px;
                                 height: 25px;
                                 margin-left: 10px;
+                            }
+                            .upImage{
+                                opacity: 0;
+                                position: relative;
+                                left: -40px;
+                                border: 1px solid red;
                             }
                         }
                         .textArea{

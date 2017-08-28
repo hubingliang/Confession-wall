@@ -3,7 +3,7 @@
         <div class="view">
             <div class="Confession-box" id="box">
                 <div class="items" >
-                    <div class="item" @click="Windowshow = true" v-for="(item,index) in ConfessionData" v-bind:key="item.username">
+                    <div class="item" @click="Windowshow = true,getIndex(index)" v-for="(item,index) in ConfessionData" v-bind:key="item.username">
                         <div class="user">
                             <img src="https://i.loli.net/2017/08/19/5997affaf2cda.jpg"/>
                             <div class="username">
@@ -43,7 +43,7 @@
         <transition name="el-fade-in">
             <div v-show="Windowshow">
                 <el-button class="dialog-close" type="text"><i class="el-icon-close" @click="Windowshow = false"></i></el-button>
-                <Window v-bind:user="user" v-bind:ConfessionData="ConfessionData"></Window>
+                <Window v-bind:user="user" v-bind:ConfessionData="ConfessionData" v-bind:item="item"></Window>
             </div>
         </transition>
 
@@ -54,7 +54,7 @@
                     <div class="user">
                         <img src="https://i.loli.net/2017/08/19/5997affaf2cda.jpg"/>
                         <div class="username">
-                            <h4>胡秉亮</h4>
+                            <h4>{{user.username}}</h4>
                             <p>用无限适用于未来的方法，置换体内星辰河流。</p>
                         </div>
                     </div>
@@ -62,6 +62,7 @@
                         <svg class="editable-icon" aria-hidden="true">
                             <use xlink:href="#icon-zhaoxiang"></use>
                         </svg>
+                        <input class="upImage" type="file" id="photoFileUpload"/>
                     </div>
                     <el-input
                     class="textArea"
@@ -71,7 +72,7 @@
                     v-model="textarea">
                     </el-input>
                     <div class="submit">
-                        <el-button type="primary" @click="save()">提交发表</el-button>
+                        <el-button type="primary" @click="save(),saveImage()">提交发表</el-button>
                     </div>
                 </div>
             </div>
@@ -95,6 +96,7 @@ export default {
             textarea: '',
             index: 0,
             ConfessionData:[],
+            item:{}
         }
     },
     mounted() {
@@ -111,7 +113,6 @@ export default {
                 })
                 this.page = this.page - 1
             }else{
-                console.log(this.page)
                 let width = $('.items').width()
                 let number = -width * (this.page - 1)
                 $('#box').css({
@@ -121,7 +122,6 @@ export default {
             }
         },
         rightmove:function(){
-            console.log(this.page)
             let width = $('.items').width()
             let page = this.page + 1
             let number = -width * page
@@ -132,7 +132,6 @@ export default {
         },
         save:function(){
             var ConfessionData = AV.Object.extend('ConfessionData');
-            console.log(this.user)
             var username = this.user.username;
             
             var usersign = '';
@@ -161,8 +160,9 @@ export default {
         read:function(){
             var query = new AV.Query('ConfessionData');
             query.find().then((ConfessionData)=> {   
+                ConfessionData.reverse()
                 for(let i=0;i<ConfessionData.length;i++){
-                    console.log(ConfessionData[i].attributes)
+                   
                     this.ConfessionData[i] = {
                         username : ConfessionData[i].attributes.username,
                         content : ConfessionData[i].attributes.content,
@@ -171,10 +171,30 @@ export default {
                         commentNumber : ConfessionData[i].attributes.commentNumber,
                     }
                 }
-                console.log(this.ConfessionData)
             }, function(error){
                 console.error(error) 
             })
+        },
+        getIndex:function(index){
+            this.item = this.ConfessionData[index]
+            console.log(this.item)
+        },
+        saveImage:function(){
+            var fileUploadControl = $('#photoFileUpload')[0];
+            if (fileUploadControl.files.length > 0) {
+            var localFile = fileUploadControl.files[0];
+            var name = 'avatar.jpg';
+
+            var file = new AV.File(name, localFile);
+            file.save().then(function(file) {
+                let image = $(`<img src="${file.url()}" alt="">`)
+                image.appendTo("")
+                console.log(file.url());
+            }, function(error) {
+                // 异常处理
+                console.error(error);
+            });
+            }
         }
     }
 }
