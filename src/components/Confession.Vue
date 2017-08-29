@@ -12,7 +12,7 @@
                             </div>
                         </div>
                         <div class="content">
-                            <img class="img" src="https://i.loli.net/2017/08/19/5997acbb7dd43.jpg"/>
+                            <img class="img" v-bind:src="item.imageUrl[0]"/>
                             <p>{{item.content}}</p>
                         </div>
                         <div class="actions">
@@ -71,8 +71,10 @@
                     placeholder="写什么都行..."
                     v-model="textarea">
                     </el-input>
+                    <div class="imageBox" id="imageBox">
+                    </div>
                     <div class="submit">
-                        <el-button type="primary" @click="save(),saveImage()">提交发表</el-button>
+                        <el-button type="primary" @click="save()">提交发表</el-button>
                     </div>
                 </div>
             </div>
@@ -96,11 +98,13 @@ export default {
             textarea: '',
             index: 0,
             ConfessionData:[],
-            item:{}
+            item:{},
+
         }
     },
     mounted() {
-        this.read()
+        this.read(),
+        this.showImage()
     },
     methods:{
         leftmove:function(){
@@ -140,6 +144,14 @@ export default {
             var comment = [];
             var commentNumber = 0
             var time = new Date()
+            var imageUrl = []
+   
+            $('.image-item').children().each(function () {
+                let src = this.src
+                imageUrl.push(src)
+            })
+            
+
             
             var ConfessionData = new ConfessionData();
             ConfessionData.set('username', username);
@@ -149,8 +161,10 @@ export default {
             ConfessionData.set('commentNumber', commentNumber);
             ConfessionData.set('comment', comment);
             ConfessionData.set('time', time);
+            ConfessionData.set('imageUrl', imageUrl);
             ConfessionData.save().then( (ConfessionData)=> {
                 this.editorshow = false
+                $('#imageBox').empty() 
                 this.textarea = ''
                 this.read()
             }, function(error) {
@@ -168,6 +182,7 @@ export default {
                         good : ConfessionData[i].attributes.good,
                         comment : ConfessionData[i].attributes.comment,
                         commentNumber : ConfessionData[i].attributes.commentNumber,
+                        imageUrl : ConfessionData[i].attributes.imageUrl
                     }
                 }
             }, function(error){
@@ -176,24 +191,46 @@ export default {
         },
         getIndex:function(index){
             this.item = this.ConfessionData[index]
-            console.log(this.item)
         },
         saveImage:function(){
-            var fileUploadControl = $('#photoFileUpload')[0];
-            if (fileUploadControl.files.length > 0) {
-            var localFile = fileUploadControl.files[0];
-            var name = 'avatar.jpg';
+            let imageBox = $('#imageBox')
+            let imageNumber = imageBox.children().length
+            if(imageNumber>=9){
+                return
+            }else{
+                var fileUploadControl = $('#photoFileUpload')[0];
+                if (fileUploadControl.files.length > 0) {
+                    var localFile = fileUploadControl.files[0];
+                    var name = 'avatar.jpg';
 
-            var file = new AV.File(name, localFile);
-            file.save().then(function(file) {
-                let image = $(`<img src="${file.url()}" alt="">`)
-                image.appendTo("")
-                console.log(file.url());
-            }, function(error) {
-                // 异常处理
-                console.error(error);
-            });
+                    var file = new AV.File(name, localFile);
+                    file.save().then((file)=> {
+                        let url = file.url()
+                        let image = $(`<div class="image-item">
+                                        <img src="${url}" alt="">
+                                        </div>`)
+                        
+                        image.appendTo("#imageBox")
+                        setTimeout(function() {
+                            let width = image.children().width()
+                            let height = image.children().height()
+                            if (width<height) {
+                                image.children().css('width','185px')
+                            }else{
+                                image.children().css('height','185px')
+                            }
+                        }, 1000);
+                    }, function(error) {
+                        // 异常处理
+                        console.error(error);
+                    });
+                }
             }
+        },
+        showImage(){
+            $('#photoFileUpload').change(()=> {
+                this.saveImage()
+            });
         }
     }
 }

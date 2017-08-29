@@ -553,7 +553,6 @@ html .box .home .Confession .wrapper {
 html .box .home .Confession .wrapper .editor {
   position: absolute;
   width: 700px;
-  height: 300px;
   background: white;
 }
 html .box .home .Confession .wrapper .editor .editor-close {
@@ -596,7 +595,7 @@ html .box .home .Confession .wrapper .editor .editable .upImage {
 }
 html .box .home .Confession .wrapper .editor .textArea {
   width: 700px;
-  height: 118px;
+  height: 136px;
 }
 html .box .home .Confession .wrapper .editor .textArea textarea {
   border: none;
@@ -607,11 +606,33 @@ html .box .home .Confession .wrapper .editor .textArea textarea {
 html .box .home .Confession .wrapper .editor .textArea span {
   color: #8590a6;
 }
+html .box .home .Confession .wrapper .editor .imageBox {
+  border-top: 1px solid #e7eaf1;
+  border-bottom: 1px solid #e7eaf1;
+  background: white;
+  padding: 12px 60px;
+  display: flex;
+  width: 700px;
+  max-height: 374px;
+  overflow: auto;
+  flex-wrap: wrap;
+}
+html .box .home .Confession .wrapper .editor .imageBox .image-item {
+  height: 185px;
+  width: 185px;
+  margin-right: 2px;
+  margin-bottom: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
 html .box .home .Confession .wrapper .editor .submit {
   padding: 12px 24px;
   height: 64px;
   display: flex;
   flex-direction: row-reverse;
+  background: white;
 }
 html .box .home .Confession .dialog-close {
   position: absolute;

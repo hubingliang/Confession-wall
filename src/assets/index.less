@@ -547,7 +547,6 @@ html{
                     .editor{
                         position: absolute;
                         width: 700px;
-                        height: 300px;
                         background: white;
                         .editor-close{
                             position: absolute;
@@ -589,7 +588,7 @@ html{
                         }
                         .textArea{
                             width: 700px;
-                            height: 118px;
+                            height: 136px;
                             textarea{
                                 border: none;
                                 padding: 12px 20px;
@@ -600,11 +599,35 @@ html{
                                 color: #8590a6;
                             }
                         }
+                        .imageBox{
+                            border-top: 1px solid #e7eaf1;
+                            border-bottom: 1px solid #e7eaf1;
+                            background: white;
+                            padding: 12px 60px;
+                            display: flex;
+                            width: 700px;
+                            max-height: 374px;
+                            overflow: auto;
+                            flex-wrap: wrap;
+                            .image-item{
+                                height: 185px;
+                                width: 185px;
+                                margin-right: 2px;
+                                margin-bottom: 2px;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                overflow: hidden;
+                                img{
+                                }
+                            }
+                        }
                         .submit{
                             padding: 12px 24px;
                             height: 64px;
                             display: flex;
                             flex-direction: row-reverse;
+                            background: white;
                         }
                     }
                 }
