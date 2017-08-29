@@ -28,9 +28,9 @@
               <h1>登录</h1>
               <p>在墙上分享你的</p>
               <form class="login-form" autocomplete="off">
-                  <input type="text"placeholder="Username"id="signinEmail">
+                  <input type="text"placeholder="Username"id="signinUsername">
                   <input type="password"placeholder="password"id="signinPassword">
-                  <el-button class="el-signin" v-on:click="login()" type="primary">sign in</el-button>
+                  <el-button class="el-signin" v-on:click="login()" type="primary">登 录</el-button>
               </form>
           </div>
           <div class="slider" id="slider">
@@ -198,25 +198,20 @@ export default {
       }));
     },
     login:function(){
-      var username = $('#inputUsername').val();
-      var password = $('#inputPassword').val();
+      var username = $('#signinUsername').val();
+      var password = $('#signinPassword').val();
 
       // LeanCloud - 登录
       // https://leancloud.cn/docs/leanstorage_guide-js.html#用户名和密码登录
       AV.User.logIn(username, password).then( (loginedUser)=> {
         $('#start').css('display','none')
         $('#home').css('display','flex')
-        $('#username').html(loginedUser.attributes.username)
         console.log(loginedUser.attributes.username)
+        $('#username').html(loginedUser.attributes.username)
         this.user.username = loginedUser.attributes.username
       }, function (error) {
         alert(JSON.stringify(error));
       })
-
-      
-
-
-
     },
     move:function(){
       $('#slider').css('transform',`translateX(400px)`)

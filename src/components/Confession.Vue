@@ -162,7 +162,6 @@ export default {
             query.find().then((ConfessionData)=> {   
                 ConfessionData.reverse()
                 for(let i=0;i<ConfessionData.length;i++){
-                   
                     this.ConfessionData[i] = {
                         username : ConfessionData[i].attributes.username,
                         content : ConfessionData[i].attributes.content,

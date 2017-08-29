@@ -43,7 +43,7 @@ export default {
         return{
         }
     },
-    props:['ConfessionData','item'],
+    props:['item'],
     mounted() {
         this.read()
     },
