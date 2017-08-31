@@ -534,6 +534,23 @@ html{
                         }
                     }
                 }
+                #wrapper{
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    left: 0;
+                    bottom: 0;
+                    background: rgba(205, 205, 205, 0.5);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    z-index: 20;
+                    #imgBox{
+                        padding: 40px;
+                        perspective: 1000px;
+                        
+                    }
+                }
                 .wrapper{
                     position: absolute;
                     top: 0;
@@ -660,12 +677,24 @@ html{
                         background: white;
                         padding: 10px;
                         .content{
-                            img{
-                                height: 160px;
-                                display: block;
-                                border-radius: 2px;
-                                margin-right: 18px;
-                                margin-bottom: 10px;
+                            .imgBox{
+                                border-top: 1px solid #e7eaf1;
+                                border-bottom: 1px solid #e7eaf1;
+                                background: white;
+                                display: flex;
+                                width: 580px;
+                                max-height: 374px;
+                                overflow: auto;
+                                flex-wrap: wrap;
+                                padding: 10px 0 ;
+                                margin-bottom: 10px; 
+                                img{
+                                    height: 170px;
+                                    display: block;
+                                    border-radius: 2px;
+                                    margin-right: 2px;
+                                    margin-bottom: 2px;
+                                }
                             }
                             p{
                                 overflow: hidden;
@@ -749,7 +778,7 @@ html{
                         }
                         .line{
                             border: none;
-                            border-top: 1px solid #333;
+                            border-top: 1px solid #e7eaf1;
                             margin: 10px 0;
                         }
                         .comment{

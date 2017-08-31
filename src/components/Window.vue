@@ -9,7 +9,9 @@
             </div>
         </div>
         <div class="content">
-            <img class="img" src="https://i.loli.net/2017/08/19/5997acbb7dd43.jpg"/>
+            <div class="imgBox">
+                <img class="img" v-for="item in item.imageUrl" v-bind:src="item" v-bind:key="item" @click="bigImage(item)"/>
+            </div>      
             <p>{{item.content}}</p>
         </div>
         <div class="actions">
@@ -50,6 +52,40 @@ export default {
     methods:{
         read:function(){
             console.log(this.item)
+        },
+        bigImage:function(item){
+            $(`    <div id="wrapper">
+        <div id="imgBox">
+            <img src="${item}" alt="" id="img">
+        </div>
+    </div>`).appendTo(".Confession")
+            let box = $('#imgBox')[0]
+            let img = $('#img')[0]
+            let wrapper = $('#wrapper')
+            box.addEventListener('mousemove',function(e){
+            let width = box.getBoundingClientRect().width
+
+            let height = box.getBoundingClientRect().height
+
+            
+            let Xcenter = box.offsetLeft + width /2
+            let Ycenter = box.offsetTop + height /2
+            let mouseX = e.clientX - Xcenter
+            let mouseY = e.clientY - Ycenter
+            
+
+
+            let Xpercent = mouseX / width/2
+            let Ypercent = mouseY / height/2
+            
+            let xDeg = Xpercent * 50
+            let yDeg = Ypercent * 50
+            img.style.transform = `translateZ(-100px) rotateX(${-yDeg}deg) rotateY(${xDeg}deg)`  
+
+            })
+            wrapper.bind('click',function(){
+                wrapper.remove()
+            })
         }
     }
 }

@@ -12,7 +12,10 @@
                             </div>
                         </div>
                         <div class="content">
-                            <img class="img" v-bind:src="item.imageUrl[0]"/>
+                            <div class="imgBox">
+                                <img class="img" v-bind:src="item.imageUrl[0]"/>
+                            </div>
+                            
                             <p>{{item.content}}</p>
                         </div>
                         <div class="actions">
@@ -164,7 +167,7 @@ export default {
             ConfessionData.set('imageUrl', imageUrl);
             ConfessionData.save().then( (ConfessionData)=> {
                 this.editorshow = false
-                $('#imageBox').empty() 
+                $('#imageBox').empty()
                 this.textarea = ''
                 this.read()
             }, function(error) {

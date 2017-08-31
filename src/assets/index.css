@@ -539,6 +539,22 @@ html .box .home .Confession .view .Confession-box .items .item .actions .comment
   height: 30px;
   line-height: 30px;
 }
+html .box .home .Confession #wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(205, 205, 205, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+}
+html .box .home .Confession #wrapper #imgBox {
+  padding: 40px;
+  perspective: 1000px;
+}
 html .box .home .Confession .wrapper {
   position: absolute;
   top: 0;
@@ -664,12 +680,24 @@ html .box .home .Confession .dialog .bigItem {
   background: white;
   padding: 10px;
 }
-html .box .home .Confession .dialog .bigItem .content img {
-  height: 160px;
+html .box .home .Confession .dialog .bigItem .content .imgBox {
+  border-top: 1px solid #e7eaf1;
+  border-bottom: 1px solid #e7eaf1;
+  background: white;
+  display: flex;
+  width: 580px;
+  max-height: 374px;
+  overflow: auto;
+  flex-wrap: wrap;
+  padding: 10px 0 ;
+  margin-bottom: 10px;
+}
+html .box .home .Confession .dialog .bigItem .content .imgBox img {
+  height: 170px;
   display: block;
   border-radius: 2px;
-  margin-right: 18px;
-  margin-bottom: 10px;
+  margin-right: 2px;
+  margin-bottom: 2px;
 }
 html .box .home .Confession .dialog .bigItem .content p {
   overflow: hidden;
@@ -751,7 +779,7 @@ html .box .home .Confession .dialog .bigItem .actions .comment-icon span {
 }
 html .box .home .Confession .dialog .bigItem .line {
   border: none;
-  border-top: 1px solid #333;
+  border-top: 1px solid #e7eaf1;
   margin: 10px 0;
 }
 html .box .home .Confession .dialog .bigItem .comment {
