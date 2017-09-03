@@ -555,6 +555,9 @@ html .box .home .Confession #wrapper #imgBox {
   padding: 40px;
   perspective: 1000px;
 }
+html .box .home .Confession #wrapper #imgBox img {
+  max-height: 800px;
+}
 html .box .home .Confession .wrapper {
   position: absolute;
   top: 0;
