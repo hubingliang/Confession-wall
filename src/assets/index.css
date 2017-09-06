@@ -360,6 +360,49 @@ html .box .home .nav-icon .icon {
   margin-top: 20px;
   z-index: 2;
 }
+html .box .home .wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(205, 205, 205, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+}
+html .box .home .wrapper .userForm {
+  background: white;
+  width: 400px;
+  height: 535px;
+  position: absolute;
+  padding: 20px;
+}
+html .box .home .wrapper .userForm form {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100%;
+}
+html .box .home .wrapper .userForm form .upImage {
+  opacity: 0;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  z-index: 1;
+}
+html .box .home .wrapper .userForm form .userImage {
+  position: absolute;
+  top: 0;
+  width: 150px;
+  height: 150px;
+}
+html .box .home .wrapper .userForm form .submit {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
 html .box .home .Confession {
   background: #f3f3f3;
   position: absolute;

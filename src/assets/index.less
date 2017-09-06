@@ -355,6 +355,49 @@ html{
                     z-index: 2; 
                 }
             }
+            .wrapper{
+                position: absolute;
+                top: 0;
+                right: 0;
+                left: 0;
+                bottom: 0;
+                background: rgba(205, 205, 205, 0.5);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 20;
+                .userForm{
+                    background: white;
+                    width: 400px;
+                    height: 535px;
+                    position: absolute;
+                    padding: 20px;
+                    form{
+                        display: flex;
+                        flex-direction: column;
+                        position: relative;
+                        height: 100%;
+                        .upImage{
+                            opacity: 0;
+                            width: 150px;
+                            height: 150px;
+                            position: absolute;
+                            z-index: 1;
+                        }
+                        .userImage{
+                            position: absolute;
+                            top: 0;
+                            width: 150px;
+                            height: 150px;
+                        }
+                        .submit{
+                            position: absolute;
+                            bottom: 0;
+                            right: 0
+                        }
+                    }
+                }
+            }
             .Confession{
                 background: rgb(243, 243, 243);
                 position: absolute;

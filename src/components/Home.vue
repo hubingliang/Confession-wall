@@ -16,7 +16,7 @@
         <div class="form" v-show="formshow">
           <div class="register">
             <h1>注册</h1>
-            <p>在墙上分享你的</p>
+            <p>在墙上闲扯</p>
             <form class="register-form" autocomplete="off">
                   <input type="text"placeholder="用户名"id="inputUsername">
                   <input type="password"placeholder="密码"id="inputPassword">
@@ -62,13 +62,21 @@
         </div>
 
         <div class="link-box">
-          <a href="http://211.68.250.72/JWWEB/" target="_blank">
-            <button id="link" class="xx animated fadeInDown">教 务 在 线 传 送 门</button> 
-          </a>
+            <button id="link" class="xx animated fadeInDown" @click="logOut()">登 出</button> 
         </div>
 
       </div>
- 
+
+      <div class="wrapper">
+        <div class="userForm">
+          <form action="" class="user-form">
+            <input class="upImage" type="file" id="userImage"/>
+            <img src="https://i.loli.net/2017/08/19/5997affaf2cda.jpg" alt="" class="userImage">
+            <el-button type="primary" class="submit" @click="save()">确认修改</el-button>
+          </form>
+        </div>
+      </div>
+
       <div class="main animated fadeIn">
         <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-xin"></use>
@@ -143,7 +151,8 @@ export default {
     }
   },
   mounted() {
-
+    this.showImage()
+    this.currentUser()
   },
   methods: {
     Confession:function(){
@@ -206,15 +215,73 @@ export default {
       AV.User.logIn(username, password).then( (loginedUser)=> {
         $('#start').css('display','none')
         $('#home').css('display','flex')
-        console.log(loginedUser.attributes.username)
         $('#username').html(loginedUser.attributes.username)
         this.user.username = loginedUser.attributes.username
       }, function (error) {
         alert(JSON.stringify(error));
       })
     },
+    userImage:function(){
+      var fileUploadControl = $('#userImage')[0];
+      if (fileUploadControl.files.length > 0) {
+        var localFile = fileUploadControl.files[0];
+        var name = 'avatar.jpg';
+
+        var file = new AV.File(name, localFile);
+        file.save().then((file)=> {
+          // 文件保存成功
+          this.user.userImage = file.url()
+          let url = file.url()
+          $('.userImage').attr('src',`${url}`)
+        }, function(error) {
+          // 异常处理
+          console.error(error);
+        });
+      }
+    },
     move:function(){
       $('#slider').css('transform',`translateX(400px)`)
+    },
+    showImage:function(){
+      $('#userImage').change(()=> {
+          this.userImage()
+      });
+    },
+    save:function(){
+        // 声明类型
+      var userInformation = AV.Object.extend('userInformation');
+      // 新建对象
+      var userInformation = new userInformation();
+      // 设置名称
+      let username = this.user.username
+      let userImage = this.user.userImage
+      userInformation.set('username',username);
+      userInformation.set('userImage',userImage);
+      // 设置优先级
+      userInformation.save().then(function (todo) {
+        console.log('objectId is ' + todo.id);
+      }, function (error) {
+        console.error(error);
+      });
+    },
+    currentUser:function(){
+      var currentUser = AV.User.current();
+      if (currentUser) {
+        console.log(currentUser)
+        $('#start').css('display','none')
+        $('#home').css('display','flex')
+        $('#username').html(currentUser.attributes.username)
+      }
+      else {
+        //currentUser 为空时，可打开用户注册界面…
+      }
+    },
+    logOut:function(){
+      AV.User.logOut();
+      // 现在的 currentUser 是 null 了
+      $('#start').css('display','flex')
+      $('#home').css('display','none')
+      var currentUser = AV.User.current();
     }
   }
 }
