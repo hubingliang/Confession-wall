@@ -43,7 +43,44 @@
         </div>
 
       </transition>
+
+
     </div>
+
+    <div class="wrapper animated fadeInDown" id="userInformation" v-show="wrappershow">
+        <div class="userForm">
+          <div class="logo">
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-xin"></use>
+            </svg>
+            <div>
+              <h1>天农，表白，墙</h1>
+              <p>C o n f e s s i o n - W a l l</p>
+            </div>
+          </div>
+          <form action="" class="user-form">
+            <input class="upImage" type="file" id="userImage"/>
+            <img src="https://i.loli.net/2017/08/19/5997affaf2cda.jpg" alt="" class="userImage">
+            <div class="inputBox">
+              <div class="username">{{this.user.username}}</div>
+              <div class="gender">
+                <el-radio class="radio" v-model="user.gender" label="man">男</el-radio>
+                <el-radio class="radio" v-model="user.gender" label="woman">女</el-radio>
+              </div>
+              <el-input placeholder="一句话介绍" class="usersign" v-model="user.userSign"></el-input>
+              <div class="real">
+                <el-input placeholder="专业" class="major" v-model="user.major"></el-input>
+                <el-input placeholder="姓名" class="realName" v-model="user.realName"></el-input>
+              </div>
+              <el-input placeholder="QQ / Wechat / phone" class="call" v-model="user.call"></el-input>
+
+            </div>
+
+            <el-button type="primary" class="submit" @click="save()">确认修改</el-button>
+          </form>
+        </div>
+      </div>
+
     <div class="home" v-show="homeshow" id="home">
 
       <div class="topbar">
@@ -67,15 +104,7 @@
 
       </div>
 
-      <div class="wrapper">
-        <div class="userForm">
-          <form action="" class="user-form">
-            <input class="upImage" type="file" id="userImage"/>
-            <img src="https://i.loli.net/2017/08/19/5997affaf2cda.jpg" alt="" class="userImage">
-            <el-button type="primary" class="submit" @click="save()">确认修改</el-button>
-          </form>
-        </div>
-      </div>
+      
 
       <div class="main animated fadeIn">
         <svg class="icon" aria-hidden="true">
@@ -141,10 +170,13 @@ export default {
       homeshow: false,
       Windowshow: false,
       formshow: false,
-
+      wrappershow: false,
 
       user:{
         username:'',
+        gender:'',
+        userSign:'',
+        realName:''
       },
 
       slidermove: 0,
@@ -213,8 +245,7 @@ export default {
       // LeanCloud - 登录
       // https://leancloud.cn/docs/leanstorage_guide-js.html#用户名和密码登录
       AV.User.logIn(username, password).then( (loginedUser)=> {
-        $('#start').css('display','none')
-        $('#home').css('display','flex')
+        $('#userInformation').css('display','flex')
         $('#username').html(loginedUser.attributes.username)
         this.user.username = loginedUser.attributes.username
       }, function (error) {
@@ -255,11 +286,24 @@ export default {
       // 设置名称
       let username = this.user.username
       let userImage = this.user.userImage
+      let gender = this.user.gender
+      let userSign = this.user.userSign
+      let major = this.user.major
+      let realName = this.user.realName
+      let call = this.user.call
       userInformation.set('username',username);
+      userInformation.set('gender',gender);
+      userInformation.set('userSign',userSign);
+      userInformation.set('major',major);
+      userInformation.set('realName',realName);
+      userInformation.set('call',call);
       userInformation.set('userImage',userImage);
       // 设置优先级
       userInformation.save().then(function (todo) {
         console.log('objectId is ' + todo.id);
+        $('#userInformation').css('display','none')
+        $('#start').css('display','none')
+        $('#home').css('display','flex')
       }, function (error) {
         console.error(error);
       });
@@ -271,6 +315,7 @@ export default {
         $('#start').css('display','none')
         $('#home').css('display','flex')
         $('#username').html(currentUser.attributes.username)
+        this.user.username = currentUser.attributes.username
       }
       else {
         //currentUser 为空时，可打开用户注册界面…

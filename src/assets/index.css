@@ -360,49 +360,6 @@ html .box .home .nav-icon .icon {
   margin-top: 20px;
   z-index: 2;
 }
-html .box .home .wrapper {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  background: rgba(205, 205, 205, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 20;
-}
-html .box .home .wrapper .userForm {
-  background: white;
-  width: 400px;
-  height: 535px;
-  position: absolute;
-  padding: 20px;
-}
-html .box .home .wrapper .userForm form {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  height: 100%;
-}
-html .box .home .wrapper .userForm form .upImage {
-  opacity: 0;
-  width: 150px;
-  height: 150px;
-  position: absolute;
-  z-index: 1;
-}
-html .box .home .wrapper .userForm form .userImage {
-  position: absolute;
-  top: 0;
-  width: 150px;
-  height: 150px;
-}
-html .box .home .wrapper .userForm form .submit {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-}
 html .box .home .Confession {
   background: #f3f3f3;
   position: absolute;
@@ -861,4 +818,91 @@ html .box .home .Notice {
   right: 20px;
   bottom: 20px;
   z-index: 1;
+}
+html .box .wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+  display: none;
+}
+html .box .wrapper .userForm {
+  background: white;
+  width: 850px;
+  height: 530px;
+  position: absolute;
+  padding: 40px;
+}
+html .box .wrapper .userForm .logo {
+  display: flex;
+  align-items: center;
+  color: #333;
+}
+html .box .wrapper .userForm .logo .icon {
+  height: 50px;
+  width: 50px;
+  margin-right: 20px;
+  fill: #333;
+}
+html .box .wrapper .userForm .logo div {
+  max-width: 225px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+html .box .wrapper .userForm .logo div p {
+  color: #333;
+  font-size: 16px;
+}
+html .box .wrapper .userForm form {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  height: 390px;
+}
+html .box .wrapper .userForm form .upImage {
+  opacity: 0;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 40px;
+}
+html .box .wrapper .userForm form .userImage {
+  width: 150px;
+  height: 150px;
+  margin-top: 40px;
+}
+html .box .wrapper .userForm form .inputBox {
+  width: 600px;
+  margin-top: 40px;
+  margin-left: 40px;
+}
+html .box .wrapper .userForm form .inputBox .username {
+  padding-bottom: 20px;
+  font-size: 26px;
+  font-weight: bold;
+  line-height: 30px;
+}
+html .box .wrapper .userForm form .inputBox .real {
+  display: flex;
+}
+html .box .wrapper .userForm form .inputBox .real .realName {
+  margin-left: 20px;
+}
+html .box .wrapper .userForm form .inputBox .gender {
+  padding-bottom: 20px;
+}
+html .box .wrapper .userForm form .inputBox .el-input {
+  margin-bottom: 20px;
+}
+html .box .wrapper .userForm form .submit {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
 }
