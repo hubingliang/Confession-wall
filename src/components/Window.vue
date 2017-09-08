@@ -51,7 +51,7 @@ export default {
     },
     methods:{
         read:function(){
-            console.log(this.item)
+            
         },
         bigImage:function(item){
             $(`    <div id="wrapper">

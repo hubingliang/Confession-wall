@@ -102,7 +102,6 @@ export default {
             index: 0,
             ConfessionData:[],
             item:{},
-
         }
     },
     mounted() {
@@ -176,7 +175,7 @@ export default {
         },
         read:function(){
             var query = new AV.Query('ConfessionData');
-            query.find().then((ConfessionData)=> {   
+            query.find().then((ConfessionData)=> {  
                 ConfessionData.reverse()
                 for(let i=0;i<ConfessionData.length;i++){
                     this.ConfessionData[i] = {
@@ -191,6 +190,7 @@ export default {
             }, function(error){
                 console.error(error) 
             })
+            console.log(this.ConfessionData)
         },
         getIndex:function(index){
             this.item = this.ConfessionData[index]

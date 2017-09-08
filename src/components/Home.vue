@@ -311,7 +311,6 @@ export default {
     currentUser:function(){
       var currentUser = AV.User.current();
       if (currentUser) {
-        console.log(currentUser)
         $('#start').css('display','none')
         $('#home').css('display','flex')
         $('#username').html(currentUser.attributes.username)
