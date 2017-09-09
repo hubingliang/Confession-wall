@@ -3,15 +3,15 @@
         <div class="view">
             <div class="Confession-box" id="box">
                 <div class="items" >
-                    <div class="item" @click="Windowshow = true,getIndex(index)" v-for="(item,index) in ConfessionData" v-bind:key="item.username">
+                    <div class="item" v-for="(item,index) in ConfessionData" v-bind:key="item.usersign">
                         <div class="user">
-                            <img src="https://i.loli.net/2017/08/19/5997affaf2cda.jpg"/>
+                            <img v-bind:src="item.userImage"/>
                             <div class="username">
                                 <h4>{{item.username}}</h4>
-                                <span>用无限适用于未来的方法，置换体内星辰河流。</span>
+                                <span>{{item.usersign}}</span>
                             </div>
                         </div>
-                        <div class="content">
+                        <div class="content" @click="Windowshow = true,getIndex(index)">
                             <div class="imgBox">
                                 <img class="img" v-bind:src="item.imageUrl[0]"/>
                             </div>
@@ -55,10 +55,10 @@
                 <div class="editor">
                     <el-button class="editor-close" type="text"><i class="el-icon-close" @click="editorshow = false"></i></el-button>
                     <div class="user">
-                        <img src="https://i.loli.net/2017/08/19/5997affaf2cda.jpg"/>
+                        <img v-bind:src="user.userImage"/>
                         <div class="username">
                             <h4>{{user.username}}</h4>
-                            <p>用无限适用于未来的方法，置换体内星辰河流。</p>
+                            <p>{{user.userSign}}</p>
                         </div>
                     </div>
                     <div class="editable">
@@ -82,6 +82,8 @@
                 </div>
             </div>
         </transition>
+
+ 
 
     </div>
 </template>
@@ -138,9 +140,9 @@ export default {
         },
         save:function(){
             var ConfessionData = AV.Object.extend('ConfessionData');
-            var username = this.user.username;
-            
-            var usersign = '';
+            var username = this.user.username
+            var userImage = this.user.userImage
+            var userSign = this.user.userSign
             var content = this.textarea;
             var good = 0;
             var comment = [];
@@ -153,11 +155,10 @@ export default {
                 imageUrl.push(src)
             })
             
-
-            
             var ConfessionData = new ConfessionData();
             ConfessionData.set('username', username);
-            ConfessionData.set('usersign', usersign);
+            ConfessionData.set('usersign', userSign);
+            ConfessionData.set('userImage', userImage);
             ConfessionData.set('content', content);
             ConfessionData.set('good', good);
             ConfessionData.set('commentNumber', commentNumber);
@@ -184,7 +185,9 @@ export default {
                         good : ConfessionData[i].attributes.good,
                         comment : ConfessionData[i].attributes.comment,
                         commentNumber : ConfessionData[i].attributes.commentNumber,
-                        imageUrl : ConfessionData[i].attributes.imageUrl
+                        imageUrl : ConfessionData[i].attributes.imageUrl,
+                        usersign : ConfessionData[i].attributes.usersign,
+                        userImage : ConfessionData[i].attributes.userImage,
                     }
                 }
             }, function(error){

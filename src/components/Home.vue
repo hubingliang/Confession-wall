@@ -21,7 +21,7 @@
                   <input type="text"placeholder="用户名"id="inputUsername">
                   <input type="password"placeholder="密码"id="inputPassword">
                   <input type="text"placeholder="邮箱"id="inputEmail">
-                  <el-button class="el-register"v-on:click="register()" type="primary" >注册</el-button>
+                  <el-button class="el-register" v-on:click="register()" type="primary" >注册</el-button>
             </form>
           </div>
           <div class="login">
@@ -58,9 +58,9 @@
               <p>C o n f e s s i o n - W a l l</p>
             </div>
           </div>
-          <form action="" class="user-form">
+          <form class="user-form">
             <input class="upImage" type="file" id="userImage"/>
-            <img src="https://i.loli.net/2017/08/19/5997affaf2cda.jpg" alt="" class="userImage">
+            <img src="https://i.loli.net/2017/09/09/59b381b067f3b.jpg" alt="" class="userImage">
             <div class="inputBox">
               <div class="username">{{this.user.username}}</div>
               <div class="gender">
@@ -79,8 +79,46 @@
             <el-button type="primary" class="submit" @click="save()">确认修改</el-button>
           </form>
         </div>
-      </div>
+    </div>
+    <div class="wrapper animated fadeInDown" v-show="userCardshow">
+      <div class="userCard">
+        <div class="logo">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-xin"></use>
+          </svg>
+          <div>
+            <h1>天农，表白，墙</h1>
+            <p>C o n f e s s i o n - W a l l</p>
+          </div>
+        </div>
+        <div class="user-Information">
+            <img src="https://i.loli.net/2017/09/09/59b381b067f3b.jpg" alt="" class="userImage">
+            <div class="user">
+              <h1>
+                <span class="username">胡秉亮</span>
+                <span class="usersign">嗤笑的围观去,或热血的倒下。</span>
+              </h1>
+              <div class="major">
+                <span>专业 :</span>
+                <p>旅游管理</p>
+              </div>
+              <div class="realName">
+                <span>姓名 :</span>
+                <p>胡秉亮</p>
+              </div>
+              <div class="call">
+                <span>QQ :</span>
+                <p>1104524351</p>
+                <span>微信 :</span>
+                <p>15620688207</p>
+              </div>
+            </div>
 
+          </div>
+      </div>
+    </div>
+    
+    
     <div class="home" v-show="homeshow" id="home">
 
       <div class="topbar">
@@ -171,12 +209,14 @@ export default {
       Windowshow: false,
       formshow: false,
       wrappershow: false,
+      userCardshow: false,
 
       user:{
         username:'',
         gender:'',
         userSign:'',
-        realName:''
+        realName:'',
+        userImage:''
       },
 
       slidermove: 0,
@@ -226,14 +266,9 @@ export default {
       user.setUsername(username);
       user.setPassword(password);
       user.setEmail(email);
-      user.signUp().then(function (loginedUser) {
-        let x = 400
-        setInterval(function(){
-          if(x>=0){
-              $('#slider').css('transform',`translateX(${x}px)`)
-              x = x - 10
-          }
-        },15)
+      user.signUp().then( (loginedUser)=> {
+          this.user.username = username
+          $('#userInformation').css('display','flex')
       }, (function (error) {
           alert(JSON.stringify(error));
       }));
@@ -245,9 +280,10 @@ export default {
       // LeanCloud - 登录
       // https://leancloud.cn/docs/leanstorage_guide-js.html#用户名和密码登录
       AV.User.logIn(username, password).then( (loginedUser)=> {
-        $('#userInformation').css('display','flex')
         $('#username').html(loginedUser.attributes.username)
         this.user.username = loginedUser.attributes.username
+        $('#home').css('display','flex')
+        $('#start').css('display','none')
       }, function (error) {
         alert(JSON.stringify(error));
       })
@@ -279,34 +315,31 @@ export default {
       });
     },
     save:function(){
-        // 声明类型
-      var userInformation = AV.Object.extend('userInformation');
-      // 新建对象
-      var userInformation = new userInformation();
-      // 设置名称
-      let username = this.user.username
+      var username = $('#inputUsername').val();
+      var password = $('#inputPassword').val();
       let userImage = this.user.userImage
       let gender = this.user.gender
       let userSign = this.user.userSign
       let major = this.user.major
       let realName = this.user.realName
       let call = this.user.call
-      userInformation.set('username',username);
-      userInformation.set('gender',gender);
-      userInformation.set('userSign',userSign);
-      userInformation.set('major',major);
-      userInformation.set('realName',realName);
-      userInformation.set('call',call);
-      userInformation.set('userImage',userImage);
-      // 设置优先级
-      userInformation.save().then(function (todo) {
-        console.log('objectId is ' + todo.id);
-        $('#userInformation').css('display','none')
-        $('#start').css('display','none')
-        $('#home').css('display','flex')
+      AV.User.logIn(`${username}`, `${password}`).then(function (loginedUser) {
+      loginedUser.set('username',username);
+      loginedUser.set('gender',gender);
+      loginedUser.set('userSign',userSign);
+      loginedUser.set('major',major);
+      loginedUser.set('realName',realName);
+      loginedUser.set('call',call);
+      loginedUser.set('userImage',userImage);
+      loginedUser.save();
+      $('#userInformation').css('display','none')
+      $('#home').css('display','flex')
+      $('#start').css('display','none')
       }, function (error) {
+        // 异常处理
         console.error(error);
       });
+
     },
     currentUser:function(){
       var currentUser = AV.User.current();
@@ -315,6 +348,14 @@ export default {
         $('#home').css('display','flex')
         $('#username').html(currentUser.attributes.username)
         this.user.username = currentUser.attributes.username
+        this.user.call = currentUser.attributes.call
+        this.user.gender = currentUser.attributes.gender
+        this.user.major = currentUser.attributes.major
+        this.user.realName = currentUser.attributes.realName
+        this.user.userImage = currentUser.attributes.userImage
+        this.user.userSign = currentUser.attributes.userSign
+        
+        console.log(currentUser)
       }
       else {
         //currentUser 为空时，可打开用户注册界面…

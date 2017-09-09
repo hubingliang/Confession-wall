@@ -464,8 +464,8 @@ html{
                                             align-items: center;
                                     margin-bottom: 10px;
                                     img{
-                                        height: 30px;
-                                        width: 30px;
+                                        height: 40px;
+                                        width: 40px;
                                         border-radius: 50%;
                                     }
                                     .username{
@@ -548,7 +548,8 @@ html{
                         padding: 40px;
                         perspective: 1000px;
                         img{
-                            max-height: 800px;
+                            max-height: 700px;
+                            min-height: 400px;
                         }
                     }
                 }
@@ -576,8 +577,8 @@ html{
                             display: flex;
                             align-items: center;
                             img{
-                                height: 30px;
-                                width: 30px;
+                                height: 40px;
+                                width: 40px;
                                 border-radius: 50%;
                                 margin-right: 14px;
                             }
@@ -831,7 +832,6 @@ html{
             justify-content: center;
             align-items: center;
             z-index: 20;
-            display: none;
             .userForm{
                 background: white;
                 width: 850px;
@@ -886,9 +886,6 @@ html{
                             font-weight: bold;
                             line-height: 30px;
                         }
-                        .usersign{
-                            
-                        }
                         .real{
                             display: flex;
                             .realName{
@@ -906,6 +903,107 @@ html{
                         position: absolute;
                         bottom: 20px;
                         right: 20px;
+                    }
+                }
+            }
+            .userCard{
+                background: white;
+                width: 850px;
+                height: 530px;
+                position: absolute;
+                padding: 40px;
+                .logo{
+                    display: flex;
+                    align-items: center;
+                    color: #333;
+                    .icon{
+                        height: 50px;
+                        width: 50px;
+                        margin-right: 20px;
+                        fill: #333;
+                    }
+                    div{
+                        max-width: 225px;
+                        display: flex;
+                        justify-content: center;
+                        flex-wrap: wrap;
+                        p{
+                            color: #333;
+                            font-size: 16px;
+                        }
+                    }
+                }
+                .user-Information{
+                    display: flex;
+                    flex-direction: row;
+                    position: relative;
+                    height: 390px;
+                    .userImage{
+                        width: 150px;
+                        height: 150px;
+                        margin-top: 40px;
+                    }
+                    .user{
+                        width: 600px;
+                        margin-top: 40px;
+                        margin-left: 40px;
+                        font-size: 18px;
+                        h1{
+                            display: flex;
+                            flex-direction: column;
+                            border-bottom: 1px solid #e6e6e6;
+                            padding-bottom: 20px;
+                            .username{
+                                padding-bottom: 10px;
+                                font-size: 30px;
+                                font-weight: bold;
+                                line-height: 30px;
+                            }
+                            .usersign{
+                                font-size: 18px;
+                                font-weight: 400;
+                            }
+                        }
+                        .major{
+                            display: flex;
+                            padding: 20px 0;
+                            align-items: center;
+                            border-bottom: 1px solid #e6e6e6;
+                            span{
+                                width: 60px;
+                                margin-right: 20px;
+                                font-weight: 700;
+                            }
+                        }
+                        .realName{
+                            display: flex;
+                            padding: 20px 0;
+                            align-items: center;
+                            border-bottom: 1px solid #e6e6e6;
+                            span{
+                                width: 60px;
+                                margin-right: 20px;
+                                font-weight: 700;
+                            }
+                        }
+                        .call{
+                            display: flex;
+                            padding: 20px 0;
+                            align-items: center;
+                            border-bottom: 1px solid #e6e6e6;
+                            span{
+                                width: 60px;
+                                margin-right: 20px;
+                                font-weight: 700;
+                            }
+                            p{
+                                margin-right: 20px;
+                                width: 230px;
+                            }
+                        }
+                        .call{
+                            padding: 20px 0 ;
+                        }
                     }
                 }
             }

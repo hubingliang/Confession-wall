@@ -476,8 +476,8 @@ html .box .home .Confession .view .Confession-box .items .item .user {
   margin-bottom: 10px;
 }
 html .box .home .Confession .view .Confession-box .items .item .user img {
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
   border-radius: 50%;
 }
 html .box .home .Confession .view .Confession-box .items .item .user .username {
@@ -556,7 +556,8 @@ html .box .home .Confession #wrapper #imgBox {
   perspective: 1000px;
 }
 html .box .home .Confession #wrapper #imgBox img {
-  max-height: 800px;
+  max-height: 700px;
+  min-height: 400px;
 }
 html .box .home .Confession .wrapper {
   position: absolute;
@@ -585,8 +586,8 @@ html .box .home .Confession .wrapper .editor .user {
   align-items: center;
 }
 html .box .home .Confession .wrapper .editor .user img {
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
   border-radius: 50%;
   margin-right: 14px;
 }
@@ -830,7 +831,6 @@ html .box .wrapper {
   justify-content: center;
   align-items: center;
   z-index: 20;
-  display: none;
 }
 html .box .wrapper .userForm {
   background: white;
@@ -905,4 +905,105 @@ html .box .wrapper .userForm form .submit {
   position: absolute;
   bottom: 20px;
   right: 20px;
+}
+html .box .wrapper .userCard {
+  background: white;
+  width: 850px;
+  height: 530px;
+  position: absolute;
+  padding: 40px;
+}
+html .box .wrapper .userCard .logo {
+  display: flex;
+  align-items: center;
+  color: #333;
+}
+html .box .wrapper .userCard .logo .icon {
+  height: 50px;
+  width: 50px;
+  margin-right: 20px;
+  fill: #333;
+}
+html .box .wrapper .userCard .logo div {
+  max-width: 225px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+html .box .wrapper .userCard .logo div p {
+  color: #333;
+  font-size: 16px;
+}
+html .box .wrapper .userCard .user-Information {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  height: 390px;
+}
+html .box .wrapper .userCard .user-Information .userImage {
+  width: 150px;
+  height: 150px;
+  margin-top: 40px;
+}
+html .box .wrapper .userCard .user-Information .user {
+  width: 600px;
+  margin-top: 40px;
+  margin-left: 40px;
+  font-size: 18px;
+}
+html .box .wrapper .userCard .user-Information .user h1 {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #e6e6e6;
+  padding-bottom: 20px;
+}
+html .box .wrapper .userCard .user-Information .user h1 .username {
+  padding-bottom: 10px;
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 30px;
+}
+html .box .wrapper .userCard .user-Information .user h1 .usersign {
+  font-size: 18px;
+  font-weight: 400;
+}
+html .box .wrapper .userCard .user-Information .user .major {
+  display: flex;
+  padding: 20px 0;
+  align-items: center;
+  border-bottom: 1px solid #e6e6e6;
+}
+html .box .wrapper .userCard .user-Information .user .major span {
+  width: 60px;
+  margin-right: 20px;
+  font-weight: 700;
+}
+html .box .wrapper .userCard .user-Information .user .realName {
+  display: flex;
+  padding: 20px 0;
+  align-items: center;
+  border-bottom: 1px solid #e6e6e6;
+}
+html .box .wrapper .userCard .user-Information .user .realName span {
+  width: 60px;
+  margin-right: 20px;
+  font-weight: 700;
+}
+html .box .wrapper .userCard .user-Information .user .call {
+  display: flex;
+  padding: 20px 0;
+  align-items: center;
+  border-bottom: 1px solid #e6e6e6;
+}
+html .box .wrapper .userCard .user-Information .user .call span {
+  width: 60px;
+  margin-right: 20px;
+  font-weight: 700;
+}
+html .box .wrapper .userCard .user-Information .user .call p {
+  margin-right: 20px;
+  width: 230px;
+}
+html .box .wrapper .userCard .user-Information .user .call {
+  padding: 20px 0 ;
 }
