@@ -4,7 +4,7 @@
             <div class="Confession-box" id="box">
                 <div class="items" >
                     <div class="item" v-for="(item,index) in ConfessionData" v-bind:key="item.usersign">
-                        <div class="user">
+                        <div class="user" @click="userCard(item.username)">
                             <img v-bind:src="item.userImage"/>
                             <div class="username">
                                 <h4>{{item.username}}</h4>
@@ -84,17 +84,18 @@
         </transition>
 
  
-
+        <Card v-bind:card="card"></Card>
     </div>
 </template>
 
 
 <script>
 import Window from './Window'
+import Card from './Card'
 
 export default {
-    components:{Window},
-    props:['user'],
+    components:{Window,Card},
+    props:['user','userCardshow'],
     data(){
         return{
             Windowshow: false,
@@ -104,6 +105,14 @@ export default {
             index: 0,
             ConfessionData:[],
             item:{},
+            card:{
+                username:'',
+                gender:'',
+                userSign:'',
+                realName:'',
+                userImage:'',
+                major: ''
+            }
         }
     },
     mounted() {
@@ -237,6 +246,27 @@ export default {
             $('#photoFileUpload').change(()=> {
                 this.saveImage()
             });
+        },
+        userCard:function(username){
+            $('#userCard').css('display','flex')
+            var query = new AV.Query('_User');
+            query.find().then((_User)=> {  
+                console.log(_User)
+                for(let i = 0;i<_User.length;i++){
+                    if(_User[i].attributes.username === username){
+                        this.card.username = _User[i].attributes.username
+                        this.card.gender = _User[i].attributes.gender
+                        this.card.userSign = _User[i].attributes.userSign
+                        this.card.realName = _User[i].attributes.realName
+                        this.card.userImage = _User[i].attributes.userImage
+                        this.card.major = _User[i].attributes.major
+                        
+                    }
+                }
+                
+            }, function(error){
+                console.error(error) 
+            })
         }
     }
 }

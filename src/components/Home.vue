@@ -80,43 +80,8 @@
           </form>
         </div>
     </div>
-    <div class="wrapper animated fadeInDown" v-show="userCardshow">
-      <div class="userCard">
-        <div class="logo">
-          <svg class="icon" aria-hidden="true">
-            <use xlink:href="#icon-xin"></use>
-          </svg>
-          <div>
-            <h1>天农，表白，墙</h1>
-            <p>C o n f e s s i o n - W a l l</p>
-          </div>
-        </div>
-        <div class="user-Information">
-            <img src="https://i.loli.net/2017/09/09/59b381b067f3b.jpg" alt="" class="userImage">
-            <div class="user">
-              <h1>
-                <span class="username">胡秉亮</span>
-                <span class="usersign">嗤笑的围观去,或热血的倒下。</span>
-              </h1>
-              <div class="major">
-                <span>专业 :</span>
-                <p>旅游管理</p>
-              </div>
-              <div class="realName">
-                <span>姓名 :</span>
-                <p>胡秉亮</p>
-              </div>
-              <div class="call">
-                <span>QQ :</span>
-                <p>1104524351</p>
-                <span>微信 :</span>
-                <p>15620688207</p>
-              </div>
-            </div>
 
-          </div>
-      </div>
-    </div>
+    
     
     
     <div class="home" v-show="homeshow" id="home">
@@ -189,6 +154,8 @@
       </div>
 
     </div>
+
+    
   </div>
 </template>
 
@@ -196,6 +163,7 @@
 import Confession from './Confession'
 import Lost from './Lost'
 import Notice from './Notice'
+
 
 export default {
   components:{Confession,Lost,Notice},
@@ -367,6 +335,9 @@ export default {
       $('#start').css('display','flex')
       $('#home').css('display','none')
       var currentUser = AV.User.current();
+    },
+    cardClose:function(){
+      $('#userCard').css('display','none')
     }
   }
 }

@@ -802,6 +802,138 @@ html .box .home .Confession .dialog .bigItem .comment span {
 html .box .home .Confession .dialog .bigItem .comment p {
   margin-left: 5px;
 }
+html .box .home .Confession .card-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+  display: none;
+}
+html .box .home .Confession .card-wrapper .userCard {
+  background: white;
+  border: 1px solid ;
+  width: 850px;
+  height: 480px;
+  position: absolute;
+  padding: 40px;
+  border-radius: 10px;
+  position: relative;
+}
+html .box .home .Confession .card-wrapper .userCard .logo {
+  display: flex;
+  align-items: center;
+  color: #333;
+}
+html .box .home .Confession .card-wrapper .userCard .logo .card-icon {
+  height: 50px;
+  width: 50px;
+  margin-right: 20px;
+  fill: #333;
+}
+html .box .home .Confession .card-wrapper .userCard .logo div {
+  max-width: 225px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+html .box .home .Confession .card-wrapper .userCard .logo div p {
+  color: #333;
+  font-size: 16px;
+}
+html .box .home .Confession .card-wrapper .userCard .user-Information {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  height: 390px;
+}
+html .box .home .Confession .card-wrapper .userCard .user-Information .userImage {
+  width: 150px;
+  height: 150px;
+  margin-top: 40px;
+}
+html .box .home .Confession .card-wrapper .userCard .user-Information .user {
+  width: 600px;
+  margin-top: 40px;
+  margin-left: 40px;
+  font-size: 18px;
+}
+html .box .home .Confession .card-wrapper .userCard .user-Information .user h1 {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #e6e6e6;
+  padding-bottom: 20px;
+}
+html .box .home .Confession .card-wrapper .userCard .user-Information .user h1 .username {
+  padding-bottom: 10px;
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 30px;
+}
+html .box .home .Confession .card-wrapper .userCard .user-Information .user h1 .icon {
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+}
+html .box .home .Confession .card-wrapper .userCard .user-Information .user h1 .nan {
+  fill: #0032cb;
+}
+html .box .home .Confession .card-wrapper .userCard .user-Information .user h1 .nv {
+  fill: #f76c6c;
+}
+html .box .home .Confession .card-wrapper .userCard .user-Information .user h1 .usersign {
+  font-size: 18px;
+  font-weight: 400;
+}
+html .box .home .Confession .card-wrapper .userCard .user-Information .user .major {
+  display: flex;
+  padding: 20px 0;
+  align-items: center;
+  border-bottom: 1px solid #e6e6e6;
+}
+html .box .home .Confession .card-wrapper .userCard .user-Information .user .major span {
+  width: 60px;
+  margin-right: 20px;
+  font-weight: 700;
+}
+html .box .home .Confession .card-wrapper .userCard .user-Information .user .realName {
+  display: flex;
+  padding: 20px 0;
+  align-items: center;
+  border-bottom: 1px solid #e6e6e6;
+}
+html .box .home .Confession .card-wrapper .userCard .user-Information .user .realName span {
+  width: 60px;
+  margin-right: 20px;
+  font-weight: 700;
+}
+html .box .home .Confession .card-wrapper .userCard .user-Information .user .call {
+  display: flex;
+  padding: 20px 0;
+  align-items: center;
+  border-bottom: 1px solid #e6e6e6;
+}
+html .box .home .Confession .card-wrapper .userCard .user-Information .user .call span {
+  width: 60px;
+  margin-right: 20px;
+  font-weight: 700;
+}
+html .box .home .Confession .card-wrapper .userCard .user-Information .user .call p {
+  margin-right: 20px;
+  width: 230px;
+}
+html .box .home .Confession .card-wrapper .userCard .user-Information .user .call {
+  padding: 20px 0 ;
+}
+html .box .home .Confession .card-wrapper .userCard .cardClose {
+  position: absolute;
+  right: 40px;
+  top: 40px;
+}
 html .box .home .Lost {
   background: white;
   position: absolute;
@@ -865,6 +997,7 @@ html .box .wrapper .userForm form {
   flex-direction: row;
   position: relative;
   height: 390px;
+  border-radius: 10px;
 }
 html .box .wrapper .userForm form .upImage {
   opacity: 0;
@@ -912,6 +1045,8 @@ html .box .wrapper .userCard {
   height: 530px;
   position: absolute;
   padding: 40px;
+  border-radius: 10px;
+  position: relative;
 }
 html .box .wrapper .userCard .logo {
   display: flex;
@@ -963,6 +1098,17 @@ html .box .wrapper .userCard .user-Information .user h1 .username {
   font-weight: bold;
   line-height: 30px;
 }
+html .box .wrapper .userCard .user-Information .user h1 .icon {
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+}
+html .box .wrapper .userCard .user-Information .user h1 .nan {
+  fill: #0032cb;
+}
+html .box .wrapper .userCard .user-Information .user h1 .nv {
+  fill: #f76c6c;
+}
 html .box .wrapper .userCard .user-Information .user h1 .usersign {
   font-size: 18px;
   font-weight: 400;
@@ -1006,4 +1152,9 @@ html .box .wrapper .userCard .user-Information .user .call p {
 }
 html .box .wrapper .userCard .user-Information .user .call {
   padding: 20px 0 ;
+}
+html .box .wrapper .userCard .cardClose {
+  position: absolute;
+  right: 40px;
+  top: 40px;
 }
