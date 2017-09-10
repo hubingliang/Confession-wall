@@ -712,8 +712,8 @@ html{
                                     align-items: center;
                             margin-bottom: 10px;
                             img{
-                                height: 30px;
-                                width: 30px;
+                                height: 35px;
+                                width: 35px;
                                 border-radius: 50%;
                             }
                             .username{
@@ -721,7 +721,7 @@ html{
                                 display: flex;
                                 flex-direction: column;
                                 h4{
-                                    font-size: 15px;
+                                    font-size: 16px;
                                     font-weight: bold;
                                 }
                             }
@@ -782,6 +782,49 @@ html{
                             border: none;
                             border-top: 1px solid #e7eaf1;
                             margin: 10px 0;
+                        }
+                        .comment-form{
+                            margin: 20px 0 ;
+                            position: absolute;
+                            width: 580px;
+                            bottom: 25px;
+                            height: 110px;
+                            input{
+                                height: 60px;
+                            }
+                            .upComment{
+                                position: absolute;
+                                right: 5px;
+                                bottom: 5px;
+                            }
+                            .emoji-icon{
+                                position: absolute;
+                                width: 24px;
+                                height: 24px;
+                                left: 5px;
+                                bottom: 5px;
+                            }
+                            .emojiBox{
+                                padding: 20px 5px;
+                                position: absolute;
+                                border: 1px solid red;
+                                bottom: 32px;
+                                background: white;
+                                .emoji{
+                                    display: flex;
+                                    font-size: 0;
+                                    width: 395px;
+                                    flex-wrap: wrap;
+                                    img{
+                                        width: 24px;
+                                        height: 24px;
+                                        margin: 1px;
+                                    }
+                                    img:hover{
+                                        border: 1px solid;
+                                    }
+                                }
+                            }  
                         }
                         .comment{
                             display: flex;
@@ -868,7 +911,7 @@ html{
                                 font-weight: bold;
                                 line-height: 30px;
                             }
-                            .icon{
+                            .card-icon{
                                 width: 20px;
                                 height: 20px;
                                 margin-left: 5px;
@@ -1023,6 +1066,12 @@ html{
                             display: flex;
                             .realName{
                                 margin-left: 20px;
+                            }
+                        }
+                        .call{
+                            .el-input{
+                                margin-bottom: 0;
+                                width: 100px;
                             }
                         }
                         .gender{

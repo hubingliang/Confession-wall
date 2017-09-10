@@ -72,7 +72,13 @@
                 <el-input placeholder="专业" class="major" v-model="user.major"></el-input>
                 <el-input placeholder="姓名" class="realName" v-model="user.realName"></el-input>
               </div>
-              <el-input placeholder="QQ / Wechat / phone" class="call" v-model="user.call"></el-input>
+              <el-input placeholder="联系方式" v-model="user.call" class="call">
+                <el-select v-model="user.callWhat" slot="prepend" placeholder="请选择" class="callWhat">
+                  <el-option label="QQ" value="1"></el-option>
+                  <el-option label="微信" value="2"></el-option>
+                  <el-option label="电话" value="3"></el-option>
+                </el-select>
+              </el-input>
 
             </div>
 
@@ -184,7 +190,8 @@ export default {
         gender:'',
         userSign:'',
         realName:'',
-        userImage:''
+        userImage:'',
+        callWhat:''
       },
 
       slidermove: 0,
@@ -291,6 +298,7 @@ export default {
       let major = this.user.major
       let realName = this.user.realName
       let call = this.user.call
+      let callWhat = this.user.callWhat
       AV.User.logIn(`${username}`, `${password}`).then(function (loginedUser) {
       loginedUser.set('username',username);
       loginedUser.set('gender',gender);
@@ -299,6 +307,7 @@ export default {
       loginedUser.set('realName',realName);
       loginedUser.set('call',call);
       loginedUser.set('userImage',userImage);
+      loginedUser.set('callWhat',callWhat);
       loginedUser.save();
       $('#userInformation').css('display','none')
       $('#home').css('display','flex')

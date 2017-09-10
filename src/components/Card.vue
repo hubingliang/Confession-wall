@@ -16,10 +16,11 @@
             <div class="user">
               <h1>
                 <span class="username">{{card.username}}
-                  <svg class="icon nan" aria-hidden="true">
+                  
+                  <svg class="card-icon nan" aria-hidden="true" v-if="card.gender === 'man'">
                     <use xlink:href="#icon-nan"></use>
                   </svg>
-                   <svg class="icon nv" aria-hidden="true">
+                   <svg class="card-icon nv" aria-hidden="true" v-else>
                     <use xlink:href="#icon-nv"></use>
                   </svg>
                 </span>
@@ -34,10 +35,10 @@
                 <p>{{card.realName}}</p>
               </div>
               <div class="call">
-                <span>QQ :</span>
-                <p>1104524351</p>
-                <span>微信 :</span>
-                <p>15620688207</p>
+                <span v-if="card.callWhat === '1'">QQ :</span>
+                <span v-else-if="card.callWhat === '2'">微信 :</span>
+                <span v-else="card.callWhat === '3'">电话 :</span>
+                <p>{{card.call}}</p>
               </div>
             </div>
 

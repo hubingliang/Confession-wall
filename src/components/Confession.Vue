@@ -260,10 +260,10 @@ export default {
                         this.card.realName = _User[i].attributes.realName
                         this.card.userImage = _User[i].attributes.userImage
                         this.card.major = _User[i].attributes.major
-                        
+                        this.card.callWhat = _User[i].attributes.callWhat
+                        this.card.call = _User[i].attributes.call
                     }
                 }
-                
             }, function(error){
                 console.error(error) 
             })

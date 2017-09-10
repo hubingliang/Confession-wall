@@ -717,8 +717,8 @@ html .box .home .Confession .dialog .bigItem .user {
   margin-bottom: 10px;
 }
 html .box .home .Confession .dialog .bigItem .user img {
-  height: 30px;
-  width: 30px;
+  height: 35px;
+  width: 35px;
   border-radius: 50%;
 }
 html .box .home .Confession .dialog .bigItem .user .username {
@@ -727,7 +727,7 @@ html .box .home .Confession .dialog .bigItem .user .username {
   flex-direction: column;
 }
 html .box .home .Confession .dialog .bigItem .user .username h4 {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: bold;
 }
 html .box .home .Confession .dialog .bigItem .actions {
@@ -785,6 +785,49 @@ html .box .home .Confession .dialog .bigItem .line {
   border: none;
   border-top: 1px solid #e7eaf1;
   margin: 10px 0;
+}
+html .box .home .Confession .dialog .bigItem .comment-form {
+  margin: 20px 0 ;
+  position: absolute;
+  width: 580px;
+  bottom: 25px;
+  height: 110px;
+}
+html .box .home .Confession .dialog .bigItem .comment-form input {
+  height: 60px;
+}
+html .box .home .Confession .dialog .bigItem .comment-form .upComment {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+}
+html .box .home .Confession .dialog .bigItem .comment-form .emoji-icon {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  left: 5px;
+  bottom: 5px;
+}
+html .box .home .Confession .dialog .bigItem .comment-form .emojiBox {
+  padding: 20px 5px;
+  position: absolute;
+  border: 1px solid red;
+  bottom: 32px;
+  background: white;
+}
+html .box .home .Confession .dialog .bigItem .comment-form .emojiBox .emoji {
+  display: flex;
+  font-size: 0;
+  width: 395px;
+  flex-wrap: wrap;
+}
+html .box .home .Confession .dialog .bigItem .comment-form .emojiBox .emoji img {
+  width: 24px;
+  height: 24px;
+  margin: 1px;
+}
+html .box .home .Confession .dialog .bigItem .comment-form .emojiBox .emoji img:hover {
+  border: 1px solid;
 }
 html .box .home .Confession .dialog .bigItem .comment {
   display: flex;
@@ -874,7 +917,7 @@ html .box .home .Confession .card-wrapper .userCard .user-Information .user h1 .
   font-weight: bold;
   line-height: 30px;
 }
-html .box .home .Confession .card-wrapper .userCard .user-Information .user h1 .icon {
+html .box .home .Confession .card-wrapper .userCard .user-Information .user h1 .card-icon {
   width: 20px;
   height: 20px;
   margin-left: 5px;
@@ -1027,6 +1070,10 @@ html .box .wrapper .userForm form .inputBox .real {
 }
 html .box .wrapper .userForm form .inputBox .real .realName {
   margin-left: 20px;
+}
+html .box .wrapper .userForm form .inputBox .call .el-input {
+  margin-bottom: 0;
+  width: 100px;
 }
 html .box .wrapper .userForm form .inputBox .gender {
   padding-bottom: 20px;
