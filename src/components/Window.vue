@@ -25,15 +25,17 @@
                 <svg class="items-icon" aria-hidden="true">
                     <use xlink:href="#icon-pinglun"></use>
                 </svg>
-                <span class="comment">{{item.commentNumber}} 条评论</span>
+                <span class="comment-number">{{item.commentNumber}} 条评论</span>
             </div>
         </div>
-        <div class="line"></div>
-        <div class="comment">
-          <img src="https://i.loli.net/2017/08/19/5997affaf2cda.jpg"/>
-          <span>Brown</span>
-          <span>:</span>
-          <p>我能吞下玻璃而不伤身体，The quick brown fox jumps over the lazy dog.</p>
+        <div class="comment-box">
+            <div class="comment" v-for="comment in item.comment">
+                <img v-bind:src="comment.userImage"/>
+                <span>{{comment.username}}</span>
+                <span>:</span>
+                <p>{{comment.comment}}</p>
+            </div>
+
         </div>
         <div class="comment-form">
             <el-input
@@ -42,11 +44,11 @@
             placeholder="说点什么？"
             v-model="comment">
             </el-input>
-            <el-button type="primary" class="upComment" @click="convert()">发表</el-button>
-            <svg class="emoji-icon" aria-hidden="true">
+            <el-button type="primary" class="upComment" @click="addComment()">发表</el-button>
+            <svg class="emoji-icon" aria-hidden="true" @click="emojishow = !emojishow">
                 <use xlink:href="#icon-emoji"></use>
             </svg>
-            <div class="emojiBox">
+            <div class="emojiBox" v-show="emojishow">
                 <div class="emoji">
                     <img class="emojione" alt="😄" title=":smile:" src="https://cdn.jsdelivr.net/emojione/assets/3.1/png/32/1f604.png"/>
                     <img class="emojione" alt="❤️" title=":heart:" src="https://cdn.jsdelivr.net/emojione/assets/3.1/png/32/2764.png"/>
@@ -87,11 +89,13 @@
 export default {
     data(){
         return{
-            comment:''
+            comment:'',
+            emojishow:false,
         }
     },
-    props:['item'],
+    props:['item','user'],
     mounted() {
+        this.addEmoji()
     },
     methods:{
         bigImage:function(item){
@@ -129,10 +133,35 @@ export default {
             })
         },
         convert:function(){
-            var input = this.comment
-            console.log(input)
-            var output = emojione.shortnameToImage(input);
-            alert(output);
+           
+        },
+        addEmoji:function(){
+            $('.emoji').children().click((emoji)=> {
+                this.comment = this.comment + emoji.target.alt
+                this.emojishow = false
+            })
+        },
+        addComment:function(){
+            
+            this.item.comment.push(
+                {
+                    username: `${this.user.username}`,
+                    gender: `${this.user.gender}`,
+                    userSign: `${this.user.userSign}`,
+                    realName: `${this.user.realName}`,
+                    major: `${this.user.major}`,
+                    userImage: `${this.user.userImage}`,
+                    comment: `${this.comment}`
+                }
+            )
+            // 第一个参数是 className，第二个参数是 objectId
+            var ConfessionData = AV.Object.createWithoutData('ConfessionData', this.item.id);
+            // 修改属性
+            ConfessionData.set('comment', this.item.comment);
+            // 保存到云端
+            ConfessionData.save();
+            this.comment = ''
+           
         }
     }
 }

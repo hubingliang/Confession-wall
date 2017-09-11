@@ -187,6 +187,7 @@ export default {
             var query = new AV.Query('ConfessionData');
             query.find().then((ConfessionData)=> {  
                 ConfessionData.reverse()
+                console.log(ConfessionData)
                 for(let i=0;i<ConfessionData.length;i++){
                     this.ConfessionData[i] = {
                         username : ConfessionData[i].attributes.username,
@@ -197,6 +198,7 @@ export default {
                         imageUrl : ConfessionData[i].attributes.imageUrl,
                         usersign : ConfessionData[i].attributes.usersign,
                         userImage : ConfessionData[i].attributes.userImage,
+                        id : ConfessionData[i].id
                     }
                 }
             }, function(error){

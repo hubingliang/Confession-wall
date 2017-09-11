@@ -739,6 +739,7 @@ html{
                             margin-top: 10px;
                             margin-left: 10px;
                             height: 30px;
+                            border-bottom: 1px solid #e7eaf1;
                             .good{
                                 display: -webkit-box;
                                 display: -ms-flexbox;
@@ -778,11 +779,6 @@ html{
                                 }
                             }
                         }
-                        .line{
-                            border: none;
-                            border-top: 1px solid #e7eaf1;
-                            margin: 10px 0;
-                        }
                         .comment-form{
                             margin: 20px 0 ;
                             position: absolute;
@@ -807,7 +803,6 @@ html{
                             .emojiBox{
                                 padding: 20px 5px;
                                 position: absolute;
-                                border: 1px solid red;
                                 bottom: 32px;
                                 background: white;
                                 .emoji{
@@ -826,22 +821,28 @@ html{
                                 }
                             }  
                         }
-                        .comment{
-                            display: flex;
-                            align-items: center;
-                            font-size: 13px;
-                            img{
-                                height: 24px;
-                                width: 24px;
-                                border-radius: 50%;
-                            }
-                            span{
-                                margin-left: 5px;
-                            }
-                            p{
-                                margin-left: 5px;
+                        .comment-box{
+                            height: 200px;
+                            overflow: auto;
+                            .comment{
+                                display: flex;
+                                align-items: center;
+                                font-size: 13px;
+                                padding: 10px 0;
+                                img{
+                                    height: 24px;
+                                    width: 24px;
+                                    border-radius: 50%;
+                                }
+                                span{
+                                    margin-left: 5px;
+                                }
+                                p{
+                                    margin-left: 5px;
+                                }
                             }
                         }
+                        
                     }
                 }
  .card-wrapper{
