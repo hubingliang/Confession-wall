@@ -8,35 +8,41 @@
                 <span>{{item.usersign}}</span>
             </div>
         </div>
-        <div class="content">
-            <div class="imgBox">
-                <img class="img" v-for="item in item.imageUrl" v-bind:src="item" v-bind:key="item" @click="bigImage(item)"/>
-            </div>      
-            <p>{{item.content}}</p>
-        </div>
-        <div class="actions">
-            <div class="good">
-                <svg class="items-icon" aria-hidden="true">
-                    <use xlink:href="#icon-dianzan2"></use>
-                </svg>
-                <span class="number">{{item.good}}</span>
+        <div class="content-box">
+            <div class="content">
+                <div class="imgBox">
+                    <img class="img" v-for="item in item.imageUrl" v-bind:src="item" v-bind:key="item" @click="bigImage(item)"/>
+                </div>      
+                <p>{{item.content}}</p>
             </div>
-            <div class="comment-icon">
-                <svg class="items-icon" aria-hidden="true">
-                    <use xlink:href="#icon-pinglun"></use>
-                </svg>
-                <span class="comment-number">{{item.commentNumber}} 条评论</span>
+            <div class="actions">
+                <div class="good">
+                    <svg class="items-icon" aria-hidden="true" @click="good()" v-if="item.good === 0">
+                        <use xlink:href="#icon-dianzan2"></use>
+                    </svg>
+                    <svg class="red-icon" aria-hidden="true" @click="good()" v-else="item.good === 1">
+                        <use xlink:href="#icon-dianzan2"></use>
+                    </svg>
+                    <span class="number">{{item.goodNumber}}</span>
+                </div>
+                <div class="comment-icon">
+                    <svg class="items-icon" aria-hidden="true">
+                        <use xlink:href="#icon-pinglun"></use>
+                    </svg>
+                    <span class="comment-number">{{item.commentNumber}} 条评论</span>
+                </div>
             </div>
-        </div>
-        <div class="comment-box">
-            <div class="comment" v-for="comment in item.comment">
-                <img v-bind:src="comment.userImage"/>
-                <span>{{comment.username}}</span>
-                <span>:</span>
-                <p>{{comment.comment}}</p>
-            </div>
+            <div class="comment-box">
+                <div class="comment" v-for="comment in item.comment">
+                    <img v-bind:src="comment.userImage"/>
+                    <span>{{comment.username}}</span>
+                    <span>:</span>
+                    <p>{{comment.comment}}</p>
+                </div>
 
+            </div>
         </div>
+        
         <div class="comment-form">
             <el-input
             type="textarea"
@@ -137,6 +143,7 @@ export default {
         },
         addEmoji:function(){
             $('.emoji').children().click((emoji)=> {
+                console.log('ss')
                 this.comment = this.comment + emoji.target.alt
                 this.emojishow = false
             })
@@ -162,6 +169,21 @@ export default {
             ConfessionData.save();
             this.comment = ''
            
+        },
+        good:function(){
+            for(let i = 0;i<=this.item.goodUser.length;i++){
+                if(this.item.goodUser[i] === this.user.username){
+                    return
+                }          
+            }
+            
+            this.item.goodUser.push(this.user.username)
+            var ConfessionData = AV.Object.createWithoutData('ConfessionData', this.item.id);
+            // 修改属性
+            ConfessionData.set('good', this.item.good);
+            ConfessionData.set('goodUser', this.item.goodUser);
+            // 保存到云端
+            ConfessionData.save();
         }
     }
 }

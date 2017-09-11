@@ -20,16 +20,19 @@
                         </div>
                         <div class="actions">
                             <div class="good">
-                                <svg class="items-icon" aria-hidden="true">
+                                <svg class="items-icon" aria-hidden="true" @click="good(index)" v-if="item.good === 0">
                                     <use xlink:href="#icon-dianzan2"></use>
                                 </svg>
-                                <span class="number">{{item.good}}</span>
+                                <svg class="red-icon" aria-hidden="true" @click="good(index)" v-else="item.good === 1">
+                                    <use xlink:href="#icon-dianzan2"></use>
+                                </svg>
+                                <span class="number">{{item.goodUser.length}}</span>
                             </div>
                             <div class="comment-icon">
                                 <svg class="items-icon" aria-hidden="true">
                                     <use xlink:href="#icon-pinglun"></use>
                                 </svg>
-                                <span>{{item.commentNumber}} 条评论</span>
+                                <span>{{item.comment.length}} 条评论</span>
                             </div>
                         </div>
                     </div>
@@ -154,6 +157,7 @@ export default {
             var userSign = this.user.userSign
             var content = this.textarea;
             var good = 0;
+            var goodUser = [];
             var comment = [];
             var commentNumber = 0
             var time = new Date()
@@ -170,6 +174,7 @@ export default {
             ConfessionData.set('userImage', userImage);
             ConfessionData.set('content', content);
             ConfessionData.set('good', good);
+            ConfessionData.set('goodUser', goodUser);
             ConfessionData.set('commentNumber', commentNumber);
             ConfessionData.set('comment', comment);
             ConfessionData.set('time', time);
@@ -187,7 +192,6 @@ export default {
             var query = new AV.Query('ConfessionData');
             query.find().then((ConfessionData)=> {  
                 ConfessionData.reverse()
-                console.log(ConfessionData)
                 for(let i=0;i<ConfessionData.length;i++){
                     this.ConfessionData[i] = {
                         username : ConfessionData[i].attributes.username,
@@ -198,16 +202,30 @@ export default {
                         imageUrl : ConfessionData[i].attributes.imageUrl,
                         usersign : ConfessionData[i].attributes.usersign,
                         userImage : ConfessionData[i].attributes.userImage,
-                        id : ConfessionData[i].id
+                        id : ConfessionData[i].id,
+                        goodUser :ConfessionData[i].attributes.goodUser,
+                    }
+                    console.log(this.ConfessionData[i].goodUser.length)
+                    for(let ii = 0;ii < this.ConfessionData[i].goodUser.length;ii++){
+                        if(this.ConfessionData[i].goodUser[ii] === this.user.username){
+                            this.ConfessionData[i].good = 1
+                            break   
+                        }else{
+                            this.ConfessionData[i].good = 0
+                        }
+                         
                     }
                 }
+
             }, function(error){
                 console.error(error) 
             })
-            console.log(this.ConfessionData)
         },
         getIndex:function(index){
             this.item = this.ConfessionData[index]
+            this.item.commentNumber = this.ConfessionData[index].comment.length
+            this.item.goodNumber = this.ConfessionData[index].goodUser.length
+            
         },
         saveImage:function(){
             let imageBox = $('#imageBox')
@@ -253,7 +271,6 @@ export default {
             $('#userCard').css('display','flex')
             var query = new AV.Query('_User');
             query.find().then((_User)=> {  
-                console.log(_User)
                 for(let i = 0;i<_User.length;i++){
                     if(_User[i].attributes.username === username){
                         this.card.username = _User[i].attributes.username
@@ -269,6 +286,22 @@ export default {
             }, function(error){
                 console.error(error) 
             })
+        },
+        good:function(index){
+            for(let i = 0;i<=this.ConfessionData[index].goodUser.length;i++){
+                if(this.ConfessionData[index].goodUser[i] === this.user.username){
+                    return
+                }          
+            }
+            this.ConfessionData[index].good = 1
+            this.ConfessionData[index].goodUser.push(this.user.username)
+            var ConfessionData = AV.Object.createWithoutData('ConfessionData', this.ConfessionData[index].id);
+            // 修改属性
+            ConfessionData.set('good', this.ConfessionData[index].good);
+            ConfessionData.set('goodUser', this.ConfessionData[index].goodUser);
+            // 保存到云端
+            ConfessionData.save();
+            
         }
     }
 }

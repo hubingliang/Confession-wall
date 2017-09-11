@@ -332,7 +332,6 @@ export default {
         this.user.userImage = currentUser.attributes.userImage
         this.user.userSign = currentUser.attributes.userSign
         
-        console.log(currentUser)
       }
       else {
         //currentUser 为空时，可打开用户注册界面…
@@ -341,9 +340,8 @@ export default {
     logOut:function(){
       AV.User.logOut();
       // 现在的 currentUser 是 null 了
-      $('#start').css('display','flex')
-      $('#home').css('display','none')
       var currentUser = AV.User.current();
+      history.go(0) 
     },
     cardClose:function(){
       $('#userCard').css('display','none')

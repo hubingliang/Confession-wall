@@ -504,6 +504,12 @@ html{
                                             width: 15px;
                                             margin-right: 5px;
                                         }
+                                        .red-icon{
+                                            height: 15px;
+                                            fill: red;
+                                            width: 15px;
+                                            margin-right: 5px;
+                                        }
                                         span{
                                             height: 30px;
                                             line-height: 30px;
@@ -678,29 +684,110 @@ html{
                         width: 600px;
                         background: white;
                         padding: 10px;
-                        .content{
-                            .imgBox{
-                                border-top: 1px solid #e7eaf1;
-                                border-bottom: 1px solid #e7eaf1;
-                                background: white;
-                                display: flex;
-                                width: 580px;
-                                max-height: 374px;
-                                overflow: auto;
-                                flex-wrap: wrap;
-                                padding: 10px 0 ;
-                                margin-bottom: 10px; 
-                                img{
-                                    height: 170px;
-                                    display: block;
-                                    border-radius: 2px;
-                                    margin-right: 2px;
-                                    margin-bottom: 2px;
+                        .content-box{
+                            max-height: 470px;
+                            overflow-y: auto;
+                            overflow-x: hidden;
+                            .content{
+                                .imgBox{
+                                    border-bottom: 1px solid #e7eaf1;
+                                    background: white;
+                                    display: flex;
+                                    width: 580px;
+                                    max-height: 374px;
+                                    overflow: auto;
+                                    flex-wrap: wrap;
+                                    padding: 10px 0 ;
+                                    margin-bottom: 10px; 
+                                    img{
+                                        height: 170px;
+                                        display: block;
+                                        border-radius: 2px;
+                                        margin-right: 2px;
+                                        margin-bottom: 2px;
+                                    }
+                                }
+                                p{
+                                    overflow: hidden;
+                                    vertical-align: center;
+                                    line-height: 24px;
                                 }
                             }
-                            p{
-                                overflow: hidden;
-                                vertical-align: center;
+                            .actions{
+                                display: -webkit-box;
+                                display: -ms-flexbox;
+                                display: flex;
+                                -webkit-box-pack: start;
+                                    -ms-flex-pack: start;
+                                        justify-content: flex-start;
+                                -webkit-box-align: center;
+                                    -ms-flex-align: center;
+                                        align-items: center;
+                                margin-top: 10px;
+                                margin-left: 10px;
+                                height: 30px;
+                                border-bottom: 1px solid #e7eaf1;
+                                .good{
+                                    display: -webkit-box;
+                                    display: -ms-flexbox;
+                                    display: flex;
+                                    -webkit-box-align: center;
+                                        -ms-flex-align: center;
+                                            align-items: center;
+                                    margin-right: 20px;
+                                    .items-icon{
+                                        height: 15px;
+                                        fill: #333;
+                                        width: 15px;
+                                        margin-right: 5px;
+                                    }
+                                    .red-icon{
+                                        height: 15px;
+                                        fill: red;
+                                        width: 15px;
+                                        margin-right: 5px;
+                                    }
+                                    span{
+                                        height: 30px;
+                                        line-height: 30px;
+                                    }
+                                }
+                                .comment-icon{
+                                    display: -webkit-box;
+                                    display: -ms-flexbox;
+                                    display: flex;
+                                    -webkit-box-align: center;
+                                        -ms-flex-align: center;
+                                            align-items: center;
+                                    .items-icon{
+                                        height: 15px;
+                                        fill: #333;
+                                        width: 15px;
+                                        margin-right: 5px;
+                                        
+                                    }
+                                    span{
+                                        height: 30px;
+                                        line-height: 30px;
+                                    }
+                                }
+                            }
+                            .comment{
+                                display: flex;
+                                align-items: center;
+                                font-size: 13px;
+                                padding: 10px 0;
+                                img{
+                                    height: 24px;
+                                    width: 24px;
+                                    border-radius: 50%;
+                                }
+                                span{
+                                    margin-left: 5px;
+                                }
+                                p{
+                                    margin-left: 5px;
+                                }
                             }
                         }
                         .user{
@@ -710,7 +797,8 @@ html{
                             -webkit-box-align: center;
                                 -ms-flex-align: center;
                                     align-items: center;
-                            margin-bottom: 10px;
+                            padding-bottom: 10px;
+                            border-bottom: 1px solid #e7eaf1;
                             img{
                                 height: 35px;
                                 width: 35px;
@@ -726,59 +814,7 @@ html{
                                 }
                             }
                         }
-                        .actions{
-                            display: -webkit-box;
-                            display: -ms-flexbox;
-                            display: flex;
-                            -webkit-box-pack: start;
-                                -ms-flex-pack: start;
-                                    justify-content: flex-start;
-                            -webkit-box-align: center;
-                                -ms-flex-align: center;
-                                    align-items: center;
-                            margin-top: 10px;
-                            margin-left: 10px;
-                            height: 30px;
-                            border-bottom: 1px solid #e7eaf1;
-                            .good{
-                                display: -webkit-box;
-                                display: -ms-flexbox;
-                                display: flex;
-                                -webkit-box-align: center;
-                                    -ms-flex-align: center;
-                                        align-items: center;
-                                margin-right: 20px;
-                                .items-icon{
-                                    height: 15px;
-                                    fill: #333;
-                                    width: 15px;
-                                    margin-right: 5px;
-                                }
-                                span{
-                                    height: 30px;
-                                    line-height: 30px;
-                                }
-                            }
-                            .comment-icon{
-                                display: -webkit-box;
-                                display: -ms-flexbox;
-                                display: flex;
-                                -webkit-box-align: center;
-                                    -ms-flex-align: center;
-                                        align-items: center;
-                                .items-icon{
-                                    height: 15px;
-                                    fill: #333;
-                                    width: 15px;
-                                    margin-right: 5px;
-                                    
-                                }
-                                span{
-                                    height: 30px;
-                                    line-height: 30px;
-                                }
-                            }
-                        }
+
                         .comment-form{
                             margin: 20px 0 ;
                             position: absolute;
@@ -821,28 +857,6 @@ html{
                                 }
                             }  
                         }
-                        .comment-box{
-                            height: 200px;
-                            overflow: auto;
-                            .comment{
-                                display: flex;
-                                align-items: center;
-                                font-size: 13px;
-                                padding: 10px 0;
-                                img{
-                                    height: 24px;
-                                    width: 24px;
-                                    border-radius: 50%;
-                                }
-                                span{
-                                    margin-left: 5px;
-                                }
-                                p{
-                                    margin-left: 5px;
-                                }
-                            }
-                        }
-                        
                     }
                 }
  .card-wrapper{
