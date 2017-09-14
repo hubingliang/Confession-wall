@@ -286,16 +286,6 @@ html .box .home .main h1 {
   color: white;
   font-size: 40px;
 }
-html .box .home .main .greet {
-  display: flex;
-  align-items: center;
-}
-html .box .home .main .greet p {
-  color: white;
-  font-size: 20px;
-  margin-top: 20px;
-  margin-left: 10px;
-}
 html .box .home .main .Confessionshow {
   margin-top: 50px;
 }
@@ -1056,6 +1046,19 @@ html .box .wrapper .userForm form {
   height: 390px;
   border-radius: 10px;
 }
+@keyframes spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
+html .box .wrapper .userForm form .icon-loading {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 65px;
+  left: 25px;
+  animation: spin 3s linear infinite;
+}
 html .box .wrapper .userForm form .upImage {
   opacity: 0;
   width: 150px;
@@ -1067,6 +1070,24 @@ html .box .wrapper .userForm form .userImage {
   width: 150px;
   height: 150px;
   margin-top: 40px;
+}
+html .box .wrapper .userForm form .imageBox {
+  width: 150px;
+  height: 150px;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #333;
+}
+html .box .wrapper .userForm form .imageBox p {
+  font-size: 24px;
+}
+html .box .wrapper .userForm form .imageBox .icon-updata {
+  margin-top: 20px;
+  width: 40px;
+  height: 40px;
 }
 html .box .wrapper .userForm form .inputBox {
   width: 600px;

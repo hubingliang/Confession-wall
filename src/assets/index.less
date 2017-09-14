@@ -280,16 +280,6 @@ html{
                     font-size: 40px;
                     
                 }
-                .greet{
-                    display: flex;
-                    align-items: center;
-                    p{
-                        color: white;
-                        font-size: 20px;
-                        margin-top: 20px;
-                        margin-left: 10px;
-                    }
-                }
                 .Confessionshow{
                     margin-top: 50px;
                 }
@@ -1055,6 +1045,19 @@ html{
                     position: relative;
                     height: 390px;
                     border-radius: 10px;
+                    @keyframes spin {
+                        to{
+                            transform: rotate(1turn);
+                        }
+                    }
+                    .icon-loading{
+                        position: absolute;
+                        width: 100px;
+                        height: 100px;
+                        top: 65px;
+                        left: 25px;
+                        animation: spin 3s linear infinite;
+                    }
                     .upImage{
                         opacity: 0;
                         width: 150px;
@@ -1066,6 +1069,24 @@ html{
                         width: 150px;
                         height: 150px;
                         margin-top: 40px;
+                    }
+                    .imageBox{
+                        width: 150px;
+                        height: 150px;
+                        margin-top: 40px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        border: 1px solid #333;
+                        p{
+                            font-size: 24px;
+                        }
+                        .icon-updata{
+                            margin-top: 20px;
+                            width: 40px;
+                            height: 40px;
+                        }
                     }
                     .inputBox{
                         width: 600px;

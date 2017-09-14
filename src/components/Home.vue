@@ -59,8 +59,17 @@
             </div>
           </div>
           <form class="user-form">
+            <svg class="icon-loading" aria-hidden="true" v-show="loadingshow">
+                <use xlink:href="#icon-loading"></use>
+            </svg>
             <input class="upImage" type="file" id="userImage"/>
-            <img src="https://i.loli.net/2017/09/09/59b381b067f3b.jpg" alt="" class="userImage">
+            <img class="userImage" src="" v-show="userImageshow" />
+            <div class="imageBox" v-show="imageBoxshow">
+              <p>上传你的头像</p>
+              <svg class="icon-updata" aria-hidden="true">
+                <use xlink:href="#icon-updata"></use>
+              </svg>
+            </div>
             <div class="inputBox">
               <div class="username">{{this.user.username}}</div>
               <div class="gender">
@@ -120,9 +129,6 @@
             <use xlink:href="#icon-xin"></use>
         </svg>
         <h1>天农，表白，墙</h1>
-        <div class="greet">
-          <p>你好 </p><p id="username"></p>
-        </div>
       </div>
       
       <footer class="footer animated fadeInUp">
@@ -184,6 +190,9 @@ export default {
       formshow: false,
       wrappershow: false,
       userCardshow: false,
+      loadingshow: false,
+      userImageshow: false,
+      imageBoxshow: true,
 
       user:{
         username:'',
@@ -191,7 +200,8 @@ export default {
         userSign:'',
         realName:'',
         userImage:'',
-        callWhat:''
+        callWhat:'',
+        call:''
       },
 
       slidermove: 0,
@@ -275,6 +285,9 @@ export default {
           this.user.userImage = file.url()
           let url = file.url()
           $('.userImage').attr('src',`${url}`)
+          this.loadingshow = false
+          this.userImageshow = true
+          this.imageBoxshow = false
         }, function(error) {
           // 异常处理
           console.error(error);
@@ -286,12 +299,17 @@ export default {
     },
     showImage:function(){
       $('#userImage').change(()=> {
-          this.userImage()
+        this.loadingshow = true
+        this.userImage()
       });
     },
     save:function(){
       var username = $('#inputUsername').val();
       var password = $('#inputPassword').val();
+      if(this.user.userImage === ''|| this.user.gender === '' || this.user.userSign === '' || this.user.major === ''|| this.user.realName === '' || this.user.call === '' || this.user.callWhat === ''){
+        alert('未填写完全')
+        return
+      }  
       let userImage = this.user.userImage
       let gender = this.user.gender
       let userSign = this.user.userSign
@@ -299,6 +317,7 @@ export default {
       let realName = this.user.realName
       let call = this.user.call
       let callWhat = this.user.callWhat
+      
       AV.User.logIn(`${username}`, `${password}`).then(function (loginedUser) {
       loginedUser.set('username',username);
       loginedUser.set('gender',gender);
