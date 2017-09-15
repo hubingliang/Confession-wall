@@ -138,12 +138,8 @@ export default {
                 wrapper.remove()
             })
         },
-        convert:function(){
-           
-        },
         addEmoji:function(){
             $('.emoji').children().click((emoji)=> {
-                console.log('ss')
                 this.comment = this.comment + emoji.target.alt
                 this.emojishow = false
             })

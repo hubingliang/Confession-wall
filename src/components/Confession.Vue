@@ -167,7 +167,6 @@ export default {
                 let src = this.src
                 imageUrl.push(src)
             })
-            
             var ConfessionData = new ConfessionData();
             ConfessionData.set('username', username);
             ConfessionData.set('usersign', userSign);
@@ -189,11 +188,12 @@ export default {
             });
         },
         read:function(){
+            this.ConfessionData = []
             var query = new AV.Query('ConfessionData');
             query.find().then((ConfessionData)=> {  
                 ConfessionData.reverse()
                 for(let i=0;i<ConfessionData.length;i++){
-                    this.ConfessionData[i] = {
+                    this.ConfessionData.push({
                         username : ConfessionData[i].attributes.username,
                         content : ConfessionData[i].attributes.content,
                         good : ConfessionData[i].attributes.good,
@@ -204,8 +204,7 @@ export default {
                         userImage : ConfessionData[i].attributes.userImage,
                         id : ConfessionData[i].id,
                         goodUser :ConfessionData[i].attributes.goodUser,
-                    }
-                    console.log(this.ConfessionData[i].goodUser.length)
+                    })
                     for(let ii = 0;ii < this.ConfessionData[i].goodUser.length;ii++){
                         if(this.ConfessionData[i].goodUser[ii] === this.user.username){
                             this.ConfessionData[i].good = 1
@@ -216,7 +215,6 @@ export default {
                          
                     }
                 }
-
             }, function(error){
                 console.error(error) 
             })
