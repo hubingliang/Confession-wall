@@ -75,6 +75,11 @@ html{
                     padding: 20px;
                     border-radius: 4px 0 0 4px;
                     align-items: center;
+                    .registerClose{
+                        position: absolute;
+                        left: 20px;
+                        top: 10px;
+                    }
                     h1{
                         font-weight: normal;
                         margin: 20px 0;
@@ -111,6 +116,11 @@ html{
                     flex-direction: column;
                     padding: 20px;
                     align-items: center;
+                    .loginClose{
+                        position: absolute;
+                        top: 10px;
+                        right: 20px;
+                    }
                     h1{
                         font-weight: normal;
                         margin: 20px 0;
@@ -633,8 +643,6 @@ html{
                                 justify-content: center;
                                 align-items: center;
                                 overflow: hidden;
-                                img{
-                                }
                             }
                         }
                         .submit{
@@ -849,138 +857,139 @@ html{
                         }
                     }
                 }
- .card-wrapper{
-            position: absolute;
-            top: 0;
-            right: 0;
-            left: 0;
-            bottom: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 20;
-            display: none;
-            .userCard{
-                background: white;
-                border: 1px solid ;
-                width: 850px;
-                height: 480px;
-                position: absolute;
-                padding: 40px;
-                border-radius: 10px;
-                position: relative;
-                .logo{
-                    display: flex;
-                    align-items: center;
-                    color: #333;
-                    .card-icon{
-                        height: 50px;
-                        width: 50px;
-                        margin-right: 20px;
-                        fill: #333;
-                    }
-                    div{
-                        max-width: 225px;
-                        display: flex;
-                        justify-content: center;
-                        flex-wrap: wrap;
-                        p{
-                            color: #333;
-                            font-size: 16px;
-                        }
-                    }
-                }
-                .user-Information{
-                    display: flex;
-                    flex-direction: row;
-                    position: relative;
-                    height: 390px;
-                    .userImage{
-                        width: 150px;
-                        height: 150px;
-                        margin-top: 40px;
-                    }
-                    .user{
-                        width: 600px;
-                        margin-top: 40px;
-                        margin-left: 40px;
-                        font-size: 18px;
-                        h1{
-                            display: flex;
-                            flex-direction: column;
-                            border-bottom: 1px solid #e6e6e6;
-                            padding-bottom: 20px;
-                            .username{
-                                padding-bottom: 10px;
-                                font-size: 30px;
-                                font-weight: bold;
-                                line-height: 30px;
-                            }
-                            .card-icon{
-                                width: 20px;
-                                height: 20px;
-                                margin-left: 5px;
-                            }
-                            .nan{
-                                fill: rgb(0, 50, 203);
-                            }
-                            .nv{
-                                fill: rgb(247, 108, 108);
-                            }
-                            .usersign{
-                                font-size: 18px;
-                                font-weight: 400;
-                            }
-                        }
-                        .major{
-                            display: flex;
-                            padding: 20px 0;
-                            align-items: center;
-                            border-bottom: 1px solid #e6e6e6;
-                            span{
-                                width: 60px;
-                                margin-right: 20px;
-                                font-weight: 700;
-                            }
-                        }
-                        .realName{
-                            display: flex;
-                            padding: 20px 0;
-                            align-items: center;
-                            border-bottom: 1px solid #e6e6e6;
-                            span{
-                                width: 60px;
-                                margin-right: 20px;
-                                font-weight: 700;
-                            }
-                        }
-                        .call{
-                            display: flex;
-                            padding: 20px 0;
-                            align-items: center;
-                            border-bottom: 1px solid #e6e6e6;
-                            span{
-                                width: 60px;
-                                margin-right: 20px;
-                                font-weight: 700;
-                            }
-                            p{
-                                margin-right: 20px;
-                                width: 230px;
-                            }
-                        }
-                        .call{
-                            padding: 20px 0 ;
-                        }
-                    }
-                }
-                .cardClose{
+                .card-wrapper{
                     position: absolute;
-                    right: 40px;
-                    top: 40px;
+                    top: 0;
+                    right: 0;
+                    left: 0;
+                    bottom: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    z-index: 20;
+                    display: none;
+                    .userCard{
+                        background: white;
+                        border: 1px solid ;
+                        width: 850px;
+                        height: 480px;
+                        position: absolute;
+                        padding: 40px;
+                        border-radius: 10px;
+                        position: relative;
+                        box-shadow: 0 0 0 999px rgba(0,0,0,.8);
+                        .logo{
+                            display: flex;
+                            align-items: center;
+                            color: #333;
+                            .card-icon{
+                                height: 50px;
+                                width: 50px;
+                                margin-right: 20px;
+                                fill: #333;
+                            }
+                            div{
+                                max-width: 225px;
+                                display: flex;
+                                justify-content: center;
+                                flex-wrap: wrap;
+                                p{
+                                    color: #333;
+                                    font-size: 16px;
+                                }
+                            }
+                        }
+                        .user-Information{
+                            display: flex;
+                            flex-direction: row;
+                            position: relative;
+                            height: 390px;
+                            .userImage{
+                                width: 150px;
+                                height: 150px;
+                                margin-top: 40px;
+                            }
+                            .user{
+                                width: 600px;
+                                margin-top: 40px;
+                                margin-left: 40px;
+                                font-size: 18px;
+                                h1{
+                                    display: flex;
+                                    flex-direction: column;
+                                    border-bottom: 1px solid #e6e6e6;
+                                    padding-bottom: 20px;
+                                    .username{
+                                        padding-bottom: 10px;
+                                        font-size: 30px;
+                                        font-weight: bold;
+                                        line-height: 30px;
+                                    }
+                                    .card-icon{
+                                        width: 20px;
+                                        height: 20px;
+                                        margin-left: 5px;
+                                    }
+                                    .nan{
+                                        fill: rgb(0, 50, 203);
+                                    }
+                                    .nv{
+                                        fill: rgb(247, 108, 108);
+                                    }
+                                    .usersign{
+                                        font-size: 18px;
+                                        font-weight: 400;
+                                    }
+                                }
+                                .major{
+                                    display: flex;
+                                    padding: 20px 0;
+                                    align-items: center;
+                                    border-bottom: 1px solid #e6e6e6;
+                                    span{
+                                        width: 60px;
+                                        margin-right: 20px;
+                                        font-weight: 700;
+                                    }
+                                }
+                                .realName{
+                                    display: flex;
+                                    padding: 20px 0;
+                                    align-items: center;
+                                    border-bottom: 1px solid #e6e6e6;
+                                    span{
+                                        width: 60px;
+                                        margin-right: 20px;
+                                        font-weight: 700;
+                                    }
+                                }
+                                .call{
+                                    display: flex;
+                                    padding: 20px 0;
+                                    align-items: center;
+                                    border-bottom: 1px solid #e6e6e6;
+                                    span{
+                                        width: 60px;
+                                        margin-right: 20px;
+                                        font-weight: 700;
+                                    }
+                                    p{
+                                        margin-right: 20px;
+                                        width: 230px;
+                                    }
+                                }
+                                .call{
+                                    padding: 20px 0 ;
+                                }
+                            }
+                        }
+                        .cardClose{
+                            position: absolute;
+                            right: 40px;
+                            top: 40px;
+                        }
+                    }
                 }
-            }
-        }
             }
             .Lost{
                 background: white;
@@ -1132,6 +1141,7 @@ html{
                 padding: 40px;
                 border-radius: 10px;
                 position: relative;
+                
                 .logo{
                     display: flex;
                     align-items: center;

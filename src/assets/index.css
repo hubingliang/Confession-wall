@@ -81,6 +81,11 @@ html .box .start .form .register {
   border-radius: 4px 0 0 4px;
   align-items: center;
 }
+html .box .start .form .register .registerClose {
+  position: absolute;
+  left: 20px;
+  top: 10px;
+}
 html .box .start .form .register h1 {
   font-weight: normal;
   margin: 20px 0;
@@ -116,6 +121,11 @@ html .box .start .form .login {
   flex-direction: column;
   padding: 20px;
   align-items: center;
+}
+html .box .start .form .login .loginClose {
+  position: absolute;
+  top: 10px;
+  right: 20px;
 }
 html .box .start .form .login h1 {
   font-weight: normal;
@@ -870,6 +880,7 @@ html .box .home .Confession .card-wrapper .userCard {
   padding: 40px;
   border-radius: 10px;
   position: relative;
+  box-shadow: 0 0 0 999px rgba(0, 0, 0, 0.8);
 }
 html .box .home .Confession .card-wrapper .userCard .logo {
   display: flex;

@@ -15,6 +15,7 @@
       <transition name="el-fade-in">
         <div class="form" v-show="formshow">
           <div class="register">
+            <el-button class="registerClose" type="text" @click="formshow = false"><i class="el-icon-close"></i></el-button>
             <h1>注册</h1>
             <p>在墙上闲扯</p>
             <form class="register-form" autocomplete="off">
@@ -25,6 +26,7 @@
             </form>
           </div>
           <div class="login">
+            <el-button class="loginClose" type="text" @click="formshow = false"><i class="el-icon-close"></i></el-button>
               <h1>登录</h1>
               <p>在墙上分享你的</p>
               <form class="login-form" autocomplete="off">
