@@ -8,7 +8,7 @@
         <p class="animated bounce">Confession Wall</p>
       </div>
       <div class="main-button">
-        <el-button class="Confessionshow animated bounce" @click="formshow = !formshow">登 录</el-button>
+        <el-button class="Confessionshow animated bounce" @click="formshow = !formshow,moveBack()">登 录</el-button>
         <el-button class="Confessionshow animated bounce" @click="formshow = !formshow,move()">注 册</el-button>
       </div>
 
@@ -298,6 +298,9 @@ export default {
     },
     move:function(){
       $('#slider').css('transform',`translateX(400px)`)
+    },
+    moveBack:function(){
+      $('#slider').css('transform',`translateX(0px)`)
     },
     showImage:function(){
       $('#userImage').change(()=> {

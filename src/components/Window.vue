@@ -35,9 +35,9 @@
             <div class="comment-box">
                 <div class="comment" v-for="comment in item.comment">
                     <img v-bind:src="comment.userImage"/>
-                    <span>{{comment.username}}</span>
-                    <span>:</span>
-                    <p>{{comment.comment}}</p>
+                    <span class="comment-username">{{comment.username}}</span>
+                    <span>：</span>
+                    <p v-html="comment.comment"></p>
                 </div>
 
             </div>
@@ -140,12 +140,12 @@ export default {
         },
         addEmoji:function(){
             $('.emoji').children().click((emoji)=> {
-                this.comment = this.comment + emoji.target.alt
+                this.comment = this.comment + ' ' + emoji.target.alt　+　' '
                 this.emojishow = false
             })
         },
         addComment:function(){
-            
+            this.comment = emojione.toImage(this.comment)
             this.item.comment.push(
                 {
                     username: `${this.user.username}`,
@@ -180,6 +180,12 @@ export default {
             ConfessionData.set('goodUser', this.item.goodUser);
             // 保存到云端
             ConfessionData.save();
+        },
+        handleComment:function(){
+            for(let i = 0;i<item.comment.length;i ++){
+                item.comment[i].comment = emojione.toImage(item.comment[i].comment)
+                document.getElementById('outputText').innerHTML = item.comment[i].comment;
+            }
         }
     }
 }

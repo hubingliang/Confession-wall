@@ -775,6 +775,7 @@ html .box .home .Confession .dialog .bigItem .content-box .actions .comment-icon
 html .box .home .Confession .dialog .bigItem .content-box .actions .comment-icon span {
   height: 30px;
   line-height: 30px;
+  font-size: 13px;
 }
 html .box .home .Confession .dialog .bigItem .content-box .comment {
   display: flex;
@@ -783,15 +784,21 @@ html .box .home .Confession .dialog .bigItem .content-box .comment {
   padding: 10px 0;
 }
 html .box .home .Confession .dialog .bigItem .content-box .comment img {
-  height: 24px;
-  width: 24px;
+  height: 30px;
+  width: 30px;
   border-radius: 50%;
 }
 html .box .home .Confession .dialog .bigItem .content-box .comment span {
-  margin-left: 5px;
+  margin-left: 10px;
+  font-size: 13px;
 }
-html .box .home .Confession .dialog .bigItem .content-box .comment p {
-  margin-left: 5px;
+html .box .home .Confession .dialog .bigItem .content-box .comment .comment-username {
+  margin-left: 8px;
+  font-size: 13px;
+}
+html .box .home .Confession .dialog .bigItem .content-box .comment p img {
+  width: 24px;
+  height: 24px;
 }
 html .box .home .Confession .dialog .bigItem .user {
   display: -webkit-box;
@@ -804,18 +811,25 @@ html .box .home .Confession .dialog .bigItem .user {
   border-bottom: 1px solid #e7eaf1;
 }
 html .box .home .Confession .dialog .bigItem .user img {
-  height: 35px;
-  width: 35px;
+  height: 50px;
+  width: 50px;
   border-radius: 50%;
 }
 html .box .home .Confession .dialog .bigItem .user .username {
   margin-left: 10px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 html .box .home .Confession .dialog .bigItem .user .username h4 {
   font-size: 16px;
   font-weight: bold;
+  line-height: 20px;
+  height: 20px;
+  margin-bottom: 5px;
+}
+html .box .home .Confession .dialog .bigItem .user .username span {
+  height: 20px;
 }
 html .box .home .Confession .dialog .bigItem .comment-form {
   margin: 20px 0 ;

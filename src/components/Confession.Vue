@@ -192,7 +192,7 @@ export default {
             var query = new AV.Query('ConfessionData');
             query.find().then((ConfessionData)=> {  
                 ConfessionData.reverse()
-                for(let i=0;i<ConfessionData.length;i++){
+                for(let i=0;i<ConfessionData.length;i++){ 
                     this.ConfessionData.push({
                         username : ConfessionData[i].attributes.username,
                         content : ConfessionData[i].attributes.content,
@@ -211,9 +211,9 @@ export default {
                             break   
                         }else{
                             this.ConfessionData[i].good = 0
-                        }
-                         
+                        } 
                     }
+
                 }
             }, function(error){
                 console.error(error) 
