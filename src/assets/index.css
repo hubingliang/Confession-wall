@@ -454,6 +454,7 @@ html .box .home .Confession .view .Confession-box .items .item .content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding-top: 5px;
 }
 html .box .home .Confession .view .Confession-box .items .item .content img {
   height: 160px;
@@ -466,6 +467,12 @@ html .box .home .Confession .view .Confession-box .items .item .content p {
   height: 160px;
   overflow: hidden;
 }
+html .box .home .Confession .view .Confession-box .items .item .content p img {
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  display: inline-block;
+}
 html .box .home .Confession .view .Confession-box .items .item .user {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -473,7 +480,9 @@ html .box .home .Confession .view .Confession-box .items .item .user {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin-bottom: 10px;
+  padding-bottom: 5px;
+  position: relative;
+  border-bottom: 1px solid #e7eaf1;
 }
 html .box .home .Confession .view .Confession-box .items .item .user img {
   height: 40px;
@@ -488,6 +497,10 @@ html .box .home .Confession .view .Confession-box .items .item .user .username {
 html .box .home .Confession .view .Confession-box .items .item .user .username h4 {
   font-size: 15px;
   font-weight: bold;
+}
+html .box .home .Confession .view .Confession-box .items .item .user .date {
+  position: absolute;
+  right: 0;
 }
 html .box .home .Confession .view .Confession-box .items .item .actions {
   display: -webkit-box;
@@ -659,12 +672,36 @@ html .box .home .Confession .wrapper .editor .submit {
   display: flex;
   flex-direction: row-reverse;
   background: white;
+  position: relative;
 }
-html .box .home .Confession .dialog-close {
+html .box .home .Confession .wrapper .editor .submit .emoji-icon {
   position: absolute;
-  top: 35px;
-  left: 1010px;
-  z-index: 4;
+  top: 20px;
+  left: 24px;
+  width: 24px;
+  height: 24px;
+}
+html .box .home .Confession .wrapper .editor .submit .emojiBox {
+  padding: 20px 5px;
+  position: absolute;
+  bottom: 48px;
+  left: 24px;
+  background: white;
+  border: 1px solid;
+}
+html .box .home .Confession .wrapper .editor .submit .emojiBox .emoji {
+  display: flex;
+  font-size: 0;
+  width: 395px;
+  flex-wrap: wrap;
+}
+html .box .home .Confession .wrapper .editor .submit .emojiBox .emoji img {
+  width: 24px;
+  height: 24px;
+  margin: 1px;
+}
+html .box .home .Confession .wrapper .editor .submit .emojiBox .emoji img:hover {
+  border: 1px solid;
 }
 html .box .home .Confession .dialog {
   position: fixed;
@@ -683,15 +720,23 @@ html .box .home .Confession .dialog {
   -ms-flex-align: center;
   align-items: center;
   background: rgba(205, 205, 205, 0.5);
+  display: none;
 }
 html .box .home .Confession .dialog .bigItem {
   height: 650px;
   width: 600px;
   background: white;
   padding: 10px;
+  position: relative;
+}
+html .box .home .Confession .dialog .bigItem .dialog-close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  z-index: 4;
 }
 html .box .home .Confession .dialog .bigItem .content-box {
-  max-height: 470px;
+  max-height: 440px;
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -832,11 +877,13 @@ html .box .home .Confession .dialog .bigItem .user .username span {
   height: 20px;
 }
 html .box .home .Confession .dialog .bigItem .comment-form {
-  margin: 20px 0 ;
+  border-top: 1px solid #e7eaf1;
+  padding: 10px 0 ;
   position: absolute;
   width: 580px;
-  bottom: 25px;
-  height: 110px;
+  bottom: 10px;
+  height: 130px;
+  background: white;
 }
 html .box .home .Confession .dialog .bigItem .comment-form input {
   height: 60px;
@@ -858,6 +905,7 @@ html .box .home .Confession .dialog .bigItem .comment-form .emojiBox {
   position: absolute;
   bottom: 32px;
   background: white;
+  border: 1px solid;
 }
 html .box .home .Confession .dialog .bigItem .comment-form .emojiBox .emoji {
   display: flex;

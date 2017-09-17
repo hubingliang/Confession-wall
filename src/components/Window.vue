@@ -1,6 +1,7 @@
 <template>
-  <div class="dialog">
+  <div class="dialog animated fadeIn" id="window">
     <div class="bigItem">
+        <el-button class="dialog-close" type="text"><i class="el-icon-close" @click="hidden()"></i></el-button>
         <div class="user">
             <img v-bind:src="item.userImage"/>
             <div class="username">
@@ -13,7 +14,7 @@
                 <div class="imgBox">
                     <img class="img" v-for="item in item.imageUrl" v-bind:src="item" v-bind:key="item" @click="bigImage(item)"/>
                 </div>      
-                <p>{{item.content}}</p>
+                <p v-html="item.content"></p>
             </div>
             <div class="actions">
                 <div class="good" @click="good()">
@@ -23,7 +24,7 @@
                     <svg class="red-icon" aria-hidden="true" @click="good()" v-else="item.good === 1">
                         <use xlink:href="#icon-dianzan2"></use>
                     </svg>
-                    <span class="number">{{item.goodUser.length}}</span>
+                    <span class="number">{{item.good}}</span>
                 </div>
                 <div class="comment-icon">
                     <svg class="items-icon" aria-hidden="true">
@@ -192,6 +193,9 @@ export default {
             // 保存到云端
             ConfessionData.save();
             
+        },
+        hidden:function(){
+            $('#window').css('display','none')
         }
     }
 }

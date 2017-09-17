@@ -443,6 +443,7 @@ html{
                                     display: -webkit-box;
                                     display: -ms-flexbox;
                                     display: flex;
+                                    padding-top: 5px;
                                     img{
                                         height: 160px;
                                         display: block;
@@ -453,6 +454,12 @@ html{
                                         line-height: 1.67;
                                         height: 160px;
                                         overflow: hidden;
+                                        img{
+                                            width: 24px;
+                                            height: 24px;
+                                            margin: 0;
+                                            display: inline-block;
+                                        }
                                     }
                                 }
                                 .user{
@@ -462,7 +469,9 @@ html{
                                     -webkit-box-align: center;
                                         -ms-flex-align: center;
                                             align-items: center;
-                                    margin-bottom: 10px;
+                                    padding-bottom: 5px;
+                                    position: relative;
+                                    border-bottom: 1px solid #e7eaf1;
                                     img{
                                         height: 40px;
                                         width: 40px;
@@ -476,6 +485,10 @@ html{
                                             font-size: 15px;
                                             font-weight: bold;
                                         }
+                                    }
+                                    .date{
+                                        position: absolute;
+                                        right: 0;
                                     }
                                 }
                                 .actions{
@@ -651,16 +664,41 @@ html{
                             display: flex;
                             flex-direction: row-reverse;
                             background: white;
+                            position: relative;
+                            .emoji-icon{
+                                position: absolute;
+                                top: 20px;
+                                left: 24px;
+                                width: 24px;
+                                height: 24px;
+                            }
+                            .emojiBox{
+                                padding: 20px 5px;
+                                position: absolute;
+                                bottom: 48px;
+                                left: 24px;
+                                background: white;
+                                border: 1px solid;
+                                .emoji{
+                                    display: flex;
+                                    font-size: 0;
+                                    width: 395px;
+                                    flex-wrap: wrap;
+                                    img{
+                                        width: 24px;
+                                        height: 24px;
+                                        margin: 1px;
+                                    }
+                                    img:hover{
+                                        border: 1px solid;
+                                    }
+                                }
+                            } 
                         }
                     }
                 }
-                .dialog-close{
-                    position: absolute;
-                    top: 35px;
-                    left: 1010px;
-                    z-index: 4;
-                }
                 .dialog{
+
                     position: fixed;
                     left: 0;
                     top: 0;
@@ -677,13 +715,21 @@ html{
                         -ms-flex-align: center;
                             align-items: center;
                     background: rgba(205, 205, 205, 0.5);
+                    display: none;
                     .bigItem{
                         height: 650px;
                         width: 600px;
                         background: white;
                         padding: 10px;
+                        position: relative;
+                        .dialog-close{
+                            position: absolute;
+                            top: 10px;
+                            right: 20px;
+                            z-index: 4;
+                        }
                         .content-box{
-                            max-height: 470px;
+                            max-height: 440px;
                             overflow-y: auto;
                             overflow-x: hidden;
                             .content{
@@ -830,11 +876,13 @@ html{
                         }
 
                         .comment-form{
-                            margin: 20px 0 ;
+                            border-top: 1px solid #e7eaf1;
+                            padding: 10px 0 ;
                             position: absolute;
                             width: 580px;
-                            bottom: 25px;
-                            height: 110px;
+                            bottom: 10px;
+                            height: 130px;
+                            background: white;
                             input{
                                 height: 60px;
                             }
@@ -855,6 +903,7 @@ html{
                                 position: absolute;
                                 bottom: 32px;
                                 background: white;
+                                border: 1px solid;
                                 .emoji{
                                     display: flex;
                                     font-size: 0;
