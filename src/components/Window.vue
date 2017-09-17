@@ -16,14 +16,14 @@
                 <p>{{item.content}}</p>
             </div>
             <div class="actions">
-                <div class="good">
+                <div class="good" @click="good()">
                     <svg class="items-icon" aria-hidden="true" @click="good()" v-if="item.good === 0">
                         <use xlink:href="#icon-dianzan2"></use>
                     </svg>
                     <svg class="red-icon" aria-hidden="true" @click="good()" v-else="item.good === 1">
                         <use xlink:href="#icon-dianzan2"></use>
                     </svg>
-                    <span class="number">{{item.goodNumber}}</span>
+                    <span class="number">{{item.goodUser.length}}</span>
                 </div>
                 <div class="comment-icon">
                     <svg class="items-icon" aria-hidden="true">
@@ -176,6 +176,22 @@ export default {
                     $(this).html(converted);
                 });
             });
+        },
+        good:function(){
+            for(let i = 0;i<=this.item.goodUser.length;i++){
+                if(this.item.goodUser[i] === this.user.username){
+                    return
+                }          
+            }
+            this.item.good = 1
+            this.item.goodUser.push(this.user.username)
+            var ConfessionData = AV.Object.createWithoutData('ConfessionData', this.item.id);
+            // 修改属性
+            ConfessionData.set('good', this.item.good);
+            ConfessionData.set('goodUser', this.item.goodUser);
+            // 保存到云端
+            ConfessionData.save();
+            
         }
     }
 }
