@@ -251,7 +251,7 @@ export default {
                 var fileUploadControl = $('#photoFileUpload')[0];
                 if (fileUploadControl.files.length > 0) {
                     var localFile = fileUploadControl.files[0];
-                    var name = 'avatar.jpg';
+                    var name = 'ConfessionImage.jpg';
 
                     var file = new AV.File(name, localFile);
                     file.save().then((file)=> {
