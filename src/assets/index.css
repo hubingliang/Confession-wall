@@ -40,11 +40,18 @@ html .box .start {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   position: relative;
 }
 html .box .start .icon-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 html .box .start .icon {
@@ -69,20 +76,31 @@ html .box .start .main-button button {
 }
 html .box .start .form {
   position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
 html .box .start .form .register {
   width: 400px;
   height: 535px;
   background: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   padding: 20px;
   border-radius: 4px 0 0 4px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 html .box .start .form .register .registerClose {
@@ -100,7 +118,12 @@ html .box .start .form .register p {
   margin: 10px 0;
 }
 html .box .start .form .register .register-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 html .box .start .form .register .register-form input {
@@ -121,9 +144,16 @@ html .box .start .form .login {
   width: 400px;
   height: 535px;
   background: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   padding: 20px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 html .box .start .form .login .loginClose {
@@ -141,7 +171,12 @@ html .box .start .form .login p {
   margin: 10px 0;
 }
 html .box .start .form .login .login-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 html .box .start .form .login .login-form input {
@@ -162,9 +197,17 @@ html .box .start .form .slider {
   width: 400px;
   height: 535px;
   background: #f76c6c;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-transform: translateX(0px);
   transform: translateX(0px);
   border-radius: 4px;
 }
@@ -399,6 +442,7 @@ html .box .home .Confession .icon {
   width: 3em;
   height: 3em;
   border-radius: 50%;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   padding: 10px;
   left: calc(48.5%);
@@ -444,6 +488,8 @@ html .box .home .Confession .view .Confession-box .items {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 html .box .home .Confession .view .Confession-box .items .item {
@@ -499,7 +545,12 @@ html .box .home .Confession .view .Confession-box .items .item .user img {
 }
 html .box .home .Confession .view .Confession-box .items .item .user .username {
   margin-left: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 html .box .home .Confession .view .Confession-box .items .item .user .username h4 {
@@ -573,13 +624,20 @@ html .box .home .Confession #wrapper {
   left: 0;
   bottom: 0;
   background: rgba(205, 205, 205, 0.5);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   z-index: 20;
 }
 html .box .home .Confession #wrapper #imgBox {
   padding: 40px;
+  -webkit-perspective: 1000px;
   perspective: 1000px;
 }
 html .box .home .Confession #wrapper #imgBox img {
@@ -593,14 +651,21 @@ html .box .home .Confession .wrapper {
   left: 0;
   bottom: 0;
   background: rgba(205, 205, 205, 0.5);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 html .box .home .Confession .wrapper .editor {
   position: absolute;
   left: 50%;
   top: 50%;
+  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   width: 700px;
   background: white;
@@ -612,7 +677,11 @@ html .box .home .Confession .wrapper .editor .editor-close {
 }
 html .box .home .Confession .wrapper .editor .user {
   padding: 16px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 html .box .home .Confession .wrapper .editor .user img {
@@ -628,7 +697,11 @@ html .box .home .Confession .wrapper .editor .editable {
   border-bottom: 1px solid #e7eaf1;
   width: 700px;
   height: 42px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 html .box .home .Confession .wrapper .editor .editable .editable-icon {
@@ -661,10 +734,13 @@ html .box .home .Confession .wrapper .editor .imageBox {
   border-bottom: 1px solid #e7eaf1;
   background: white;
   padding: 12px 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 700px;
   max-height: 374px;
   overflow: auto;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 html .box .home .Confession .wrapper .editor .imageBox .image-item {
@@ -672,15 +748,26 @@ html .box .home .Confession .wrapper .editor .imageBox .image-item {
   width: 185px;
   margin-right: 2px;
   margin-bottom: 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   overflow: hidden;
 }
 html .box .home .Confession .wrapper .editor .submit {
   padding: 12px 24px;
   height: 64px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: row-reverse;
   flex-direction: row-reverse;
   background: white;
   position: relative;
@@ -701,9 +788,12 @@ html .box .home .Confession .wrapper .editor .submit .emojiBox {
   border: 1px solid;
 }
 html .box .home .Confession .wrapper .editor .submit .emojiBox .emoji {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   font-size: 0;
   width: 395px;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 html .box .home .Confession .wrapper .editor .submit .emojiBox .emoji img {
@@ -741,6 +831,7 @@ html .box .home .Confession .dialog .bigItem {
   position: absolute;
   left: 50%;
   top: 50%;
+  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
 html .box .home .Confession .dialog .bigItem .dialog-close {
@@ -757,10 +848,13 @@ html .box .home .Confession .dialog .bigItem .content-box {
 html .box .home .Confession .dialog .bigItem .content-box .content .imgBox {
   border-bottom: 1px solid #e7eaf1;
   background: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 580px;
   max-height: 374px;
   overflow: auto;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   padding: 10px 0 ;
   margin-bottom: 10px;
@@ -838,7 +932,11 @@ html .box .home .Confession .dialog .bigItem .content-box .actions .comment-icon
   font-size: 13px;
 }
 html .box .home .Confession .dialog .bigItem .content-box .comment {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   font-size: 13px;
   padding: 10px 0;
@@ -877,8 +975,15 @@ html .box .home .Confession .dialog .bigItem .user img {
 }
 html .box .home .Confession .dialog .bigItem .user .username {
   margin-left: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 html .box .home .Confession .dialog .bigItem .user .username h4 {
@@ -923,9 +1028,12 @@ html .box .home .Confession .dialog .bigItem .comment-form .emojiBox {
   border: 1px solid;
 }
 html .box .home .Confession .dialog .bigItem .comment-form .emojiBox .emoji {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   font-size: 0;
   width: 395px;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 html .box .home .Confession .dialog .bigItem .comment-form .emojiBox .emoji img {
@@ -942,8 +1050,14 @@ html .box .home .Confession .card-wrapper {
   right: 0;
   left: 0;
   bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   z-index: 20;
   display: none;
@@ -957,10 +1071,15 @@ html .box .home .Confession .card-wrapper .userCard {
   padding: 40px;
   border-radius: 10px;
   position: relative;
+  -webkit-box-shadow: 0 0 0 999px rgba(0, 0, 0, 0.8);
   box-shadow: 0 0 0 999px rgba(0, 0, 0, 0.8);
 }
 html .box .home .Confession .card-wrapper .userCard .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   color: #333;
 }
@@ -972,8 +1091,13 @@ html .box .home .Confession .card-wrapper .userCard .logo .card-icon {
 }
 html .box .home .Confession .card-wrapper .userCard .logo div {
   max-width: 225px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 html .box .home .Confession .card-wrapper .userCard .logo div p {
@@ -981,7 +1105,12 @@ html .box .home .Confession .card-wrapper .userCard .logo div p {
   font-size: 16px;
 }
 html .box .home .Confession .card-wrapper .userCard .user-Information {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
   flex-direction: row;
   position: relative;
   height: 390px;
@@ -998,7 +1127,12 @@ html .box .home .Confession .card-wrapper .userCard .user-Information .user {
   font-size: 18px;
 }
 html .box .home .Confession .card-wrapper .userCard .user-Information .user h1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   border-bottom: 1px solid #e6e6e6;
   padding-bottom: 20px;
@@ -1025,8 +1159,12 @@ html .box .home .Confession .card-wrapper .userCard .user-Information .user h1 .
   font-weight: 400;
 }
 html .box .home .Confession .card-wrapper .userCard .user-Information .user .major {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding: 20px 0;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   border-bottom: 1px solid #e6e6e6;
 }
@@ -1036,8 +1174,12 @@ html .box .home .Confession .card-wrapper .userCard .user-Information .user .maj
   font-weight: 700;
 }
 html .box .home .Confession .card-wrapper .userCard .user-Information .user .realName {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding: 20px 0;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   border-bottom: 1px solid #e6e6e6;
 }
@@ -1047,8 +1189,12 @@ html .box .home .Confession .card-wrapper .userCard .user-Information .user .rea
   font-weight: 700;
 }
 html .box .home .Confession .card-wrapper .userCard .user-Information .user .call {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding: 20px 0;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   border-bottom: 1px solid #e6e6e6;
 }
@@ -1094,8 +1240,14 @@ html .box .wrapper {
   left: 0;
   bottom: 0;
   background: #333;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   z-index: 20;
 }
@@ -1107,7 +1259,11 @@ html .box .wrapper .userForm {
   padding: 40px;
 }
 html .box .wrapper .userForm .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   color: #333;
 }
@@ -1119,8 +1275,13 @@ html .box .wrapper .userForm .logo .icon {
 }
 html .box .wrapper .userForm .logo div {
   max-width: 225px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 html .box .wrapper .userForm .logo div p {
@@ -1128,14 +1289,26 @@ html .box .wrapper .userForm .logo div p {
   font-size: 16px;
 }
 html .box .wrapper .userForm form {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
   flex-direction: row;
   position: relative;
   height: 390px;
   border-radius: 10px;
 }
+@-webkit-keyframes spin {
+  to {
+    -webkit-transform: rotate(1turn);
+    transform: rotate(1turn);
+  }
+}
 @keyframes spin {
   to {
+    -webkit-transform: rotate(1turn);
     transform: rotate(1turn);
   }
 }
@@ -1145,6 +1318,7 @@ html .box .wrapper .userForm form .icon-loading {
   height: 100px;
   top: 65px;
   left: 25px;
+  -webkit-animation: spin 3s linear infinite;
   animation: spin 3s linear infinite;
 }
 html .box .wrapper .userForm form .upImage {
@@ -1163,9 +1337,18 @@ html .box .wrapper .userForm form .imageBox {
   width: 150px;
   height: 150px;
   margin-top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   border: 1px solid #333;
 }
@@ -1189,6 +1372,8 @@ html .box .wrapper .userForm form .inputBox .username {
   line-height: 30px;
 }
 html .box .wrapper .userForm form .inputBox .real {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 html .box .wrapper .userForm form .inputBox .real .realName {
@@ -1219,7 +1404,11 @@ html .box .wrapper .userCard {
   position: relative;
 }
 html .box .wrapper .userCard .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   color: #333;
 }
@@ -1231,8 +1420,13 @@ html .box .wrapper .userCard .logo .icon {
 }
 html .box .wrapper .userCard .logo div {
   max-width: 225px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 html .box .wrapper .userCard .logo div p {
@@ -1240,7 +1434,12 @@ html .box .wrapper .userCard .logo div p {
   font-size: 16px;
 }
 html .box .wrapper .userCard .user-Information {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
   flex-direction: row;
   position: relative;
   height: 390px;
@@ -1257,7 +1456,12 @@ html .box .wrapper .userCard .user-Information .user {
   font-size: 18px;
 }
 html .box .wrapper .userCard .user-Information .user h1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   border-bottom: 1px solid #e6e6e6;
   padding-bottom: 20px;
@@ -1284,8 +1488,12 @@ html .box .wrapper .userCard .user-Information .user h1 .usersign {
   font-weight: 400;
 }
 html .box .wrapper .userCard .user-Information .user .major {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding: 20px 0;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   border-bottom: 1px solid #e6e6e6;
 }
@@ -1295,8 +1503,12 @@ html .box .wrapper .userCard .user-Information .user .major span {
   font-weight: 700;
 }
 html .box .wrapper .userCard .user-Information .user .realName {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding: 20px 0;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   border-bottom: 1px solid #e6e6e6;
 }
@@ -1306,8 +1518,12 @@ html .box .wrapper .userCard .user-Information .user .realName span {
   font-weight: 700;
 }
 html .box .wrapper .userCard .user-Information .user .call {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding: 20px 0;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   border-bottom: 1px solid #e6e6e6;
 }

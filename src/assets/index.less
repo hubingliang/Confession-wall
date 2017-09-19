@@ -38,11 +38,18 @@ html{
             -webkit-box-align: center;
                 -ms-flex-align: center;
                     align-items: center;
-            flex-direction: column;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
             position: relative;
             .icon-box{
+                display: -webkit-box;
+                display: -ms-flexbox;
                 display: flex;
-                align-items: center;
+                -webkit-box-align: center;
+                    -ms-flex-align: center;
+                        align-items: center;
             }
             .icon{
                 width: 5em; height: 5em;
@@ -65,20 +72,31 @@ html{
             }
             .form{
                 position: absolute;
+                display: -webkit-box;
+                display: -ms-flexbox;
                 display: flex;
-                box-shadow: 0 1px 3px rgba(0,0,0,.1);
+                -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.1);
+                        box-shadow: 0 1px 3px rgba(0,0,0,.1);
                 top: 50%;
                 left: 50%;
-                transform: translate(-50%,-50%);
+                -webkit-transform: translate(-50%,-50%);
+                        transform: translate(-50%,-50%);
                 .register{
                     width: 400px;
                     height: 535px;
                     background: white;
+                    display: -webkit-box;
+                    display: -ms-flexbox;
                     display: flex;
-                    flex-direction: column;
+                    -webkit-box-orient: vertical;
+                    -webkit-box-direction: normal;
+                        -ms-flex-direction: column;
+                            flex-direction: column;
                     padding: 20px;
                     border-radius: 4px 0 0 4px;
-                    align-items: center;
+                    -webkit-box-align: center;
+                        -ms-flex-align: center;
+                            align-items: center;
                     .registerClose{
                         position: absolute;
                         left: 20px;
@@ -94,8 +112,13 @@ html{
                         margin: 10px 0;
                     }
                     .register-form{
+                        display: -webkit-box;
+                        display: -ms-flexbox;
                         display: flex;
-                        flex-direction: column;
+                        -webkit-box-orient: vertical;
+                        -webkit-box-direction: normal;
+                            -ms-flex-direction: column;
+                                flex-direction: column;
                         input{
                             margin: 20px 0;
                             outline: none;
@@ -116,10 +139,17 @@ html{
                     width: 400px;
                     height: 535px;
                     background: white;
+                    display: -webkit-box;
+                    display: -ms-flexbox;
                     display: flex;
-                    flex-direction: column;
+                    -webkit-box-orient: vertical;
+                    -webkit-box-direction: normal;
+                        -ms-flex-direction: column;
+                            flex-direction: column;
                     padding: 20px;
-                    align-items: center;
+                    -webkit-box-align: center;
+                        -ms-flex-align: center;
+                            align-items: center;
                     .loginClose{
                         position: absolute;
                         top: 10px;
@@ -135,8 +165,13 @@ html{
                         margin: 10px 0;
                     }
                     .login-form{
+                        display: -webkit-box;
+                        display: -ms-flexbox;
                         display: flex;
-                        flex-direction: column;
+                        -webkit-box-orient: vertical;
+                        -webkit-box-direction: normal;
+                            -ms-flex-direction: column;
+                                flex-direction: column;
                         input{
                             margin: 20px 0;
                             outline: none;
@@ -157,10 +192,18 @@ html{
                     width: 400px;
                     height: 535px;
                     background: rgb(247, 108, 108);
+                    display: -webkit-box;
+                    display: -ms-flexbox;
                     display: flex;
-                    align-items: center;
-                    flex-direction: column;
-                    transform: translateX(0px);
+                    -webkit-box-align: center;
+                        -ms-flex-align: center;
+                            align-items: center;
+                    -webkit-box-orient: vertical;
+                    -webkit-box-direction: normal;
+                        -ms-flex-direction: column;
+                            flex-direction: column;
+                    -webkit-transform: translateX(0px);
+                            transform: translateX(0px);
                     border-radius: 4px;
                     .icon{
                         width: 110px;
@@ -392,7 +435,8 @@ html{
                     width: 3em;
                     height: 3em;
                     border-radius: 50%;
-                    box-shadow: 0 1px 3px rgba(0,0,0,.1);
+                    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.1);
+                            box-shadow: 0 1px 3px rgba(0,0,0,.1);
                     padding: 10px;
                     left: calc(50%-1.5em);
                 }
@@ -435,7 +479,9 @@ html{
                             -webkit-box-pack: justify;
                                 -ms-flex-pack: justify;
                                     justify-content: space-between;
-                            align-items: center;
+                            -webkit-box-align: center;
+                                -ms-flex-align: center;
+                                    align-items: center;
                             .item{
                                 width: 590px;
                                 height: 255px;
@@ -487,8 +533,13 @@ html{
                                     }
                                     .username{
                                         margin-left: 10px;
+                                        display: -webkit-box;
+                                        display: -ms-flexbox;
                                         display: flex;
-                                        flex-direction: column;
+                                        -webkit-box-orient: vertical;
+                                        -webkit-box-direction: normal;
+                                            -ms-flex-direction: column;
+                                                flex-direction: column;
                                         h4{
                                             font-size: 15px;
                                             font-weight: bold;
@@ -567,13 +618,20 @@ html{
                     left: 0;
                     bottom: 0;
                     background: rgba(205, 205, 205, 0.5);
+                    display: -webkit-box;
+                    display: -ms-flexbox;
                     display: flex;
-                    justify-content: center;
-                    align-items: center;
+                    -webkit-box-pack: center;
+                        -ms-flex-pack: center;
+                            justify-content: center;
+                    -webkit-box-align: center;
+                        -ms-flex-align: center;
+                            align-items: center;
                     z-index: 20;
                     #imgBox{
                         padding: 40px;
-                        perspective: 1000px;
+                        -webkit-perspective: 1000px;
+                                perspective: 1000px;
                         img{
                             max-height: 700px;
                             min-height: 400px;
@@ -587,14 +645,21 @@ html{
                     left: 0;
                     bottom: 0;
                     background: rgba(205, 205, 205, 0.5);
+                    display: -webkit-box;
+                    display: -ms-flexbox;
                     display: flex;
-                    justify-content: center;
-                    align-items: center;
+                    -webkit-box-pack: center;
+                        -ms-flex-pack: center;
+                            justify-content: center;
+                    -webkit-box-align: center;
+                        -ms-flex-align: center;
+                            align-items: center;
                     .editor{
                         position: absolute;
                         left: 50%;
                         top: 50%;
-                        transform: translate(-50%,-50%);
+                        -webkit-transform: translate(-50%,-50%);
+                                transform: translate(-50%,-50%);
                         width: 700px;
                         background: white;
                         .editor-close{
@@ -604,8 +669,12 @@ html{
                         }
                         .user{
                             padding: 16px 20px;
+                            display: -webkit-box;
+                            display: -ms-flexbox;
                             display: flex;
-                            align-items: center;
+                            -webkit-box-align: center;
+                                -ms-flex-align: center;
+                                    align-items: center;
                             img{
                                 height: 40px;
                                 width: 40px;
@@ -620,8 +689,12 @@ html{
                             border-bottom: 1px solid #e7eaf1;
                             width: 700px;
                             height: 42px;
+                            display: -webkit-box;
+                            display: -ms-flexbox;
                             display: flex;
-                            align-items: center;
+                            -webkit-box-align: center;
+                                -ms-flex-align: center;
+                                    align-items: center;
                             .editable-icon{
                                 fill: #9fadc7;
                                 width: 25px;
@@ -653,27 +726,41 @@ html{
                             border-bottom: 1px solid #e7eaf1;
                             background: white;
                             padding: 12px 60px;
+                            display: -webkit-box;
+                            display: -ms-flexbox;
                             display: flex;
                             width: 700px;
                             max-height: 374px;
                             overflow: auto;
-                            flex-wrap: wrap;
+                            -ms-flex-wrap: wrap;
+                                flex-wrap: wrap;
                             .image-item{
                                 height: 185px;
                                 width: 185px;
                                 margin-right: 2px;
                                 margin-bottom: 2px;
+                                display: -webkit-box;
+                                display: -ms-flexbox;
                                 display: flex;
-                                justify-content: center;
-                                align-items: center;
+                                -webkit-box-pack: center;
+                                    -ms-flex-pack: center;
+                                        justify-content: center;
+                                -webkit-box-align: center;
+                                    -ms-flex-align: center;
+                                        align-items: center;
                                 overflow: hidden;
                             }
                         }
                         .submit{
                             padding: 12px 24px;
                             height: 64px;
+                            display: -webkit-box;
+                            display: -ms-flexbox;
                             display: flex;
-                            flex-direction: row-reverse;
+                            -webkit-box-orient: horizontal;
+                            -webkit-box-direction: reverse;
+                                -ms-flex-direction: row-reverse;
+                                    flex-direction: row-reverse;
                             background: white;
                             position: relative;
                             .emoji-icon{
@@ -691,10 +778,13 @@ html{
                                 background: white;
                                 border: 1px solid;
                                 .emoji{
+                                    display: -webkit-box;
+                                    display: -ms-flexbox;
                                     display: flex;
                                     font-size: 0;
                                     width: 395px;
-                                    flex-wrap: wrap;
+                                    -ms-flex-wrap: wrap;
+                                        flex-wrap: wrap;
                                     img{
                                         width: 24px;
                                         height: 24px;
@@ -734,7 +824,8 @@ html{
                         position: absolute;
                         left: 50%;
                         top: 50%;
-                        transform: translate(-50%,-50%);
+                        -webkit-transform: translate(-50%,-50%);
+                                transform: translate(-50%,-50%);
                         .dialog-close{
                             position: absolute;
                             top: 10px;
@@ -749,11 +840,14 @@ html{
                                 .imgBox{
                                     border-bottom: 1px solid #e7eaf1;
                                     background: white;
+                                    display: -webkit-box;
+                                    display: -ms-flexbox;
                                     display: flex;
                                     width: 580px;
                                     max-height: 374px;
                                     overflow: auto;
-                                    flex-wrap: wrap;
+                                    -ms-flex-wrap: wrap;
+                                        flex-wrap: wrap;
                                     padding: 10px 0 ;
                                     margin-bottom: 10px; 
                                     img{
@@ -832,8 +926,12 @@ html{
                                 }
                             }
                             .comment{
+                                display: -webkit-box;
+                                display: -ms-flexbox;
                                 display: flex;
-                                align-items: center;
+                                -webkit-box-align: center;
+                                    -ms-flex-align: center;
+                                        align-items: center;
                                 font-size: 13px;
                                 padding: 10px 0;
                                 img{
@@ -873,9 +971,16 @@ html{
                             }
                             .username{
                                 margin-left: 10px;
+                                display: -webkit-box;
+                                display: -ms-flexbox;
                                 display: flex;
-                                flex-direction: column;
-                                justify-content: center;
+                                -webkit-box-orient: vertical;
+                                -webkit-box-direction: normal;
+                                    -ms-flex-direction: column;
+                                        flex-direction: column;
+                                -webkit-box-pack: center;
+                                    -ms-flex-pack: center;
+                                        justify-content: center;
                                 h4{
                                     font-size: 16px;
                                     font-weight: bold;
@@ -919,10 +1024,13 @@ html{
                                 background: white;
                                 border: 1px solid;
                                 .emoji{
+                                    display: -webkit-box;
+                                    display: -ms-flexbox;
                                     display: flex;
                                     font-size: 0;
                                     width: 395px;
-                                    flex-wrap: wrap;
+                                    -ms-flex-wrap: wrap;
+                                        flex-wrap: wrap;
                                     img{
                                         width: 24px;
                                         height: 24px;
@@ -942,9 +1050,15 @@ html{
                     right: 0;
                     left: 0;
                     bottom: 0;
+                    display: -webkit-box;
+                    display: -ms-flexbox;
                     display: flex;
-                    justify-content: center;
-                    align-items: center;
+                    -webkit-box-pack: center;
+                        -ms-flex-pack: center;
+                            justify-content: center;
+                    -webkit-box-align: center;
+                        -ms-flex-align: center;
+                            align-items: center;
                     z-index: 20;
                     display: none;
                     .userCard{
@@ -956,10 +1070,15 @@ html{
                         padding: 40px;
                         border-radius: 10px;
                         position: relative;
-                        box-shadow: 0 0 0 999px rgba(0,0,0,.8);
+                        -webkit-box-shadow: 0 0 0 999px rgba(0,0,0,.8);
+                                box-shadow: 0 0 0 999px rgba(0,0,0,.8);
                         .logo{
+                            display: -webkit-box;
+                            display: -ms-flexbox;
                             display: flex;
-                            align-items: center;
+                            -webkit-box-align: center;
+                                -ms-flex-align: center;
+                                    align-items: center;
                             color: #333;
                             .card-icon{
                                 height: 50px;
@@ -969,9 +1088,14 @@ html{
                             }
                             div{
                                 max-width: 225px;
+                                display: -webkit-box;
+                                display: -ms-flexbox;
                                 display: flex;
-                                justify-content: center;
-                                flex-wrap: wrap;
+                                -webkit-box-pack: center;
+                                    -ms-flex-pack: center;
+                                        justify-content: center;
+                                -ms-flex-wrap: wrap;
+                                    flex-wrap: wrap;
                                 p{
                                     color: #333;
                                     font-size: 16px;
@@ -979,8 +1103,13 @@ html{
                             }
                         }
                         .user-Information{
+                            display: -webkit-box;
+                            display: -ms-flexbox;
                             display: flex;
-                            flex-direction: row;
+                            -webkit-box-orient: horizontal;
+                            -webkit-box-direction: normal;
+                                -ms-flex-direction: row;
+                                    flex-direction: row;
                             position: relative;
                             height: 390px;
                             .userImage{
@@ -994,8 +1123,13 @@ html{
                                 margin-left: 40px;
                                 font-size: 18px;
                                 h1{
+                                    display: -webkit-box;
+                                    display: -ms-flexbox;
                                     display: flex;
-                                    flex-direction: column;
+                                    -webkit-box-orient: vertical;
+                                    -webkit-box-direction: normal;
+                                        -ms-flex-direction: column;
+                                            flex-direction: column;
                                     border-bottom: 1px solid #e6e6e6;
                                     padding-bottom: 20px;
                                     .username{
@@ -1021,9 +1155,13 @@ html{
                                     }
                                 }
                                 .major{
+                                    display: -webkit-box;
+                                    display: -ms-flexbox;
                                     display: flex;
                                     padding: 20px 0;
-                                    align-items: center;
+                                    -webkit-box-align: center;
+                                        -ms-flex-align: center;
+                                            align-items: center;
                                     border-bottom: 1px solid #e6e6e6;
                                     span{
                                         width: 60px;
@@ -1032,9 +1170,13 @@ html{
                                     }
                                 }
                                 .realName{
+                                    display: -webkit-box;
+                                    display: -ms-flexbox;
                                     display: flex;
                                     padding: 20px 0;
-                                    align-items: center;
+                                    -webkit-box-align: center;
+                                        -ms-flex-align: center;
+                                            align-items: center;
                                     border-bottom: 1px solid #e6e6e6;
                                     span{
                                         width: 60px;
@@ -1043,9 +1185,13 @@ html{
                                     }
                                 }
                                 .call{
+                                    display: -webkit-box;
+                                    display: -ms-flexbox;
                                     display: flex;
                                     padding: 20px 0;
-                                    align-items: center;
+                                    -webkit-box-align: center;
+                                        -ms-flex-align: center;
+                                            align-items: center;
                                     border-bottom: 1px solid #e6e6e6;
                                     span{
                                         width: 60px;
@@ -1096,9 +1242,15 @@ html{
             left: 0;
             bottom: 0;
             background: #333;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            justify-content: center;
-            align-items: center;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
             z-index: 20;
             .userForm{
                 background: white;
@@ -1107,8 +1259,12 @@ html{
                 position: absolute;
                 padding: 40px;
                 .logo{
+                    display: -webkit-box;
+                    display: -ms-flexbox;
                     display: flex;
-                    align-items: center;
+                    -webkit-box-align: center;
+                        -ms-flex-align: center;
+                            align-items: center;
                     color: #333;
                     .icon{
                         height: 50px;
@@ -1118,9 +1274,14 @@ html{
                     }
                     div{
                         max-width: 225px;
+                        display: -webkit-box;
+                        display: -ms-flexbox;
                         display: flex;
-                        justify-content: center;
-                        flex-wrap: wrap;
+                        -webkit-box-pack: center;
+                            -ms-flex-pack: center;
+                                justify-content: center;
+                        -ms-flex-wrap: wrap;
+                            flex-wrap: wrap;
                         p{
                             color: #333;
                             font-size: 16px;
@@ -1128,14 +1289,26 @@ html{
                     }
                 }
                 form{
+                    display: -webkit-box;
+                    display: -ms-flexbox;
                     display: flex;
-                    flex-direction: row;
+                    -webkit-box-orient: horizontal;
+                    -webkit-box-direction: normal;
+                        -ms-flex-direction: row;
+                            flex-direction: row;
                     position: relative;
                     height: 390px;
                     border-radius: 10px;
+                    @-webkit-keyframes spin {
+                        to{
+                            -webkit-transform: rotate(1turn);
+                                    transform: rotate(1turn);
+                        }
+                    }
                     @keyframes spin {
                         to{
-                            transform: rotate(1turn);
+                            -webkit-transform: rotate(1turn);
+                                    transform: rotate(1turn);
                         }
                     }
                     .icon-loading{
@@ -1144,7 +1317,8 @@ html{
                         height: 100px;
                         top: 65px;
                         left: 25px;
-                        animation: spin 3s linear infinite;
+                        -webkit-animation: spin 3s linear infinite;
+                                animation: spin 3s linear infinite;
                     }
                     .upImage{
                         opacity: 0;
@@ -1162,10 +1336,19 @@ html{
                         width: 150px;
                         height: 150px;
                         margin-top: 40px;
+                        display: -webkit-box;
+                        display: -ms-flexbox;
                         display: flex;
-                        flex-direction: column;
-                        justify-content: center;
-                        align-items: center;
+                        -webkit-box-orient: vertical;
+                        -webkit-box-direction: normal;
+                            -ms-flex-direction: column;
+                                flex-direction: column;
+                        -webkit-box-pack: center;
+                            -ms-flex-pack: center;
+                                justify-content: center;
+                        -webkit-box-align: center;
+                            -ms-flex-align: center;
+                                align-items: center;
                         border: 1px solid #333;
                         p{
                             font-size: 24px;
@@ -1187,6 +1370,8 @@ html{
                             line-height: 30px;
                         }
                         .real{
+                            display: -webkit-box;
+                            display: -ms-flexbox;
                             display: flex;
                             .realName{
                                 margin-left: 20px;
@@ -1222,8 +1407,12 @@ html{
                 position: relative;
                 
                 .logo{
+                    display: -webkit-box;
+                    display: -ms-flexbox;
                     display: flex;
-                    align-items: center;
+                    -webkit-box-align: center;
+                        -ms-flex-align: center;
+                            align-items: center;
                     color: #333;
                     .icon{
                         height: 50px;
@@ -1233,9 +1422,14 @@ html{
                     }
                     div{
                         max-width: 225px;
+                        display: -webkit-box;
+                        display: -ms-flexbox;
                         display: flex;
-                        justify-content: center;
-                        flex-wrap: wrap;
+                        -webkit-box-pack: center;
+                            -ms-flex-pack: center;
+                                justify-content: center;
+                        -ms-flex-wrap: wrap;
+                            flex-wrap: wrap;
                         p{
                             color: #333;
                             font-size: 16px;
@@ -1243,8 +1437,13 @@ html{
                     }
                 }
                 .user-Information{
+                    display: -webkit-box;
+                    display: -ms-flexbox;
                     display: flex;
-                    flex-direction: row;
+                    -webkit-box-orient: horizontal;
+                    -webkit-box-direction: normal;
+                        -ms-flex-direction: row;
+                            flex-direction: row;
                     position: relative;
                     height: 390px;
                     .userImage{
@@ -1258,8 +1457,13 @@ html{
                         margin-left: 40px;
                         font-size: 18px;
                         h1{
+                            display: -webkit-box;
+                            display: -ms-flexbox;
                             display: flex;
-                            flex-direction: column;
+                            -webkit-box-orient: vertical;
+                            -webkit-box-direction: normal;
+                                -ms-flex-direction: column;
+                                    flex-direction: column;
                             border-bottom: 1px solid #e6e6e6;
                             padding-bottom: 20px;
                             .username{
@@ -1285,9 +1489,13 @@ html{
                             }
                         }
                         .major{
+                            display: -webkit-box;
+                            display: -ms-flexbox;
                             display: flex;
                             padding: 20px 0;
-                            align-items: center;
+                            -webkit-box-align: center;
+                                -ms-flex-align: center;
+                                    align-items: center;
                             border-bottom: 1px solid #e6e6e6;
                             span{
                                 width: 60px;
@@ -1296,9 +1504,13 @@ html{
                             }
                         }
                         .realName{
+                            display: -webkit-box;
+                            display: -ms-flexbox;
                             display: flex;
                             padding: 20px 0;
-                            align-items: center;
+                            -webkit-box-align: center;
+                                -ms-flex-align: center;
+                                    align-items: center;
                             border-bottom: 1px solid #e6e6e6;
                             span{
                                 width: 60px;
@@ -1307,9 +1519,13 @@ html{
                             }
                         }
                         .call{
+                            display: -webkit-box;
+                            display: -ms-flexbox;
                             display: flex;
                             padding: 20px 0;
-                            align-items: center;
+                            -webkit-box-align: center;
+                                -ms-flex-align: center;
+                                    align-items: center;
                             border-bottom: 1px solid #e6e6e6;
                             span{
                                 width: 60px;
