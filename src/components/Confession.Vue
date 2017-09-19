@@ -17,7 +17,7 @@
                                 <img class="img" v-bind:src="item.imageUrl[0]"/>
                             </div>
                             
-                            <p v-html="item.content"></p>
+                            <pre v-html="item.content"></pre>
                         </div>
                         <div class="actions">
                             <div class="good">

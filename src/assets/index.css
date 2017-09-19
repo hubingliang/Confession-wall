@@ -462,12 +462,13 @@ html .box .home .Confession .view .Confession-box .items .item .content img {
   border-radius: 2px;
   margin-right: 18px;
 }
-html .box .home .Confession .view .Confession-box .items .item .content p {
-  line-height: 1.67;
+html .box .home .Confession .view .Confession-box .items .item .content pre {
+  line-height: 1.5;
   height: 160px;
   overflow: hidden;
+  font-size: 15px;
 }
-html .box .home .Confession .view .Confession-box .items .item .content p img {
+html .box .home .Confession .view .Confession-box .items .item .content pre img {
   width: 24px;
   height: 24px;
   margin: 0;

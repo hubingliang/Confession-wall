@@ -14,7 +14,7 @@
                 <div class="imgBox">
                     <img class="img" v-for="item in item.imageUrl" v-bind:src="item" v-bind:key="item" @click="bigImage(item)"/>
                 </div>      
-                <p v-html="item.content"></p>
+                <pre v-html="item.content"></pre>
             </div>
             <div class="actions">
                 <div class="good" @click="good()">
