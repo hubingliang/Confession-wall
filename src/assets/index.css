@@ -9,6 +9,7 @@ html {
 }
 html .box {
   width: 100vw;
+  height: 100vh;
   background: #0032cb;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -70,6 +71,9 @@ html .box .start .form {
   position: absolute;
   display: flex;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 html .box .start .form .register {
   width: 400px;
@@ -382,9 +386,11 @@ html .box .home .Confession {
 html .box .home .Confession .el-icon-arrow-right {
   position: absolute;
   right: 40px;
+  top: 50%;
 }
 html .box .home .Confession .el-icon-arrow-left {
   position: absolute;
+  top: 50%;
   left: 40px;
 }
 html .box .home .Confession .icon {
@@ -593,6 +599,9 @@ html .box .home .Confession .wrapper {
 }
 html .box .home .Confession .wrapper .editor {
   position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   width: 700px;
   background: white;
 }
@@ -729,7 +738,10 @@ html .box .home .Confession .dialog .bigItem {
   width: 600px;
   background: white;
   padding: 10px;
-  position: relative;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 html .box .home .Confession .dialog .bigItem .dialog-close {
   position: absolute;

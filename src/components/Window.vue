@@ -1,7 +1,7 @@
 <template>
   <div class="dialog animated fadeIn" id="window">
     <div class="bigItem">
-        <el-button class="dialog-close" type="text"><i class="el-icon-close" @click="hidden()"></i></el-button>
+        <el-button class="dialog-close" type="text" @click="hidden()"><i class="el-icon-close" @click="hidden()"></i></el-button>
         <div class="user">
             <img v-bind:src="item.userImage"/>
             <div class="username">
@@ -49,6 +49,7 @@
             type="textarea"
             :rows="2"
             placeholder="说点什么？"
+            resize="none"
             v-model="comment">
             </el-input>
             <el-button type="primary" class="upComment" @click="addComment()">发表</el-button>
@@ -195,6 +196,7 @@ export default {
             
         },
         hidden:function(){
+            console.log('sss')
             $('#window').css('display','none')
         }
     }

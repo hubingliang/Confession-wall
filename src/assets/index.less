@@ -8,6 +8,7 @@ html{
     font-family: -apple-system, "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Source Han Sans CN", "Source Han Sans SC", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
     .box{
         width: 100vw;
+        height: 100vh;
         background: rgb(0, 50, 203);
         display: -webkit-box;
         display: -ms-flexbox;
@@ -66,6 +67,9 @@ html{
                 position: absolute;
                 display: flex;
                 box-shadow: 0 1px 3px rgba(0,0,0,.1);
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
                 .register{
                     width: 400px;
                     height: 535px;
@@ -375,9 +379,11 @@ html{
                 .el-icon-arrow-right{
                     position: absolute;
                     right: 40px;
+                    top: 50%;
                 }
                 .el-icon-arrow-left{
                     position: absolute;
+                    top: 50%;
                     left: 40px;
                 }
                 .icon{
@@ -586,6 +592,9 @@ html{
                     align-items: center;
                     .editor{
                         position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%,-50%);
                         width: 700px;
                         background: white;
                         .editor-close{
@@ -700,7 +709,6 @@ html{
                     }
                 }
                 .dialog{
-
                     position: fixed;
                     left: 0;
                     top: 0;
@@ -723,7 +731,10 @@ html{
                         width: 600px;
                         background: white;
                         padding: 10px;
-                        position: relative;
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%,-50%);
                         .dialog-close{
                             position: absolute;
                             top: 10px;

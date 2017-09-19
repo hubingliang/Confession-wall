@@ -56,7 +56,7 @@
         <transition name="el-fade-in">
             <div class="wrapper" v-show="editorshow">
                 <div class="editor">
-                    <el-button class="editor-close" type="text"><i class="el-icon-close" @click="editorshow = false"></i></el-button>
+                    <el-button class="editor-close" type="text" @click="editorshow = false"><i class="el-icon-close" @click="editorshow = false"></i></el-button>
                     <div class="user">
                         <img v-bind:src="user.userImage"/>
                         <div class="username">
