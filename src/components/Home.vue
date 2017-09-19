@@ -19,9 +19,11 @@
             <h1>注册</h1>
             <p>在墙上闲扯</p>
             <form class="register-form" autocomplete="off">
-                  <input type="text"placeholder="用户名"id="inputUsername">
-                  <input type="password"placeholder="密码"id="inputPassword">
-                  <input type="text"placeholder="邮箱"id="inputEmail">
+                  <input type="text"placeholder="用户名"id="inputUsername" @keypress.enter="register()">
+                  <input type="password"placeholder="密码"id="inputPassword"
+                  @keypress.enter="register()">
+                  <input type="text"placeholder="邮箱"id="inputEmail"
+                  @keypress.enter="register()">
                   <el-button class="el-register" v-on:click="register()" type="primary" >注册</el-button>
             </form>
           </div>
@@ -30,8 +32,8 @@
               <h1>登录</h1>
               <p>在墙上分享你的</p>
               <form class="login-form" autocomplete="off">
-                  <input type="text"placeholder="Username"id="signinUsername">
-                  <input type="password"placeholder="password"id="signinPassword">
+                  <input type="text"placeholder="Username"id="signinUsername" @keypress.enter="login()">
+                  <input type="password"placeholder="password"id="signinPassword" @keypress.enter="login()">
                   <el-button class="el-signin" v-on:click="login()" type="primary">登 录</el-button>
               </form>
           </div>
@@ -243,9 +245,13 @@ export default {
       $('#back').css('color','rgb(123, 57, 163)')
     },
     register:function(){
+      if($('#inputUsername').val() === '' || $('#inputPassword').val() === '' || $('#inputEmail').val() === '' ){
+        alert('未填写完全')
+        return
+      }  
       var username = $('#inputUsername').val();
       var password = $('#inputPassword').val();
-      var email = $('inputEmail').val();
+      var email = $('#inputEmail').val();
 
       // LeanCloud - 注册
       // https://leancloud.cn/docs/leanstorage_guide-js.html#注册
@@ -261,6 +267,10 @@ export default {
       }));
     },
     login:function(){
+      if($('#signinUsername').val() === '' || $('#signinPassword').val() === ''){
+        alert('未填写完全')
+        return
+      }  
       var username = $('#signinUsername').val();
       var password = $('#signinPassword').val();
 
