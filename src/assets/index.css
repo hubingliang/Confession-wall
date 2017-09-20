@@ -520,6 +520,8 @@ html .box .home .Confession .view .Confession-box .items .item .content pre {
   overflow: hidden;
   font-size: 15px;
   font-family: -apple-system, "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Source Han Sans CN", "Source Han Sans SC", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 html .box .home .Confession .view .Confession-box .items .item .content pre img {
   width: 24px;
@@ -867,6 +869,8 @@ html .box .home .Confession .dialog .bigItem .content-box .content .imgBox img {
   margin-bottom: 2px;
 }
 html .box .home .Confession .dialog .bigItem .content-box .content pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
   overflow: hidden;
   vertical-align: center;
   line-height: 24px;
