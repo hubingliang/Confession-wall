@@ -143,20 +143,20 @@
         <Confession v-show="Confessionshow" v-bind:user="user"></Confession>
       </transition>
       <transition name="el-zoom-in-bottom" >
-        <Lost v-show="Lostshow"></Lost>
+        <Lost v-show="Lostshow" v-bind:user="user"></Lost>
       </transition>
       <transition name="el-zoom-in-bottom" >
-        <Lost v-show="Noticeshow"></Lost>
+        <Notice v-show="Noticeshow" v-bind:user="user"></Notice>
       </transition>
       
       <div class="nav-icon" id="nav-icon">
         <svg class="icon animated fadeInRight" aria-hidden="true" v-on:click="Confession()" @click="Confessionshow = true,Lostshow = false, Noticeshow = false">
             <use xlink:href="#icon-xin1"></use>
         </svg>
-        <svg class="icon animated fadeInRight" aria-hidden="true" v-on:click="Lost()" @click="Confessionshow = true,Lostshow = true">
+        <svg class="icon animated fadeInRight" aria-hidden="true" v-on:click="Lost()" @click="Confessionshow = true,Lostshow = true,Noticeshow = false">
             <use xlink:href="#icon-wenhao"></use>
         </svg>
-        <svg class="icon animated fadeInRight" aria-hidden="true" v-on:click="Notice()" @click="Noticeshow = true">
+        <svg class="icon animated fadeInRight" aria-hidden="true" v-on:click="Notice()" @click="Confessionshow = true,Lostshow = true,Noticeshow = true">
             <use xlink:href="#icon-tongzhi"></use>
         </svg>
       </div>

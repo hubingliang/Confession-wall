@@ -49,7 +49,7 @@
 
 
 
-        <Window v-bind:user="user" v-bind:ConfessionData="ConfessionData" v-bind:item="item"></Window>
+        <Window v-bind:user="user" v-bind:ConfessionData="ConfessionData" v-bind:item="item" v-bind:what="what"></Window>
 
 
 
@@ -128,7 +128,8 @@ export default {
                 realName:'',
                 userImage:'',
                 major: ''
-            }
+            },
+            what:'ConfessionData'
         }
     },
     mounted() {
