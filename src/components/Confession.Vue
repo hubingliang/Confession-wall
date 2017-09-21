@@ -22,10 +22,10 @@
                         <div class="actions">
                             <div class="good">
                                 <svg class="items-icon" aria-hidden="true" @click="good(index)" v-if="item.good === 0">
-                                    <use xlink:href="#icon-dianzan2"></use>
+                                    <use xlink:href="#icon-dianzan"></use>
                                 </svg>
                                 <svg class="red-icon" aria-hidden="true" @click="good(index)" v-else="item.good === 1">
-                                    <use xlink:href="#icon-dianzan2"></use>
+                                    <use xlink:href="#icon-dianzan"></use>
                                 </svg>
                                 <span class="number">{{item.goodUser.length}}</span>
                             </div>

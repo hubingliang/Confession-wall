@@ -151,13 +151,13 @@
       
       <div class="nav-icon" id="nav-icon">
         <svg class="icon animated fadeInRight" aria-hidden="true" v-on:click="Confession()" @click="Confessionshow = true,Lostshow = false, Noticeshow = false">
-            <use xlink:href="#icon-xin1"></use>
+            <use xlink:href="#icon-xin"></use>
         </svg>
         <svg class="icon animated fadeInRight" aria-hidden="true" v-on:click="Lost()" @click="Confessionshow = true,Lostshow = true,Noticeshow = false">
-            <use xlink:href="#icon-wenhao"></use>
+            <use xlink:href="#icon-manuser"></use>
         </svg>
         <svg class="icon animated fadeInRight" aria-hidden="true" v-on:click="Notice()" @click="Confessionshow = true,Lostshow = true,Noticeshow = true">
-            <use xlink:href="#icon-tongzhi"></use>
+            <use xlink:href="#icon-womanuser"></use>
         </svg>
       </div>
       <div class="back-button animated fadeInLeft">

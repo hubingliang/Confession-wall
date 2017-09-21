@@ -398,14 +398,16 @@ html .box .home .nav-icon {
 html .box .home .nav-icon .icon {
   width: 3em;
   height: 3em;
-  vertical-align: -0.15em;
   fill: white;
-  overflow: hidden;
   border-radius: 50%;
   border: 1px solid white;
   padding: 10px;
   margin-top: 20px;
   z-index: 2;
+}
+html .box .home .nav-icon .icon svg {
+  width: 50px;
+  height: 50px;
 }
 html .box .home .Confession {
   background: #f3f3f3;
