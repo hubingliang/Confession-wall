@@ -116,8 +116,8 @@
 
         <div class="nav animated fadeInDown">
           <el-button type="text" class="nav-item" v-on:click="Confession()" @click="Confessionshow = true">表 白 墙</el-button>
-          <el-button type="text" class="nav-item" v-on:click="Lost()" @click="Lostshow = !Lostshow">失 物 招 领</el-button>
-          <el-button type="text" class="nav-item" v-on:click="Notice()" @click="Noticeshow = true">各 类 通 知</el-button>
+          <el-button type="text" class="nav-item" v-on:click="Lost()" @click="Lostshow = !Lostshow">男 神</el-button>
+          <el-button type="text" class="nav-item" v-on:click="Notice()" @click="Noticeshow = true">女 神</el-button>
         </div>
 
         <div class="link-box">

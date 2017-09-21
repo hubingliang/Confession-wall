@@ -3,7 +3,7 @@
         <div class="view">
             <div class="Confession-box" id="box">
                 <div class="items" >
-                    <div class="item" v-for="(item,index) in SelectionData" v-bind:key="item.usersign">
+                    <div class="item" v-for="(item,index) in ManData" v-bind:key="item.usersign">
                         <div class="user" >
                             <img @click="userCard(item.username)" v-bind:src="item.userImage"/>
                             <div class="username" @click="userCard(item.username)" >
@@ -49,7 +49,7 @@
 
 
 
-        <Window v-bind:user="user" v-bind:SelectionData="SelectionData" v-bind:item="item" v-bind:what="what"></Window>
+        <Window v-bind:user="user" v-bind:ManData="ManData" v-bind:item="item" v-bind:what="what"></Window>
 
 
 
@@ -119,7 +119,7 @@ export default {
             page: 0,
             textarea: '',
             index: 0,
-            SelectionData:[],
+            ManData:[],
             item:{},
             card:{
                 username:'',
@@ -129,7 +129,7 @@ export default {
                 userImage:'',
                 major: ''
             },
-            what:'SelectionData'
+            what:'ManData'
         }
     },
     mounted() {
@@ -166,7 +166,7 @@ export default {
             this.page = this.page + 1
         },
         save:function(){
-            var SelectionData = AV.Object.extend('SelectionData');
+            var ManData = AV.Object.extend('ManData');
             var username = this.user.username
             var userImage = this.user.userImage
             var userSign = this.user.userSign
@@ -182,17 +182,17 @@ export default {
                 let src = this.src
                 imageUrl.push(src)
             })
-            var SelectionData = new SelectionData();
-            SelectionData.set('username', username);
-            SelectionData.set('usersign', userSign);
-            SelectionData.set('userImage', userImage);
-            SelectionData.set('content', content);
-            SelectionData.set('good', good);
-            SelectionData.set('goodUser', goodUser);
-            SelectionData.set('commentNumber', commentNumber);
-            SelectionData.set('comment', comment);
-            SelectionData.set('imageUrl', imageUrl);
-            SelectionData.save().then( (SelectionData)=> {
+            var ManData = new ManData();
+            ManData.set('username', username);
+            ManData.set('usersign', userSign);
+            ManData.set('userImage', userImage);
+            ManData.set('content', content);
+            ManData.set('good', good);
+            ManData.set('goodUser', goodUser);
+            ManData.set('commentNumber', commentNumber);
+            ManData.set('comment', comment);
+            ManData.set('imageUrl', imageUrl);
+            ManData.save().then( (ManData)=> {
                 this.editorshow = false
                 $('#imageBox').empty()
                 this.textarea = ''
@@ -202,30 +202,30 @@ export default {
             });
         },
         read:function(){
-            this.SelectionData = []
-            var query = new AV.Query('SelectionData');
-            query.find().then((SelectionData)=> {  
-                SelectionData.reverse()
-                for(let i=0;i<SelectionData.length;i++){ 
-                    this.SelectionData.push({
-                        username : SelectionData[i].attributes.username,
-                        content : SelectionData[i].attributes.content,
-                        good : SelectionData[i].attributes.good,
-                        comment : SelectionData[i].attributes.comment,
-                        commentNumber : SelectionData[i].attributes.commentNumber,
-                        imageUrl : SelectionData[i].attributes.imageUrl,
-                        usersign : SelectionData[i].attributes.usersign,
-                        userImage : SelectionData[i].attributes.userImage,
-                        id : SelectionData[i].id,
-                        goodUser :SelectionData[i].attributes.goodUser,
-                        date :SelectionData[i].attributes.date,
+            this.ManData = []
+            var query = new AV.Query('ManData');
+            query.find().then((ManData)=> {  
+                ManData.reverse()
+                for(let i=0;i<ManData.length;i++){ 
+                    this.ManData.push({
+                        username : ManData[i].attributes.username,
+                        content : ManData[i].attributes.content,
+                        good : ManData[i].attributes.good,
+                        comment : ManData[i].attributes.comment,
+                        commentNumber : ManData[i].attributes.commentNumber,
+                        imageUrl : ManData[i].attributes.imageUrl,
+                        usersign : ManData[i].attributes.usersign,
+                        userImage : ManData[i].attributes.userImage,
+                        id : ManData[i].id,
+                        goodUser :ManData[i].attributes.goodUser,
+                        date :ManData[i].attributes.date,
                     })
-                    for(let ii = 0;ii < this.SelectionData[i].goodUser.length;ii++){
-                        if(this.SelectionData[i].goodUser[ii] === this.user.username){
-                            this.SelectionData[i].good = 1
+                    for(let ii = 0;ii < this.ManData[i].goodUser.length;ii++){
+                        if(this.ManData[i].goodUser[ii] === this.user.username){
+                            this.ManData[i].good = 1
                             break   
                         }else{
-                            this.SelectionData[i].good = 0
+                            this.ManData[i].good = 0
                         } 
                     }
 
@@ -236,9 +236,9 @@ export default {
         },
         getIndex:function(index){
             $('.Lost>#window').css('display','flex')
-            this.item = this.SelectionData[index]
-            this.item.commentNumber = this.SelectionData[index].comment.length
-            this.item.goodNumber = this.SelectionData[index].goodUser.length
+            this.item = this.ManData[index]
+            this.item.commentNumber = this.ManData[index].comment.length
+            this.item.goodNumber = this.ManData[index].goodUser.length
         },
         saveImage:function(){
             console.log('sdd')
@@ -277,13 +277,12 @@ export default {
             }
         },
         showImage(){
-            console.log('sssss')
             $('#SelectionPhoto').change(()=> {
                 this.saveImage()
             }); 
         },
         userCard:function(username){
-            $('#userCard').css('display','flex')
+            $('.Lost>#userCard').css('display','flex')
             var query = new AV.Query('_User');
             query.find().then((_User)=> {  
                 for(let i = 0;i<_User.length;i++){
@@ -303,19 +302,19 @@ export default {
             })
         },
         good:function(index){
-            for(let i = 0;i<=this.SelectionData[index].goodUser.length;i++){
-                if(this.SelectionData[index].goodUser[i] === this.user.username){
+            for(let i = 0;i<=this.ManData[index].goodUser.length;i++){
+                if(this.ManData[index].goodUser[i] === this.user.username){
                     return
                 }          
             }
-            this.SelectionData[index].good = 1
-            this.SelectionData[index].goodUser.push(this.user.username)
-            var SelectionData = AV.Object.createWithoutData('SelectionData', this.SelectionData[index].id);
+            this.ManData[index].good = 1
+            this.ManData[index].goodUser.push(this.user.username)
+            var ManData = AV.Object.createWithoutData('ManData', this.ManData[index].id);
             // 修改属性
-            SelectionData.set('good', this.SelectionData[index].good);
-            SelectionData.set('goodUser', this.SelectionData[index].goodUser);
+            ManData.set('good', this.ManData[index].good);
+            ManData.set('goodUser', this.ManData[index].goodUser);
             // 保存到云端
-            SelectionData.save();
+            ManData.save();
             
         },
         addEmoji:function(){

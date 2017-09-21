@@ -87,7 +87,7 @@ export default {
     },
     methods:{
         bigImage:function(item){
-            if(this.what === 'SelectionData'){
+            if(this.what === 'ManData'){
                 $(`    <div id="wrapper">
                     <div id="imgBox">
                         <img src="${item}" alt="" id="img">
@@ -120,15 +120,48 @@ export default {
                 wrapper.bind('click',function(){
                     wrapper.remove()
                 })
-            }else{
+            }else if(this.what === 'WomanData'){
                                 $(`    <div id="wrapper">
                     <div id="imgBox">
                         <img src="${item}" alt="" id="img">
                         </div>
-                    </div>`).appendTo(".Confession")
+                    </div>`).appendTo(".Notice")
                 let box = $('#imgBox')[0]
                 let img = $('#img')[0]
                 let wrapper = $('#wrapper')
+                box.addEventListener('mousemove',function(e){
+                let width = box.getBoundingClientRect().width
+
+                let height = box.getBoundingClientRect().height
+
+                
+                let Xcenter = box.offsetLeft + width /2
+                let Ycenter = box.offsetTop + height /2
+                let mouseX = e.clientX - Xcenter
+                let mouseY = e.clientY - Ycenter
+                
+
+
+                let Xpercent = mouseX / width/2
+                let Ypercent = mouseY / height/2
+                
+                let xDeg = Xpercent * 50
+                let yDeg = Ypercent * 50
+                img.style.transform = `translateZ(-100px) rotateX(${-yDeg}deg) rotateY(${xDeg}deg)`  
+
+                })
+                wrapper.bind('click',function(){
+                    wrapper.remove()
+                })
+            }else{
+                    $(`    <div id="wrapper">
+                    <div id="imgBox">
+                        <img src="${item}" alt="" id="img">
+                        </div>
+                    </div>`).appendTo(".Notice")
+                let box = $('#imgBox')[0]
+                let img = $('#img')[0]
+                let wrapper = $('.Confession')
                 box.addEventListener('mousemove',function(e){
                 let width = box.getBoundingClientRect().width
 
@@ -163,7 +196,7 @@ export default {
             })
         },
         addComment:function(){
-            if(this.what === 'SelectionData'){
+            if(this.what === 'ManData'){
                 this.comment = emojione.toImage(this.comment)
                 this.item.comment.push(
                     {
@@ -177,12 +210,32 @@ export default {
                     }
                 )
                 // 第一个参数是 className，第二个参数是 objectId
-                var SelectionData = AV.Object.createWithoutData('SelectionData', this.item.id);
+                var ManData = AV.Object.createWithoutData('ManData', this.item.id);
                 // 修改属性
-                SelectionData.set('comment', this.item.comment);
+                ManData.set('comment', this.item.comment);
                 // 保存到云端
-                SelectionData.save();
+                ManData.save();
                 this.comment = ''
+            }else if(this.what === 'WomanData'){
+                this.comment = emojione.toImage(this.comment)
+                this.item.comment.push(
+                    {
+                        username: `${this.user.username}`,
+                        gender: `${this.user.gender}`,
+                        userSign: `${this.user.userSign}`,
+                        realName: `${this.user.realName}`,
+                        major: `${this.user.major}`,
+                        userImage: `${this.user.userImage}`,
+                        comment: `${this.comment}`
+                    }
+                )
+                // 第一个参数是 className，第二个参数是 objectId
+                var WomanData = AV.Object.createWithoutData('WomanData', this.item.id);
+                // 修改属性
+                WomanData.set('comment', this.item.comment);
+                // 保存到云端
+                WomanData.save();
+                this.comment = '' 
             }else{
                 this.comment = emojione.toImage(this.comment)
                 this.item.comment.push(

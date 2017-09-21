@@ -52,7 +52,7 @@
        props:['card'],
        methods:{
            cardClose:function() {
-               $('#userCard').css('display','none')
+               $('.card-wrapper').css('display','none')
            }
        }
     }
