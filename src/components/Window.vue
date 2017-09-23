@@ -154,14 +154,15 @@ export default {
                     wrapper.remove()
                 })
             }else{
+                console.log('ss')
                     $(`    <div id="wrapper">
                     <div id="imgBox">
                         <img src="${item}" alt="" id="img">
                         </div>
-                    </div>`).appendTo(".Notice")
+                    </div>`).appendTo(".Confession")
                 let box = $('#imgBox')[0]
                 let img = $('#img')[0]
-                let wrapper = $('.Confession')
+                let wrapper = $('#wrapper')
                 box.addEventListener('mousemove',function(e){
                 let width = box.getBoundingClientRect().width
 
